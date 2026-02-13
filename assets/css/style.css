@@ -1,0 +1,171 @@
+@import "tailwindcss";
+@import "swiper/css";
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import "flatpickr/dist/flatpickr.min.css";
+
+@source "../../**/*.{php,js,jsx,ts,tsx,html}";
+
+@theme {
+    --color-primary: rgb(25, 41, 89);
+    --color-secondary: rgba(243, 245, 248, 1);
+}
+
+@utility container {
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+.container-2{
+    @apply container!;
+}
+
+
+html, body {
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    margin-top: 0 !important;
+    background: white;
+}
+
+.elementor-widget-text-editor {
+    font-family: "Cormorant Garamond", serif !important;
+}
+
+button, a {
+    cursor: pointer;
+}
+
+.btn-fill, .btn-outline, .btn-fill-2, .btn-outline-2 {
+    @apply md:text-lg text-sm text-center font-bold border md:rounded-md rounded md:py-3 py-2 md:px-8 px-4 uppercase duration-300;
+}
+
+.btn-fill {
+    @apply bg-primary text-white border-primary hover:bg-[#0C183AFF];
+}
+
+.btn-outline {
+    @apply bg-white text-primary border-primary hover:bg-primary hover:text-white;
+}
+
+.btn-fill-2 {
+    @apply bg-secondary text-primary border-secondary hover:border-primary hover:bg-primary hover:text-white;
+}
+
+.btn-outline-2 {
+    @apply bg-transparent text-white border-white hover:bg-white hover:text-primary;
+}
+
+
+.heading-1 {
+    @apply 2xl:text-[84px] 2xl:leading-22.5 md:text-[56px] md:leading-16 text-3xl font-semibold;
+}
+
+.heading-2 {
+    @apply md:text-[42px] md:leading-12.5 text-2xl font-bold;
+}
+
+.heading-3 {
+    @apply md:text-[28px] md:leading-10 text-lg font-bold;
+}
+
+.heading-4 {
+    @apply md:text-[22px] md:leading-10 text-lg font-bold;
+}
+
+
+.sub-heading {
+    @apply md:text-xl md:leading-7 text-sm font-medium;
+}
+
+
+.slider-pagination .swiper-pagination-bullet-active {
+    background-color: rgb(25, 41, 89) !important;
+}
+
+.accordion-slider .slider-pagination {
+    .swiper-pagination-bullet {
+        background-color: #D9D9D9 !important;
+        opacity: 1 !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #FFFFFF !important;
+    }
+}
+
+
+.footer-menu {
+    @apply md:text-[22px] text-sm font-bold space-y-3 mb-5;
+
+    a {
+        @apply hover:opacity-80 duration-300;
+    }
+}
+
+.footer-bottom-menu {
+    @apply border-t border-white/50 flex xl:justify-between justify-center gap-x-8 gap-y-4 lg:flex-nowrap flex-wrap text-white md:text-[22px] text-[15px] font-bold md:py-8 py-6;
+
+    a {
+        @apply hover:opacity-80 duration-300;
+    }
+}
+
+.copy {
+    a {
+        @apply underline!;
+    }
+}
+
+.youtube-wrapper {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    max-height: 80vh;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+
+.room-copy {
+    ul {
+        @apply my-3 p-0 list-none;
+    }
+
+    li {
+        @apply relative pl-6 mb-2
+        before:content-['✓'] before:absolute before:left-0 before:top-1 before:font-bold before:text-primary before:text-sm;
+    }
+}
+
+
+/* Date & time picker */
+.flatpickr-calendar {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover,
+.flatpickr-monthSelect-month.selected,
+.flatpickr-monthSelect-month.selected:hover {
+    @apply bg-primary! border-primary! text-white!;
+}
+
+
+.flatpickr-day.today {
+    @apply border-primary!;
+}
+
+
+/*  */
