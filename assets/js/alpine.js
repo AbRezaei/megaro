@@ -1,15 +1,16 @@
 import Alpine from "alpinejs";
 import collapse from "@alpinejs/collapse";
-import page from "./widgets/pageStore.js"
-import checkAvailability from "./widgets/checkAvailability.js"
+import pageStore from "./widgets/pageStore.js";
 
+// Alpine init
+document.addEventListener('alpine:init', () => {
+    // Alpine store
+    Alpine.store('page', pageStore);
 
-Alpine.plugin(collapse)
-window.Alpine = Alpine
+    // Alpine data
+});
 
+Alpine.plugin(collapse);
 
-Alpine.store('page', page());
-Alpine.data('checkAvailability', checkAvailability);
-
-
-Alpine.start()
+window.Alpine = Alpine;
+Alpine.start();
