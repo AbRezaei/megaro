@@ -276,31 +276,52 @@
 }
 
 .text-body-xl {
-    @apply font-sofia-sans font-normal lg:text-[24px] text-[20px] leading-10;
+    @apply font-normal lg:text-[24px] text-[20px] leading-10;
 }
 
 .text-body-lg {
-    @apply font-sofia-sans font-normal lg:text-[18px] text-[16px] lg:leading-7 leading-6;
+    @apply font-normal lg:text-[18px] text-[16px] lg:leading-7 leading-6;
 }
 
 .text-body-md {
-    @apply font-sofia-sans font-normal lg:text-[16px] text-[14px] lg:leading-6 leading-5;
+    @apply font-normal lg:text-[16px] text-[14px] lg:leading-6 leading-5;
 }
 
 .text-body-sm {
-    @apply font-sofia-sans font-normal lg:text-[14px] text-[12px] lg:leading-5 leading-4.5;
+    @apply font-normal lg:text-[14px] text-[12px] lg:leading-5 leading-4.5;
 }
 
 .text-button-lg {
-    @apply font-sofia-sans font-medium lg:text-[18px] text-[16px] lg:leading-7 leading-6;
+    @apply font-medium lg:text-[18px] text-[16px] lg:leading-7 leading-6;
 }
 
 .text-button-md {
-    @apply font-sofia-sans font-medium lg:text-[16px] text-[14px] lg:leading-6 leading-5;
+    @apply font-medium lg:text-[16px] text-[14px] lg:leading-6 leading-5;
 }
 
 .text-button-sm {
-    @apply font-sofia-sans font-medium lg:text-[14px] text-[12px] lg:leading-5 leading-4.5;
+    @apply font-medium lg:text-[14px] text-[12px] lg:leading-5 leading-4.5;
+}
+
+/* Buttons */
+.btn-primary-fill {
+    @apply bg-primary text-whtie hover:brightness-90;
+}
+
+.btn-black-outline {
+    @apply text-black border border-black hover:bg-black hover:text-white;
+}
+
+.btn-lg {
+    @apply h-13 font-medium lg:text-[18px] text-[16px] lg:leading-7 leading-6 text-button-lg px-4;
+}
+
+.btn-md {
+    @apply h-10 font-medium lg:text-[16px] text-[14px] lg:leading-6 leading-5 text-button-md px-3;
+}
+
+.btn-sm {
+    @apply h-9 font-medium lg:text-[14px] text-[12px] lg:leading-5 leading-4.5 text-button-sm px-3;
 }
 
 [x-cloak] {
