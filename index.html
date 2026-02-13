@@ -12,8 +12,7 @@
 </head>
 <body x-data
       x-on:resize.window.debounce="$store.page.resized()"
-      x-on:scroll.window.debounce="$store.page.scrolled()"
-      class="bg-neutral-linen lg:pt-28 pt-20">
+      x-on:scroll.window.debounce="$store.page.scrolled()">
 
 <nav class="fixed top-0 left-0 z-10 w-full bg-neutral-linen lg:py-4 py-2">
     <div class="container">
@@ -272,7 +271,60 @@
     </div>
 </nav>
 
-<p>This is a test!</p>
+<main class="lg:pt-28 pt-20">
+    <header class="w-full h-dvh flex flex-col py-14"
+            style="background-image: radial-gradient(25.28% 100% at 50% 51.67%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(360deg, rgba(0, 0, 0, 0.7) 13.43%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%), url('./assets/img/hero-sample-1.jpg'); background-size: cover; background-position:center; background-repeat: no-repeat">
+
+        <div class="grow flex flex-col justify-center">
+            <div class="container">
+                <div class="lg:w-1/2 text-center mx-auto">
+
+                    <h1 class="text-display text-white mb-6">The Megaro Collection</h1>
+                    <p class="text-body-xl text-white mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    <a href="#" class="bg-primary text-white px-4 py-3 hover:opacity-90">Book now</a>
+
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="container">
+
+                <p class="text-white text-center mb-4"><span class="font-medium">The Megaro Collection</span><span
+                        class="font-light">as uniquely individual as you are</span></p>
+                <ul class="flex flex-row justify-center items-center lg:gap-10 gap-4">
+
+                    <li>
+                        <img src="./assets/img/logo-hokus-pokus.png" alt="Logo icon"
+                             class="w-auto lg:h-16 h-9 object-contain object-center">
+                    </li>
+                    <li>
+                        <img src="./assets/img/logo-spagnoletti.png" alt="Logo icon"
+                             class="w-auto lg:h-16 h-9 object-contain object-center">
+                    </li>
+                    <li>
+                        <img src="./assets/img/logo-california.png" alt="Logo icon"
+                             class="w-auto lg:h-16 h-9 object-contain object-center">
+                    </li>
+                    <li>
+                        <img src="./assets/img/logo-megaro.png" alt="Logo icon"
+                             class="w-auto lg:h-16 h-9 object-contain object-center">
+                    </li>
+                    <li>
+                        <img src="./assets/img/logo-gyle.png" alt="Logo icon"
+                             class="w-auto lg:h-16 h-9 object-contain object-center">
+                    </li>
+                    <li>
+                        <img src="./assets/img/logo-derby.png" alt="Logo icon"
+                             class="w-auto lg:h-11 h-5 object-contain object-center">
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+    </header>
+</main>
 
 <footer class="bg-neutral-graphite">
     <div class="container">
