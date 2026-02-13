@@ -246,7 +246,7 @@
     }
 
     a, button {
-        @apply inline-block cursor-pointer duration-300;
+        @apply inline-block cursor-pointer outline-none duration-300;
     }
 }
 
@@ -256,56 +256,48 @@
 }
 
 .text-heading-1 {
-    @apply font-fraunces font-normal lg:text-[60px] text-[40px] lg:leading-17 leading-12;
+    @apply font-fraunces lg:text-[60px] text-[40px] lg:leading-17 leading-12;
 }
 
 .text-heading-2 {
-    @apply font-fraunces font-normal lg:text-[48px] text-[32px] lg:leading-14 leading-10;
+    @apply font-fraunces lg:text-[48px] text-[32px] lg:leading-14 leading-10;
 }
 
 .text-heading-3 {
-    @apply font-fraunces font-normal lg:text-[40px] text-[28px] lg:leading-12 leading-8;
+    @apply font-fraunces lg:text-[40px] text-[28px] lg:leading-12 leading-8;
 }
 
 .text-heading-4 {
-    @apply font-fraunces font-normal lg:text-[32px] text-[24px] lg:leading-10 leading-7;
+    @apply font-fraunces lg:text-[32px] text-[24px] lg:leading-10 leading-7;
 }
 
 .text-heading-5 {
-    @apply font-fraunces font-normal lg:text-[24px] text-[20px] lg:leading-8 leading-6;
+    @apply font-fraunces lg:text-[24px] text-[20px] lg:leading-8 leading-6;
 }
 
 .text-body-xl {
-    @apply font-normal lg:text-[24px] text-[20px] leading-10;
+    @apply lg:text-[24px] text-[20px] leading-10;
 }
 
 .text-body-lg {
-    @apply font-normal lg:text-[18px] text-[16px] lg:leading-7 leading-6;
+    @apply lg:text-[18px] text-[16px] lg:leading-7 leading-6;
 }
 
 .text-body-md {
-    @apply font-normal lg:text-[16px] text-[14px] lg:leading-6 leading-5;
+    @apply lg:text-[16px] text-[14px] lg:leading-6 leading-5;
 }
 
 .text-body-sm {
-    @apply font-normal lg:text-[14px] text-[12px] lg:leading-5 leading-4.5;
-}
-
-.text-button-lg {
-    @apply font-medium lg:text-[18px] text-[16px] lg:leading-7 leading-6;
-}
-
-.text-button-md {
-    @apply font-medium lg:text-[16px] text-[14px] lg:leading-6 leading-5;
-}
-
-.text-button-sm {
-    @apply font-medium lg:text-[14px] text-[12px] lg:leading-5 leading-4.5;
+    @apply lg:text-[14px] text-[12px] lg:leading-5 leading-4.5;
 }
 
 /* Buttons */
+.btn {
+    @apply text-center content-center;
+}
+
 .btn-primary-fill {
-    @apply bg-primary text-whtie hover:brightness-90;
+    @apply bg-primary text-white hover:brightness-90;
 }
 
 .btn-black-outline {
@@ -313,15 +305,15 @@
 }
 
 .btn-lg {
-    @apply h-13 font-medium lg:text-[18px] text-[16px] lg:leading-7 leading-6 text-button-lg px-4;
+    @apply h-13 font-medium lg:text-[18px] text-[16px] lg:leading-7 leading-6 px-4;
 }
 
 .btn-md {
-    @apply h-10 font-medium lg:text-[16px] text-[14px] lg:leading-6 leading-5 text-button-md px-3;
+    @apply h-10 font-medium lg:text-[16px] text-[14px] lg:leading-6 leading-5 px-3;
 }
 
 .btn-sm {
-    @apply h-9 font-medium lg:text-[14px] text-[12px] lg:leading-5 leading-4.5 text-button-sm px-3;
+    @apply h-9 font-medium lg:text-[14px] text-[12px] lg:leading-5 leading-4.5 px-3;
 }
 
 [x-cloak] {
