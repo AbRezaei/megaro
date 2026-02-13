@@ -10,9 +10,269 @@
 
     <link rel="stylesheet" href="./dist/assets/style.css">
 </head>
-<body class="bg-neutral-linen">
+<body x-data
+      x-on:resize.window.debounce="$store.page.resized()"
+      x-on:scroll.window.debounce="$store.page.scrolled()"
+      class="bg-neutral-linen lg:pt-28 pt-20">
 
+<nav class="fixed top-0 left-0 z-10 w-full bg-neutral-linen lg:py-4 py-2">
+    <div class="container">
 
+        <!-- Desktop navbar -->
+        <div class="hidden lg:flex flex-row justify-between items-center gap-4">
+
+            <a href="#">
+                <img src="assets/img/logo.png" alt="Logo" class="w-auto h-20 object-contain object-center">
+            </a>
+            <div class="flex flex-row items-center gap-10">
+
+                <ul class="flex flex-row items-center gap-10">
+
+                    <li x-data="dropdown()">
+
+                        <button x-bind="onClick"
+                                class="text-body-lg flex flex-row items-center gap-1 hover:opacity-70">
+
+                            <span>Hotels</span>
+                            <img x-bind:class="{'rotate-180': open}"
+                                 src="./assets/img/svg/chevron-down-black.svg" alt="Arrow icon"
+                                 class="w-5 h-5 object-contain object-center duration-300">
+
+                        </button>
+                        <div x-bind="dialogue" x-cloak
+                             class="fixed top-28 left-0 w-full bg-neutral-linen py-16">
+                            <div class="container">
+                                <ul class="grid grid-cols-3 gap-x-16">
+
+                                    <li class="text-center">
+
+                                        <div class="mb-6">
+                                            <img src="./assets/img/sample-1.jpg" alt="Hotel image"
+                                                 class="w-full h-60 object-cover object-center">
+                                        </div>
+                                        <div>
+
+                                            <h4 class="text-heading-4 mb-4">The Megaro</h4>
+                                            <div class="flex flex-row justify-center items-center mb-4">
+
+                                                <img src="./assets/img/svg/start-black.svg" alt="Star icon"
+                                                     class="w-6 h-6 object-contain object-center">
+                                                <img src="./assets/img/svg/start-black.svg" alt="Star icon"
+                                                     class="w-6 h-6 object-contain object-center">
+                                                <img src="./assets/img/svg/start-black.svg" alt="Star icon"
+                                                     class="w-6 h-6 object-contain object-center">
+                                                <img src="./assets/img/svg/start-black.svg" alt="Star icon"
+                                                     class="w-6 h-6 object-contain object-center">
+                                                <img src="./assets/img/svg/start-black.svg" alt="Star icon"
+                                                     class="w-6 h-6 object-contain object-center">
+
+                                            </div>
+                                            <p class="text-body-lg mb-6">King's Cross, London</p>
+                                            <a href="#"
+                                               class="text-button-lg border border-black px-4 py-3 hover:opacity-70">View
+                                                hotel</a>
+
+                                        </div>
+
+                                    </li>
+                                    <li class="text-center">
+
+                                        <div class="mb-6">
+                                            <img src="./assets/img/sample-2.jpg" alt="Hotel image"
+                                                 class="w-full h-60 object-cover object-center">
+                                        </div>
+                                        <div>
+
+                                            <h4 class="text-heading-4 mb-4">The Gyle</h4>
+                                            <div class="flex flex-row justify-center items-center mb-4">
+
+                                                <img src="./assets/img/svg/start-black.svg" alt="Star icon"
+                                                     class="w-6 h-6 object-contain object-center">
+                                                <img src="./assets/img/svg/start-black.svg" alt="Star icon"
+                                                     class="w-6 h-6 object-contain object-center">
+                                                <img src="./assets/img/svg/start-black.svg" alt="Star icon"
+                                                     class="w-6 h-6 object-contain object-center">
+                                                <img src="./assets/img/svg/start-black.svg" alt="Star icon"
+                                                     class="w-6 h-6 object-contain object-center">
+
+                                            </div>
+                                            <p class="text-body-lg mb-6">King's Cross, London</p>
+                                            <a href="#"
+                                               class="text-button-lg border border-black px-4 py-3 hover:opacity-70">View
+                                                hotel</a>
+
+                                        </div>
+
+                                    </li>
+                                    <li class="text-center">
+
+                                        <div class="mb-6">
+                                            <img src="./assets/img/sample-3.jpg" alt="Hotel image"
+                                                 class="w-full h-60 object-cover object-center">
+                                        </div>
+                                        <div>
+
+                                            <h4 class="text-heading-4 mb-4">The California</h4>
+                                            <div class="flex flex-row justify-center items-center mb-4">
+
+                                                <img src="./assets/img/svg/start-black.svg" alt="Star icon"
+                                                     class="w-6 h-6 object-contain object-center">
+                                                <img src="./assets/img/svg/start-black.svg" alt="Star icon"
+                                                     class="w-6 h-6 object-contain object-center">
+                                                <img src="./assets/img/svg/start-black.svg" alt="Star icon"
+                                                     class="w-6 h-6 object-contain object-center">
+
+                                            </div>
+                                            <p class="text-body-lg mb-6">King's Cross, London</p>
+                                            <a href="#"
+                                               class="text-button-lg border border-black px-4 py-3 hover:opacity-70">View
+                                                hotel</a>
+
+                                        </div>
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li x-data="dropdown()">
+
+                        <button x-bind="onClick"
+                                class="text-body-lg flex flex-row items-center gap-1 hover:opacity-70">
+
+                            <span>Restaurants & Bars</span>
+                            <img x-bind:class="{'rotate-180': open}"
+                                 src="./assets/img/svg/chevron-down-black.svg" alt="Arrow icon"
+                                 class="w-5 h-5 object-contain object-center duration-300">
+
+                        </button>
+                        <div x-bind="dialogue" x-cloak
+                             class="fixed top-28 left-0 w-full bg-neutral-linen py-16">
+                            <div class="container">
+                                <ul class="grid grid-cols-2 gap-x-16">
+
+                                    <li class="grid grid-cols-2 gap-10">
+
+                                        <div>
+
+                                            <h4 class="text-heading-4 mb-4">Spagnoletti</h4>
+                                            <p class="text-body-lg mb-6">Tortor interdum condimentum nunc molestie
+                                                quam lectus euismod pulvinar risus. Cursus in odio aenean.</p>
+                                            <a href="#"
+                                               class="text-button-lg border border-black px-4 py-3 hover:opacity-70">Discover
+                                                more</a>
+
+                                        </div>
+                                        <div>
+                                            <img src="./assets/img/sample-4.jpg" alt="Sample image"
+                                                 class="w-full h-84 object-cover object-center">
+                                        </div>
+
+                                    </li>
+                                    <li class="grid grid-cols-2 gap-10">
+
+                                        <div>
+
+                                            <h4 class="text-heading-4 mb-4">Hokus Pokus</h4>
+                                            <p class="text-body-lg mb-6">Tortor interdum condimentum nunc molestie
+                                                quam lectus euismod pulvinar risus. Cursus in odio aenean.</p>
+                                            <a href="#"
+                                               class="text-button-lg border border-black px-4 py-3 hover:opacity-70">Discover
+                                                more</a>
+
+                                        </div>
+                                        <div>
+                                            <img src="./assets/img/sample-5.jpg" alt="Sample image"
+                                                 class="w-full h-84 object-cover object-center">
+                                        </div>
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li>
+                        <a href="#" class="hover:opacity-70">Meetings & Events</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:opacity-70">Private Parties</a>
+                    </li>
+
+                </ul>
+                <a href="#" class="text-button-lg border border-black px-4 py-3 hover:opacity-70">Book</a>
+
+            </div>
+
+        </div>
+
+        <!-- Mobile navbar -->
+        <div class="lg:hidden">
+
+            <div class="relative z-11 flex flex-row justify-between items-center gap-4">
+
+                <a href="#">
+                    <img src="assets/img/logo.png" alt="Logo" class="w-auto h-16 object-contain object-center">
+                </a>
+                <button x-on:click="$store.page.toggleHamburgerMenu()"
+                        class="flex flex-row items-center gap-1">
+
+                    <span>Menu</span>
+                    <img x-show="!$store.page.showHamburgerMenu" x-cloak
+                         src="./assets/img/svg/menu-black.svg" alt="Menu icon"
+                         class="w-5 h-5 object-contain object-center">
+                    <img x-show="$store.page.showHamburgerMenu" x-cloak
+                         src="./assets/img/svg/close-black.svg" alt="Close icon"
+                         class="w-5 h-5 object-contain object-center">
+
+                </button>
+
+            </div>
+            <div x-bind:class="{'!translate-x-0': $store.page.showHamburgerMenu}"
+                 class="fixed top-20 right-0 z-10 translate-x-full w-dvw h-[calc(100dvh-5rem)] flex flex-col bg-neutral-linen overflow-auto pb-6 duration-300">
+
+                <ul class="grow flex flex-col justify-center">
+
+                    <li>
+                        <a href="#" class="block text-center text-body-xl py-4">
+                            Hotels
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block text-center text-body-xl py-4">
+                            Restaurants & Bars
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block text-center text-body-xl py-4">
+                            Meetings & Events
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block text-center text-body-xl py-4">
+                            Private Parties
+                        </a>
+                    </li>
+
+                </ul>
+                <div>
+                    <div class="container">
+                        <a href="#"
+                           class="block text-button-lg text-center border border-black px-4 py-3 hover:opacity-70">Book</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+
+<p>This is a test!</p>
 
 <script src="./dist/assets/main.js"></script>
 </body>

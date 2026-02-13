@@ -246,7 +246,7 @@
     }
 
     a, button {
-        @apply cursor-pointer duration-300;
+        @apply inline-block cursor-pointer duration-300;
     }
 }
 
