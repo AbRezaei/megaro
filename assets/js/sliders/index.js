@@ -1,35 +1,18 @@
 import Swiper from 'swiper';
-import imageAccordion from './image-accordion.js';
-import card from './card.js';
-import text from './text.js';
-import reviews from './reviews.js';
-import stories from './stories.js';
-import gallery from './gallery.js';
-import textMedia from './text-media.js';
-import membershipList from './membership-list.js';
-
+import rooms from './rooms.js';
 
 const types = {
-    imageAccordion,
-    card,
-    text,
-    reviews,
-    stories,
-    gallery,
-    textMedia,
-    membershipList,
+    rooms
 };
 
 // Loading sliders
 document.addEventListener("DOMContentLoaded", function () {
     const sliders = document.querySelectorAll('[data-slider]');
+
     if (!sliders.length) return;
 
     sliders.forEach((slider) => {
-        const type = slider.dataset.slider;
-        const swiperEl = slider.querySelector('.swiper')
-
-        if (!swiperEl) return;
+        const type     = slider.dataset.slider;
 
         const getConfig = types[type];
 
@@ -38,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        new Swiper(swiperEl, getConfig(slider));
-
+        new Swiper(slider, getConfig(slider));
     });
 })
