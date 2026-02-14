@@ -316,6 +316,27 @@
     @apply h-9 font-medium lg:text-[14px] text-[12px] lg:leading-5 leading-4.5 px-3;
 }
 
+/* Date & time picker */
+.flatpickr-calendar {
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover,
+.flatpickr-monthSelect-month.selected,
+.flatpickr-monthSelect-month.selected:hover {
+    @apply bg-primary! border-primary! text-white!;
+}
+
+.flatpickr-day.today {
+    @apply border-primary!;
+}
+
 [x-cloak] {
     display: none !important;
 }
