@@ -236,7 +236,7 @@
 
 /* Utilities */
 @utility container {
-    @apply mx-auto px-4;
+    @apply max-w-[76rem] mx-auto px-4;
 }
 
 /* Layers */
