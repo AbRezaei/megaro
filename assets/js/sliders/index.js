@@ -1,9 +1,11 @@
 import Swiper from 'swiper';
 import rooms from './rooms.js';
+import double from './double.js';
 import triple from './triple.js';
 
 const types = {
     rooms,
+    double,
     triple
 };
 

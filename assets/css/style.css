@@ -349,6 +349,15 @@
     @apply border-primary!;
 }
 
+/* Swiper styles */
+.swiper-pagination-bullet-class {
+    @apply w-2 h-2 border border-black rotate-45 duration-300;
+}
+
+.swiper-pagination-bullet-active-class {
+    @apply bg-primary border-primary scale-1.5;
+}
+
 [x-cloak] {
     display: none !important;
 }
