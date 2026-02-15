@@ -355,7 +355,7 @@
 }
 
 .swiper-pagination-bullet-active-class {
-    @apply bg-primary border-primary scale-1.5;
+    @apply bg-primary border-primary scale-150;
 }
 
 [x-cloak] {
