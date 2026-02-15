@@ -11,8 +11,8 @@ export default function config(slider) {
             renderCustom: function (swiper, current, total) {
                 return `<div class="flex items-center gap-2">
                             <p class="text-body-md">${current}</p>
-                            <p class="w-4 h-[1px] bg-[#737373]"></p>
-                            <p class="text-body-md text-[#737373]">${total}</p>
+                            <p class="w-4 h-[1px] bg-current opacity-40"></p>
+                            <p class="text-body-md opacity-40">${total}</p>
                         </div>`;
             },
         },

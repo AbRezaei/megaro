@@ -1,8 +1,10 @@
 import Swiper from 'swiper';
 import rooms from './rooms.js';
+import triple from './triple.js';
 
 const types = {
-    rooms
+    rooms,
+    triple
 };
 
 // Loading sliders

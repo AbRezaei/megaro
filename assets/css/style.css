@@ -308,6 +308,10 @@
     @apply text-black border border-black hover:bg-black hover:text-white;
 }
 
+.btn-white-outline {
+    @apply text-white border border-white hover:bg-white hover:text-black;
+}
+
 .btn-lg {
     @apply h-13 font-medium lg:text-[18px] text-[16px] lg:leading-7 leading-6 px-4;
 }
