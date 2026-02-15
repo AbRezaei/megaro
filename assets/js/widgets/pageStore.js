@@ -15,7 +15,7 @@ export default {
             this.toggleHamburgerMenu();
     },
     scrolled() {
-        this.pageScrolled = window.scrollY >= 50;
+        this.pageScrolled = window.scrollY >= 500;
     },
     toggleHamburgerMenu() {
         this.showHamburgerMenu = !this.showHamburgerMenu;
