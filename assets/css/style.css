@@ -249,8 +249,12 @@
         @apply inline-block cursor-pointer outline-none duration-300;
     }
 
-    input {
-        @apply h-13 block bg-white border border-secondary px-4 py-3 outline-none rounded-none focus:border-primary duration-300;
+    input, textarea {
+        @apply h-13 block bg-white border border-secondary px-4 py-3 outline-none rounded-none focus:border-primary duration-300 placeholder:text-[#737373];
+    }
+
+    textarea {
+        @apply h-43;
     }
 }
 
