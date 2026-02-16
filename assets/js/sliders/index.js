@@ -2,11 +2,13 @@ import Swiper from 'swiper';
 import rooms from './rooms.js';
 import double from './double.js';
 import triple from './triple.js';
+import autoHeight from './autoHeight.js';
 
 const types = {
     rooms,
     double,
-    triple
+    triple,
+    autoHeight
 };
 
 // Loading sliders
