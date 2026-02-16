@@ -254,7 +254,7 @@
     }
 
     textarea {
-        @apply h-43;
+        @apply h-43 resize-none;
     }
 }
 
