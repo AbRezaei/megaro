@@ -5,6 +5,7 @@ import dropdown from "./widgets/dropdown.js";
 import tabs from "./widgets/tabs.js";
 import select from "./widgets/select.js";
 import datepicker from "./widgets/datepicker.js";
+import modal from "./widgets/modal.js";
 
 // Alpine init
 document.addEventListener('alpine:init', () => {
@@ -16,6 +17,7 @@ document.addEventListener('alpine:init', () => {
     Alpine.data('tabs', tabs);
     Alpine.data('select', select);
     Alpine.data('datepicker', datepicker);
+    Alpine.data('modal', modal);
 });
 
 Alpine.plugin(collapse);
