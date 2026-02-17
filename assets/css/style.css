@@ -221,9 +221,10 @@
 /* Theme config */
 @theme {
     /* Colors */
-    --color-primary: #98005D;
-    --color-secondary: #F0E5E7;
-    --color-tertiary: #4A182A;
+    --color-primary: #C89B3C;
+    --color-secondary: #F1EDE4;
+    --color-mid: #E8C862;
+    --color-tertiary: #241C04;
 
     --color-neutral-graphite: #2E2E2E;
     --color-neutral-stone: #6E7C7C;
