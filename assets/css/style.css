@@ -6,6 +6,8 @@
 
 @source "../../**/*.{php,js,jsx,ts,tsx,html}";
 
+@plugin '@tailwindcss/typography';
+
 /* Fraunces font family */
 @font-face {
     font-family: fraunces;
@@ -238,6 +240,26 @@
 /* Utilities */
 @utility container {
     @apply max-w-[76rem] mx-auto px-4;
+}
+
+
+@utility prose {
+    @apply max-w-none
+    prose-h1:text-5xl
+    prose-h2:text-4xl
+    prose-h3:text-3xl
+    prose-h4:text-2xl
+    prose-h5:text-xl
+    prose-h6:text-lg
+    prose-p:text-lg
+    prose-a:text-primary
+    prose-blockquote:text-primary
+    prose-strong:text-primary
+    prose-kbd:text-primary
+    prose-code:text-primary
+    prose-ol:marker:text-primary
+    prose-ul:marker:text-primary
+    prose-img:w-full
 }
 
 /* Layers */
