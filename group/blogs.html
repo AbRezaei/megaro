@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Megaro Collection</title>
+
+    <link rel="stylesheet" href="../dist/assets/style.css">
+</head>
+<body x-data
+      x-on:resize.window.debounce="$store.page.resized()"
+      x-on:scroll.window.debounce="$store.page.scrolled()">
+
+<nav class="fixed top-0 left-0 z-11 w-full bg-neutral-linen border-b border-[#E5E5E5] lg:py-4 py-2">
+    <div class="container">
+
+        <!-- Desktop navbar -->
+        <div class="hidden lg:flex flex-row justify-between items-center gap-4">
+
+            <a href="#">
+                <img src="../assets/img/logo.png" alt="Logo" class="w-auto h-20 object-contain object-center">
+            </a>
+            <div class="flex flex-row items-center gap-10">
+
+                <ul class="flex flex-row items-center gap-10">
+
+                    <li x-data="dropdown()">
+
+                        <button x-bind="onClick"
+                                class="text-body-lg flex flex-row items-center gap-1 hover:opacity-70">
+
+                            <span>Hotels</span>
+                            <img x-bind:class="{'rotate-180': open}"
+                                 src="../assets/img/svg/chevron-down-black.svg" alt="Arrow icon"
+                                 class="w-5 h-5 object-contain object-center duration-300">
+
+                        </button>
+                        <div x-bind="dialogue" x-cloak
+                             class="fixed top-28 left-0 w-full bg-neutral-linen py-16">
+                            <div class="container">
+                                <ul class="grid grid-cols-3 gap-x-16">
+
+                                    <li class="flex flex-col text-center">
+
+                                        <div class="mb-6">
+                                            <img src="../assets/img/sample-1.jpg" alt="Hotel image"
+                                                 class="w-full h-60 object-cover object-center">
+                                        </div>
+                                        <div class="grow flex flex-col">
+
+                                            <div class="grow">
+
+                                                <h4 class="text-heading-4 mb-4">The Megaro</h4>
+                                                <div class="flex flex-row justify-center items-center mb-4">
+
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+
+                                                </div>
+                                                <p class="text-body-lg mb-6">King's Cross, London</p>
+
+                                            </div>
+                                            <div>
+                                                <a href="#" class="btn btn-black-outline btn-lg">View hotel</a>
+                                            </div>
+
+                                        </div>
+
+                                    </li>
+                                    <li class="flex flex-col text-center">
+
+                                        <div class="mb-6">
+                                            <img src="../assets/img/sample-2.jpg" alt="Hotel image"
+                                                 class="w-full h-60 object-cover object-center">
+                                        </div>
+                                        <div class="grow flex flex-col">
+
+                                            <div class="grow">
+
+                                                <h4 class="text-heading-4 mb-4">The Gyle</h4>
+                                                <div class="flex flex-row justify-center items-center mb-4">
+
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+
+                                                </div>
+                                                <p class="text-body-lg mb-6">King's Cross, London</p>
+
+                                            </div>
+                                            <div>
+                                                <a href="#" class="btn btn-black-outline btn-lg">View hotel</a>
+                                            </div>
+
+                                        </div>
+
+                                    </li>
+                                    <li class="flex flex-col text-center">
+
+                                        <div class="mb-6">
+                                            <img src="../assets/img/sample-3.jpg" alt="Hotel image"
+                                                 class="w-full h-60 object-cover object-center">
+                                        </div>
+                                        <div class="grow flex flex-col">
+
+                                            <div class="grow">
+
+                                                <h4 class="text-heading-4 mb-4">The California</h4>
+                                                <div class="flex flex-row justify-center items-center mb-4">
+
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+
+                                                </div>
+                                                <p class="text-body-lg mb-6">King's Cross, London</p>
+
+                                            </div>
+                                            <div>
+                                                <a href="#" class="btn btn-black-outline btn-lg">View hotel</a>
+                                            </div>
+
+                                        </div>
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li x-data="dropdown()">
+
+                        <button x-bind="onClick"
+                                class="text-body-lg flex flex-row items-center gap-1 hover:opacity-70">
+
+                            <span>Restaurants & Bars</span>
+                            <img x-bind:class="{'rotate-180': open}"
+                                 src="../assets/img/svg/chevron-down-black.svg" alt="Arrow icon"
+                                 class="w-5 h-5 object-contain object-center duration-300">
+
+                        </button>
+                        <div x-bind="dialogue" x-cloak
+                             class="fixed top-28 left-0 w-full bg-neutral-linen py-16">
+                            <div class="container">
+                                <ul class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+                                    <li class="grid grid-cols-1 sm:grid-cols-2 xl:gap-10 gap-8">
+
+                                        <div class="sm:order-1 order-2">
+
+                                            <h4 class="text-heading-4 mb-4">Spagnoletti</h4>
+                                            <p class="text-body-lg mb-6">Tortor interdum condimentum nunc molestie
+                                                quam lectus euismod pulvinar risus. Cursus in odio aenean.</p>
+                                            <a href="#" class="btn btn-black-outline btn-lg">Discover more</a>
+
+                                        </div>
+                                        <div class="sm:order-2 order-1">
+                                            <img src="../assets/img/sample-4.jpg" alt="Sample image"
+                                                 class="w-full h-84 object-cover object-center">
+                                        </div>
+
+                                    </li>
+                                    <li class="grid grid-cols-1 sm:grid-cols-2 xl:gap-10 gap-8">
+
+                                        <div class="sm:order-1 order-2">
+
+                                            <h4 class="text-heading-4 mb-4">Hokus Pokus</h4>
+                                            <p class="text-body-lg mb-6">Tortor interdum condimentum nunc molestie
+                                                quam lectus euismod pulvinar risus. Cursus in odio aenean.</p>
+                                            <a href="#" class="btn btn-black-outline btn-lg">Discover more</a>
+
+                                        </div>
+                                        <div class="sm:order-2 order-1">
+                                            <img src="../assets/img/sample-5.jpg" alt="Sample image"
+                                                 class="w-full h-84 object-cover object-center">
+                                        </div>
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li>
+                        <a href="#" class="hover:opacity-70">Meetings & Events</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:opacity-70">Private Parties</a>
+                    </li>
+
+                </ul>
+                <a href="#" class="btn btn-black-outline btn-lg">Book</a>
+
+            </div>
+
+        </div>
+
+        <!-- Mobile navbar -->
+        <div class="lg:hidden">
+
+            <div class="relative z-11 flex flex-row justify-between items-center gap-4">
+
+                <a href="#">
+                    <img src="../assets/img/logo.png" alt="Logo" class="w-auto h-16 object-contain object-center">
+                </a>
+                <button x-on:click="$store.page.toggleHamburgerMenu()"
+                        class="flex flex-row items-center gap-1">
+
+                    <span>Menu</span>
+                    <img x-show="!$store.page.showHamburgerMenu" x-cloak
+                         src="../assets/img/svg/menu-black.svg" alt="Menu icon"
+                         class="w-5 h-5 object-contain object-center">
+                    <img x-show="$store.page.showHamburgerMenu" x-cloak
+                         src="../assets/img/svg/close-black.svg" alt="Close icon"
+                         class="w-5 h-5 object-contain object-center">
+
+                </button>
+
+            </div>
+            <div x-bind:class="{'!translate-x-0': $store.page.showHamburgerMenu}"
+                 class="fixed top-20 right-0 z-10 translate-x-full w-dvw h-[calc(100dvh-5rem)] flex flex-col bg-neutral-linen overflow-auto pb-6 duration-300">
+
+                <ul class="grow flex flex-col justify-center">
+
+                    <li>
+                        <a href="#" class="block text-center text-body-xl py-4">
+                            Hotels
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block text-center text-body-xl py-4">
+                            Restaurants & Bars
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block text-center text-body-xl py-4">
+                            Meetings & Events
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block text-center text-body-xl py-4">
+                            Private Parties
+                        </a>
+                    </li>
+
+                </ul>
+                <div>
+                    <div class="container">
+                        <a href="#" class="w-full btn btn-black-outline btn-lg">Book</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+
+<main class="lg:pt-28 pt-20">
+
+    <header class="bg-secondary lg:py-24 py-16">
+        <div class="container">
+            <div class="lg:w-1/2 mx-auto">
+
+                <p class="text-body-lg text-primary text-center mb-4">OVERLINE</p>
+                <h1 class="text-heading-1 text-center mb-4">BLOG</h1>
+                <p class="text-body-lg text-center text-[#404040]">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum nunc at risus mattis, quis
+                    dictum ex iaculis.
+                </p>
+
+            </div>
+        </div>
+    </header>
+    <section class="bg-neutral-linen lg:py-24 py-16">
+        <div class="container">
+
+            <ul class="flex flex-row flex-wrap justify-center items-center gap-2 lg:mb-16 mb-12">
+
+                <li>
+
+                    <input type="radio" name="category" id="all" class="hidden peer">
+                    <label for="all"
+                           class="block text-body-sm font-medium border border-black rounded-full px-4 py-2 cursor-pointer duration-300 hover:bg-black hover:text-white peer-checked:bg-black peer-checked:text-white">
+                        All
+                    </label>
+
+                </li>
+                <li>
+
+                    <input type="radio" name="category" id="category-1" class="hidden peer">
+                    <label for="category-1"
+                           class="block text-body-sm font-medium border border-black rounded-full px-4 py-2 cursor-pointer duration-300 hover:bg-black hover:text-white peer-checked:bg-black peer-checked:text-white">
+                        Category 1
+                    </label>
+
+                </li>
+                <li>
+
+                    <input type="radio" name="category" id="category-2" class="hidden peer">
+                    <label for="category-2"
+                           class="block text-body-sm font-medium border border-black rounded-full px-4 py-2 cursor-pointer duration-300 hover:bg-black hover:text-white peer-checked:bg-black peer-checked:text-white">
+                        Category 2
+                    </label>
+
+                </li>
+                <li>
+
+                    <input type="radio" name="category" id="category-3" class="hidden peer">
+                    <label for="category-3"
+                           class="block text-body-sm font-medium border border-black rounded-full px-4 py-2 cursor-pointer duration-300 hover:bg-black hover:text-white peer-checked:bg-black peer-checked:text-white">
+                        Category 3
+                    </label>
+
+                </li>
+                <li>
+
+                    <input type="radio" name="category" id="category-4" class="hidden peer">
+                    <label for="category-4"
+                           class="block text-body-sm font-medium border border-black rounded-full px-4 py-2 cursor-pointer duration-300 hover:bg-black hover:text-white peer-checked:bg-black peer-checked:text-white">
+                        Category 4
+                    </label>
+
+                </li>
+
+            </ul>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-12 lg:mb-16 mb-12">
+
+                <li class="flex flex-col">
+
+                    <div class="mb-6">
+                        <img src="../assets/img/sample-8.jpg" alt="Sample"
+                             class="w-full lg:h-100 h-55 object-cover object-center">
+                    </div>
+                    <div class="grow flex flex-col gap-8">
+
+                        <div class="grow">
+
+                            <p class="text-body-md text-[#737373] mb-4">20 Nov 2025</p>
+                            <h4 class="text-heading-4 mb-4">Late Summer in London 2025: Top Events Near King’s
+                                Cross</h4>
+                            <p class="text-body-lg text-[#404040]">Tortor interdum condimentum nunc molestie quam
+                                lectus euismod pulvinar risus. </p>
+
+                        </div>
+                        <a href="#" class="text-body-lg underline underline-offset-4 hover:opacity-70">View
+                            article</a>
+
+                    </div>
+
+                </li>
+                <li class="flex flex-col">
+
+                    <div class="mb-6">
+                        <img src="../assets/img/sample-9.jpg" alt="Sample"
+                             class="w-full lg:h-100 h-55 object-cover object-center">
+                    </div>
+                    <div class="grow flex flex-col gap-8">
+
+                        <div class="grow">
+
+                            <p class="text-body-md text-[#737373] mb-4">20 Nov 2025</p>
+                            <h4 class="text-heading-4 mb-4">Summer in London at The Megaro Hotel: Where Style Meets
+                                Adventure</h4>
+                            <p class="text-body-lg text-[#404040]">Tortor interdum condimentum nunc molestie quam
+                                lectus euismod pulvinar risus.</p>
+
+                        </div>
+                        <a href="#" class="text-body-lg underline underline-offset-4 hover:opacity-70">View
+                            article</a>
+
+                    </div>
+
+                </li>
+                <li class="flex flex-col">
+
+                    <div class="mb-6">
+                        <img src="../assets/img/sample-8.jpg" alt="Sample"
+                             class="w-full lg:h-100 h-55 object-cover object-center">
+                    </div>
+                    <div class="grow flex flex-col gap-8">
+
+                        <div class="grow">
+
+                            <p class="text-body-md text-[#737373] mb-4">20 Nov 2025</p>
+                            <h4 class="text-heading-4 mb-4">Late Summer in London 2025: Top Events Near King’s
+                                Cross</h4>
+                            <p class="text-body-lg text-[#404040]">Tortor interdum condimentum nunc molestie quam
+                                lectus euismod pulvinar risus. </p>
+
+                        </div>
+                        <a href="#" class="text-body-lg underline underline-offset-4 hover:opacity-70">View
+                            article</a>
+
+                    </div>
+
+                </li>
+                <li class="flex flex-col">
+
+                    <div class="mb-6">
+                        <img src="../assets/img/sample-9.jpg" alt="Sample"
+                             class="w-full lg:h-100 h-55 object-cover object-center">
+                    </div>
+                    <div class="grow flex flex-col gap-8">
+
+                        <div class="grow">
+
+                            <p class="text-body-md text-[#737373] mb-4">20 Nov 2025</p>
+                            <h4 class="text-heading-4 mb-4">Summer in London at The Megaro Hotel: Where Style Meets
+                                Adventure</h4>
+                            <p class="text-body-lg text-[#404040]">Tortor interdum condimentum nunc molestie quam
+                                lectus euismod pulvinar risus.</p>
+
+                        </div>
+                        <a href="#" class="text-body-lg underline underline-offset-4 hover:opacity-70">View
+                            article</a>
+
+                    </div>
+
+                </li>
+                <li class="flex flex-col">
+
+                    <div class="mb-6">
+                        <img src="../assets/img/sample-8.jpg" alt="Sample"
+                             class="w-full lg:h-100 h-55 object-cover object-center">
+                    </div>
+                    <div class="grow flex flex-col gap-8">
+
+                        <div class="grow">
+
+                            <p class="text-body-md text-[#737373] mb-4">20 Nov 2025</p>
+                            <h4 class="text-heading-4 mb-4">Late Summer in London 2025: Top Events Near King’s
+                                Cross</h4>
+                            <p class="text-body-lg text-[#404040]">Tortor interdum condimentum nunc molestie quam
+                                lectus euismod pulvinar risus. </p>
+
+                        </div>
+                        <a href="#" class="text-body-lg underline underline-offset-4 hover:opacity-70">View
+                            article</a>
+
+                    </div>
+
+                </li>
+                <li class="flex flex-col">
+
+                    <div class="mb-6">
+                        <img src="../assets/img/sample-9.jpg" alt="Sample"
+                             class="w-full lg:h-100 h-55 object-cover object-center">
+                    </div>
+                    <div class="grow flex flex-col gap-8">
+
+                        <div class="grow">
+
+                            <p class="text-body-md text-[#737373] mb-4">20 Nov 2025</p>
+                            <h4 class="text-heading-4 mb-4">Summer in London at The Megaro Hotel: Where Style Meets
+                                Adventure</h4>
+                            <p class="text-body-lg text-[#404040]">Tortor interdum condimentum nunc molestie quam
+                                lectus euismod pulvinar risus.</p>
+
+                        </div>
+                        <a href="#" class="text-body-lg underline underline-offset-4 hover:opacity-70">View
+                            article</a>
+
+                    </div>
+
+                </li>
+
+            </ul>
+            <p class="text-body-lg text-[#404040] text-center mb-6">Viewed 10 of 24 articles</p>
+            <div class="flex flex-row justify-center">
+                <button class="btn btn-black-outline btn-lg">Load more articles</button>
+            </div>
+
+        </div>
+    </section>
+    <section class="bg-secondary py-16">
+        <div class="container">
+            <div class="lg:w-2/3 xl:w-1/2 mx-auto">
+
+                <div class="mb-6">
+
+                    <p class="text-body-lg text-primary text-center mb-4">Subscribe</p>
+                    <h3 class="text-heading-3 text-center mb-4">Newsletter</h3>
+                    <p class="text-body-lg text-center text-[#404040]">Be the first to hear about great offers, new
+                        openings and events.</p>
+
+                </div>
+                <div class="flex flex-row justify-center items-center mb-6">
+
+                    <input type="text" class="lg:w-80 w-56 text-body-lg" placeholder="Email address">
+                    <button class="btn btn-primary-fill btn-lg">Subscribe</button>
+
+                </div>
+                <p class="text-body-md text-center text-[#737373]">By subscribing, you agree to our Terms &
+                    Conditions</p>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-neutral-graphite">
+    <div class="container">
+
+        <div class="lg:py-16 py-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-24 gap-16">
+
+                <div>
+
+                    <div class="mb-6">
+                        <img src="../assets/img/logo-light.png" alt="Logo icon"
+                             class="w-auto h-20 object-contain object-center">
+                    </div>
+                    <p class="text-body-sm text-[#E5E5E5] mb-6">St Pancras Hotels Group Derbyshire House St. Chad's
+                        Street London WC1H 8AG</p>
+                    <a href="#" class="hover:opacity-70">
+                        <img src="../assets/img/svg/linkedin-light.svg" alt="Social icon"
+                             class="w-6 h-6 object-contain object-center">
+                    </a>
+
+                </div>
+                <div>
+
+                    <p class="text-body-sm text-[#A3A3A3] mb-6">Quick Links</p>
+                    <ul class="space-y-1">
+
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">The Megaro Hotel</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">The Gyle Hotel</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">The California
+                                Hotel</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Spagnoletti</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Hokus Pokus</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Meetings & Events</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Private Parties</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div>
+
+                    <p class="text-body-sm text-[#A3A3A3] mb-6">Our Group</p>
+                    <ul class="space-y-1">
+
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Careers</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Sustainability</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Contact Us</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div>
+
+                    <p class="text-body-sm text-[#A3A3A3] mb-6">Legal</p>
+                    <ul class="space-y-1">
+
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Terms & Conditions</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Legal</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+        <hr class="border-neutral-stone">
+        <div class="lg:py-16 py-12">
+            <p class="text-[#A3A3A3] text-body-md text-center">© 2025 The Megaro Collection | Derbyshire House St.
+                Chad's Street London WC1H 8AG</p>
+        </div>
+
+    </div>
+</footer>
+
+<script src="../dist/assets/main.js"></script>
+</body>
+</html>
