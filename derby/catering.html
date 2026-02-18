@@ -1,0 +1,1596 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Megaro Collection</title>
+
+    <link rel="stylesheet" href="../dist/assets/style.css">
+</head>
+<body x-data
+      x-on:resize.window.debounce="$store.page.resized()"
+      x-on:scroll.window.debounce="$store.page.scrolled()">
+
+<nav class="fixed top-0 left-0 z-11 w-full bg-neutral-linen border-b border-[#E5E5E5] lg:py-4 py-2">
+    <div class="container">
+
+        <!-- Desktop navbar -->
+        <div class="hidden lg:flex flex-row justify-between items-center gap-4">
+
+            <a href="#">
+                <img src="../assets/img/logo.png" alt="Logo" class="w-auto h-20 object-contain object-center">
+            </a>
+            <div class="flex flex-row items-center gap-10">
+
+                <ul class="flex flex-row items-center gap-10">
+
+                    <li x-data="dropdown()">
+
+                        <button x-bind="onClick"
+                                class="text-body-lg flex flex-row items-center gap-1 hover:opacity-70">
+
+                            <span>Hotels</span>
+                            <img x-bind:class="{'rotate-180': open}"
+                                 src="../assets/img/svg/chevron-down-black.svg" alt="Arrow icon"
+                                 class="w-5 h-5 object-contain object-center duration-300">
+
+                        </button>
+                        <div x-bind="dialogue" x-cloak
+                             class="fixed top-28 left-0 w-full bg-neutral-linen py-16">
+                            <div class="container">
+                                <ul class="grid grid-cols-3 gap-x-16">
+
+                                    <li class="flex flex-col text-center">
+
+                                        <div class="mb-6">
+                                            <img src="../assets/img/sample-1.jpg" alt="Hotel image"
+                                                 class="w-full h-60 object-cover object-center">
+                                        </div>
+                                        <div class="grow flex flex-col">
+
+                                            <div class="grow">
+
+                                                <h4 class="text-heading-4 mb-4">The Megaro</h4>
+                                                <div class="flex flex-row justify-center items-center mb-4">
+
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+
+                                                </div>
+                                                <p class="text-body-lg mb-6">King's Cross, London</p>
+
+                                            </div>
+                                            <div>
+                                                <a href="#" class="btn btn-black-outline btn-lg">View hotel</a>
+                                            </div>
+
+                                        </div>
+
+                                    </li>
+                                    <li class="flex flex-col text-center">
+
+                                        <div class="mb-6">
+                                            <img src="../assets/img/sample-2.jpg" alt="Hotel image"
+                                                 class="w-full h-60 object-cover object-center">
+                                        </div>
+                                        <div class="grow flex flex-col">
+
+                                            <div class="grow">
+
+                                                <h4 class="text-heading-4 mb-4">The Gyle</h4>
+                                                <div class="flex flex-row justify-center items-center mb-4">
+
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+
+                                                </div>
+                                                <p class="text-body-lg mb-6">King's Cross, London</p>
+
+                                            </div>
+                                            <div>
+                                                <a href="#" class="btn btn-black-outline btn-lg">View hotel</a>
+                                            </div>
+
+                                        </div>
+
+                                    </li>
+                                    <li class="flex flex-col text-center">
+
+                                        <div class="mb-6">
+                                            <img src="../assets/img/sample-3.jpg" alt="Hotel image"
+                                                 class="w-full h-60 object-cover object-center">
+                                        </div>
+                                        <div class="grow flex flex-col">
+
+                                            <div class="grow">
+
+                                                <h4 class="text-heading-4 mb-4">The California</h4>
+                                                <div class="flex flex-row justify-center items-center mb-4">
+
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+                                                    <img src="../assets/img/svg/start-black.svg" alt="Star icon"
+                                                         class="w-6 h-6 object-contain object-center">
+
+                                                </div>
+                                                <p class="text-body-lg mb-6">King's Cross, London</p>
+
+                                            </div>
+                                            <div>
+                                                <a href="#" class="btn btn-black-outline btn-lg">View hotel</a>
+                                            </div>
+
+                                        </div>
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li x-data="dropdown()">
+
+                        <button x-bind="onClick"
+                                class="text-body-lg flex flex-row items-center gap-1 hover:opacity-70">
+
+                            <span>Restaurants & Bars</span>
+                            <img x-bind:class="{'rotate-180': open}"
+                                 src="../assets/img/svg/chevron-down-black.svg" alt="Arrow icon"
+                                 class="w-5 h-5 object-contain object-center duration-300">
+
+                        </button>
+                        <div x-bind="dialogue" x-cloak
+                             class="fixed top-28 left-0 w-full bg-neutral-linen py-16">
+                            <div class="container">
+                                <ul class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+                                    <li class="grid grid-cols-1 sm:grid-cols-2 xl:gap-10 gap-8">
+
+                                        <div class="sm:order-1 order-2">
+
+                                            <h4 class="text-heading-4 mb-4">Spagnoletti</h4>
+                                            <p class="text-body-lg mb-6">Tortor interdum condimentum nunc molestie
+                                                quam lectus euismod pulvinar risus. Cursus in odio aenean.</p>
+                                            <a href="#" class="btn btn-black-outline btn-lg">Discover more</a>
+
+                                        </div>
+                                        <div class="sm:order-2 order-1">
+                                            <img src="../assets/img/sample-4.jpg" alt="Sample image"
+                                                 class="w-full h-84 object-cover object-center">
+                                        </div>
+
+                                    </li>
+                                    <li class="grid grid-cols-1 sm:grid-cols-2 xl:gap-10 gap-8">
+
+                                        <div class="sm:order-1 order-2">
+
+                                            <h4 class="text-heading-4 mb-4">Hokus Pokus</h4>
+                                            <p class="text-body-lg mb-6">Tortor interdum condimentum nunc molestie
+                                                quam lectus euismod pulvinar risus. Cursus in odio aenean.</p>
+                                            <a href="#" class="btn btn-black-outline btn-lg">Discover more</a>
+
+                                        </div>
+                                        <div class="sm:order-2 order-1">
+                                            <img src="../assets/img/sample-5.jpg" alt="Sample image"
+                                                 class="w-full h-84 object-cover object-center">
+                                        </div>
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li>
+                        <a href="#" class="hover:opacity-70">Meetings & Events</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:opacity-70">Private Parties</a>
+                    </li>
+
+                </ul>
+                <a href="#" class="btn btn-black-outline btn-lg">Book</a>
+
+            </div>
+
+        </div>
+
+        <!-- Mobile navbar -->
+        <div class="lg:hidden">
+
+            <div class="relative z-11 flex flex-row justify-between items-center gap-4">
+
+                <a href="#">
+                    <img src="../assets/img/logo.png" alt="Logo" class="w-auto h-16 object-contain object-center">
+                </a>
+                <button x-on:click="$store.page.toggleHamburgerMenu()"
+                        class="flex flex-row items-center gap-1">
+
+                    <span>Menu</span>
+                    <img x-show="!$store.page.showHamburgerMenu" x-cloak
+                         src="../assets/img/svg/menu-black.svg" alt="Menu icon"
+                         class="w-5 h-5 object-contain object-center">
+                    <img x-show="$store.page.showHamburgerMenu" x-cloak
+                         src="../assets/img/svg/close-black.svg" alt="Close icon"
+                         class="w-5 h-5 object-contain object-center">
+
+                </button>
+
+            </div>
+            <div x-bind:class="{'!translate-x-0': $store.page.showHamburgerMenu}"
+                 class="fixed top-20 right-0 z-10 translate-x-full w-dvw h-[calc(100dvh-5rem)] flex flex-col bg-neutral-linen overflow-auto pb-6 duration-300">
+
+                <ul class="grow flex flex-col justify-center">
+
+                    <li>
+                        <a href="#" class="block text-center text-body-xl py-4">
+                            Hotels
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block text-center text-body-xl py-4">
+                            Restaurants & Bars
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block text-center text-body-xl py-4">
+                            Meetings & Events
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block text-center text-body-xl py-4">
+                            Private Parties
+                        </a>
+                    </li>
+
+                </ul>
+                <div>
+                    <div class="container">
+                        <a href="#" class="w-full btn btn-black-outline btn-lg">Book</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+<nav class="fixed lg:top-28 top-20 left-0 z-10 w-full bg-neutral-linen border border-[#E5E5E5]">
+    <div class="overflow-x-auto w-full">
+        <ul class="flex justify-center min-w-full w-max lg:gap-10 gap-8 px-8">
+
+            <li class="group">
+                <a href="#"
+                   class="block text-body-md hover:opacity-70 py-4 border-b-2 border-transparent group-[.active]:border-primary">The
+                    Derby</a>
+            </li>
+            <li class="group">
+                <a href="#"
+                   class="block text-body-md hover:opacity-70 py-4 border-b-2 border-transparent group-[.active]:border-primary">Meeting
+                    Spaces</a>
+            </li>
+            <li class="group active">
+                <a href="#"
+                   class="block text-body-md hover:opacity-70 py-4 border-b-2 border-transparent group-[.active]:border-primary">Conference
+                    Facilities</a>
+            </li>
+            <li class="group">
+                <a href="#"
+                   class="block text-body-md hover:opacity-70 py-4 border-b-2 border-transparent group-[.active]:border-primary">Catering</a>
+            </li>
+            <li class="group">
+                <a href="#"
+                   class="block text-body-md hover:opacity-70 py-4 border-b-2 border-transparent group-[.active]:border-primary">Location</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<main class="lg:pt-28 pt-20">
+
+    <header class="w-full md:h-dvh flex flex-row md:flex-nowrap flex-wrap">
+
+        <div class="md:w-1/2 w-full h-full md:order-1 order-2 relative bg-tertiary flex flex-col justify-center items-center md:py-4 py-16 after:content-[''] after:absolute md:after:top-1/2 after:-top-24 after:left-1/2 after:z-1 md:after:-translate-y-1/2 after:w-px md:after:h-4/5 after:h-[calc(100%+6rem)] after:bg-primary">
+            <div class="container relative z-2">
+                <div class="w-full lg:w-4/5 flex flex-col justify-center items-center bg-tertiary py-6 mx-auto">
+
+                    <p class="text-body-lg text-secondary text-center mb-4">FOOD THAT FITS THE AGENDA</p>
+                    <h1 class="text-heading-1 text-white text-center mb-4">CATERING</h1>
+                    <p class="text-body-lg text-[#E5E5E5] text-center lg:mb-10 mb-8">
+                        Working closely with our kitchen teams, we offer a range of catering options that can be adapted
+                        to your timings, dietary requirements, and event format.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="md:w-1/2 w-full md:h-full h-100 md:order-2 order-1">
+            <img src="../assets/img/hero-sample-4.jpg" alt="Hero image"
+                 class="w-full h-full object-cover object-center">
+        </div>
+
+    </header>
+    <section class="bg-secondary lg:py-24 py-16">
+        <div class="container">
+            <div class="lg:w-2/3 mx-auto">
+                <h4 class="text-heading-4 text-center text-[#404040]">
+                    From early-morning briefings to full-day conferences and evening events, our catering is designed to
+                    keep energy levels high and conversations flowing. Thoughtfully prepared, beautifully presented, and
+                    tailored to your event.
+                </h4>
+            </div>
+        </div>
+    </section>
+    <section class="bg-neutral-linen lg:py-24 py-16">
+        <div class="container">
+
+            <div class="lg:mb-16 mb-12">
+
+                <p class="text-body-lg text-primary text-center mb-6">MENUS</p>
+                <h2 class="text-heading-2 text-center">DESIGNED TO SUPPORT <br> YOUR EVENT</h2>
+
+            </div>
+            <div class="lg:space-y-24 space-y-16">
+
+                <div class="flex flex-row lg:flex-nowrap flex-wrap justify-start xl:gap-x-24 gap-x-12 gap-y-16">
+
+                    <div class="lg:w-2/5 w-full lg:order-2 order-2">
+
+                        <p class="text-body-lg text-primary mb-6">BREAKFAST</p>
+                        <h2 class="text-heading-2 lg:mb-10 mb-8">START THE DAY RIGHT</h2>
+                        <p class="text-body-lg text-[#404040] lg:mb-10 mb-8">
+                            Begin your conference with a relaxed breakfast offering fresh pastries, Greek yoghurt with
+                            granola, seasonal fruit, and classic breakfast rolls — all served alongside quality coffee
+                            and refreshments.
+                        </p>
+                        <div x-data="modal()">
+
+                            <button x-bind="trigger" class="btn btn-black-outline btn-lg">View sample breakfast menu
+                            </button>
+                            <div x-bind="dialogue"
+                                 x-cloak
+                                 class="fixed inset-0 z-30 bg-secondary overflow-y-auto">
+                                <div class="lg:py-10 py-8">
+                                    <div class="container">
+
+                                        <div class="flex flex-row justify-end hover:opacity-70 mb-4">
+                                            <button x-bind="trigger">
+                                                <img src="../assets/img/svg/close-square-black.svg" alt="Close icon"
+                                                     class="w-12 h-12">
+                                            </button>
+                                        </div>
+                                        <div class="w-full lg:w-1/2 lg:mb-24 mb-16 mx-auto">
+
+                                            <div class="mb-4">
+                                                <img src="../assets/img/logo-derby-2.png" alt="Logo icon"
+                                                     class="w-auto h-11 object-contain object-center mx-auto">
+                                            </div>
+                                            <h1 class="text-heading-1 text-center mb-2">BREAKFAST</h1>
+                                            <h5 class="text-heading-5 text-center">from £3.50 per person</h5>
+
+                                        </div>
+                                        <div class="w-full lg:w-2/3 mx-auto">
+
+                                            <ul class="lg:space-y-24 space-y-16 lg:mb-24 mb-16">
+
+                                                <li>
+
+                                                    <h5 class="relative text-heading-5 text-center after:content-[''] after:absolute after:top-1/2 after:left-0 after:-translate-y-1/2 after:w-full after:h-px after:bg-primary after:z-1 lg:mb-10 mb-8">
+                                                        <span class="relative z-2 bg-secondary px-4">light breakfast buffet</span>
+                                                    </h5>
+                                                    <ul>
+
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Selection of freshly baked
+                                                                    pastries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Greek yoghurt w/ granola & fresh
+                                                                    berries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Fresh orange juice</p>
+
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+                                                <li>
+
+                                                    <h5 class="relative text-heading-5 text-center after:content-[''] after:absolute after:top-1/2 after:left-0 after:-translate-y-1/2 after:w-full after:h-px after:bg-primary after:z-1 lg:mb-10 mb-8">
+                                                        <span class="relative z-2 bg-secondary px-4">light breakfast buffet</span>
+                                                    </h5>
+                                                    <ul>
+
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Selection of freshly baked
+                                                                    pastries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Greek yoghurt w/ granola & fresh
+                                                                    berries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Fresh orange juice</p>
+
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+                                                <li>
+
+                                                    <h5 class="relative text-heading-5 text-center after:content-[''] after:absolute after:top-1/2 after:left-0 after:-translate-y-1/2 after:w-full after:h-px after:bg-primary after:z-1 lg:mb-10 mb-8">
+                                                        <span class="relative z-2 bg-secondary px-4">light breakfast buffet</span>
+                                                    </h5>
+                                                    <ul>
+
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Selection of freshly baked
+                                                                    pastries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Greek yoghurt w/ granola & fresh
+                                                                    berries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Fresh orange juice</p>
+
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                            </ul>
+                                            <p class="text-body-md text-[#404040] text-center">
+                                                All prices are inclusive of vat at the prevailing rate.
+                                                <br>
+                                                A full pre-order with any dietary requirements will be required at least
+                                                2 weeks prior to arrival.
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="lg:w-3/5 md:w-4/5 w-full lg:order-1 order-1">
+
+                        <div class="relative z-1 flex flex-row justify-start">
+                            <img src="../assets/img/sample-8.jpg" alt="Sample"
+                                 class="w-4/5 aspect-square object-cover object-center"/>
+                        </div>
+                        <div class="relative z-1 flex flex-row justify-end md:-mt-32 -mt-20">
+                            <img src="../assets/img/sample-9.jpg" alt="Sample"
+                                 class="lg:w-2/5 w-1/2 aspect-square md:translate-x-0 -translate-x-1/4 border-8 border-neutral-linen object-cover object-center"/>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="flex flex-row lg:flex-nowrap flex-wrap justify-end xl:gap-x-24 gap-x-12 gap-y-16">
+
+                    <div class="lg:w-2/5 w-full lg:order-1 order-2">
+
+                        <p class="text-body-lg text-primary mb-6">BREAKFAST</p>
+                        <h2 class="text-heading-2 lg:mb-10 mb-8">START THE DAY RIGHT</h2>
+                        <p class="text-body-lg text-[#404040] lg:mb-10 mb-8">
+                            Begin your conference with a relaxed breakfast offering fresh pastries, Greek yoghurt with
+                            granola, seasonal fruit, and classic breakfast rolls — all served alongside quality coffee
+                            and refreshments.
+                        </p>
+                        <div x-data="modal()">
+
+                            <button x-bind="trigger" class="btn btn-black-outline btn-lg">View sample breakfast menu
+                            </button>
+                            <div x-bind="dialogue"
+                                 x-cloak
+                                 class="fixed inset-0 z-30 bg-secondary overflow-y-auto">
+                                <div class="lg:py-10 py-8">
+                                    <div class="container">
+
+                                        <div class="flex flex-row justify-end hover:opacity-70 mb-4">
+                                            <button x-bind="trigger">
+                                                <img src="../assets/img/svg/close-square-black.svg" alt="Close icon"
+                                                     class="w-12 h-12">
+                                            </button>
+                                        </div>
+                                        <div class="w-full lg:w-1/2 lg:mb-24 mb-16 mx-auto">
+
+                                            <div class="mb-4">
+                                                <img src="../assets/img/logo-derby-2.png" alt="Logo icon"
+                                                     class="w-auto h-11 object-contain object-center mx-auto">
+                                            </div>
+                                            <h1 class="text-heading-1 text-center mb-2">BREAKFAST</h1>
+                                            <h5 class="text-heading-5 text-center">from £3.50 per person</h5>
+
+                                        </div>
+                                        <div class="w-full lg:w-2/3 mx-auto">
+
+                                            <ul class="lg:space-y-24 space-y-16 lg:mb-24 mb-16">
+
+                                                <li>
+
+                                                    <h5 class="relative text-heading-5 text-center after:content-[''] after:absolute after:top-1/2 after:left-0 after:-translate-y-1/2 after:w-full after:h-px after:bg-primary after:z-1 lg:mb-10 mb-8">
+                                                        <span class="relative z-2 bg-secondary px-4">light breakfast buffet</span>
+                                                    </h5>
+                                                    <ul>
+
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Selection of freshly baked
+                                                                    pastries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Greek yoghurt w/ granola & fresh
+                                                                    berries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Fresh orange juice</p>
+
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+                                                <li>
+
+                                                    <h5 class="relative text-heading-5 text-center after:content-[''] after:absolute after:top-1/2 after:left-0 after:-translate-y-1/2 after:w-full after:h-px after:bg-primary after:z-1 lg:mb-10 mb-8">
+                                                        <span class="relative z-2 bg-secondary px-4">light breakfast buffet</span>
+                                                    </h5>
+                                                    <ul>
+
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Selection of freshly baked
+                                                                    pastries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Greek yoghurt w/ granola & fresh
+                                                                    berries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Fresh orange juice</p>
+
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+                                                <li>
+
+                                                    <h5 class="relative text-heading-5 text-center after:content-[''] after:absolute after:top-1/2 after:left-0 after:-translate-y-1/2 after:w-full after:h-px after:bg-primary after:z-1 lg:mb-10 mb-8">
+                                                        <span class="relative z-2 bg-secondary px-4">light breakfast buffet</span>
+                                                    </h5>
+                                                    <ul>
+
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Selection of freshly baked
+                                                                    pastries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Greek yoghurt w/ granola & fresh
+                                                                    berries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Fresh orange juice</p>
+
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                            </ul>
+                                            <p class="text-body-md text-[#404040] text-center">
+                                                All prices are inclusive of vat at the prevailing rate.
+                                                <br>
+                                                A full pre-order with any dietary requirements will be required at least
+                                                2 weeks prior to arrival.
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="lg:w-3/5 md:w-4/5 w-full lg:order-2 order-1">
+
+                        <div class="relative z-1 flex flex-row justify-end">
+                            <img src="../assets/img/sample-8.jpg" alt="Sample"
+                                 class="w-4/5 aspect-square object-cover object-center"/>
+                        </div>
+                        <div class="relative z-1 flex flex-row justify-start md:-mt-32 -mt-20">
+                            <img src="../assets/img/sample-9.jpg" alt="Sample"
+                                 class="lg:w-2/5 w-1/2 aspect-square md:translate-x-0 translate-x-1/4 border-8 border-neutral-linen object-cover object-center"/>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="flex flex-row lg:flex-nowrap flex-wrap justify-start xl:gap-x-24 gap-x-12 gap-y-16">
+
+                    <div class="lg:w-2/5 w-full lg:order-2 order-2">
+
+                        <p class="text-body-lg text-primary mb-6">BREAKFAST</p>
+                        <h2 class="text-heading-2 lg:mb-10 mb-8">START THE DAY RIGHT</h2>
+                        <p class="text-body-lg text-[#404040] lg:mb-10 mb-8">
+                            Begin your conference with a relaxed breakfast offering fresh pastries, Greek yoghurt with
+                            granola, seasonal fruit, and classic breakfast rolls — all served alongside quality coffee
+                            and refreshments.
+                        </p>
+                        <div x-data="modal()">
+
+                            <button x-bind="trigger" class="btn btn-black-outline btn-lg">View sample breakfast menu
+                            </button>
+                            <div x-bind="dialogue"
+                                 x-cloak
+                                 class="fixed inset-0 z-30 bg-secondary overflow-y-auto">
+                                <div class="lg:py-10 py-8">
+                                    <div class="container">
+
+                                        <div class="flex flex-row justify-end hover:opacity-70 mb-4">
+                                            <button x-bind="trigger">
+                                                <img src="../assets/img/svg/close-square-black.svg" alt="Close icon"
+                                                     class="w-12 h-12">
+                                            </button>
+                                        </div>
+                                        <div class="w-full lg:w-1/2 lg:mb-24 mb-16 mx-auto">
+
+                                            <div class="mb-4">
+                                                <img src="../assets/img/logo-derby-2.png" alt="Logo icon"
+                                                     class="w-auto h-11 object-contain object-center mx-auto">
+                                            </div>
+                                            <h1 class="text-heading-1 text-center mb-2">BREAKFAST</h1>
+                                            <h5 class="text-heading-5 text-center">from £3.50 per person</h5>
+
+                                        </div>
+                                        <div class="w-full lg:w-2/3 mx-auto">
+
+                                            <ul class="lg:space-y-24 space-y-16 lg:mb-24 mb-16">
+
+                                                <li>
+
+                                                    <h5 class="relative text-heading-5 text-center after:content-[''] after:absolute after:top-1/2 after:left-0 after:-translate-y-1/2 after:w-full after:h-px after:bg-primary after:z-1 lg:mb-10 mb-8">
+                                                        <span class="relative z-2 bg-secondary px-4">light breakfast buffet</span>
+                                                    </h5>
+                                                    <ul>
+
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Selection of freshly baked
+                                                                    pastries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Greek yoghurt w/ granola & fresh
+                                                                    berries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Fresh orange juice</p>
+
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+                                                <li>
+
+                                                    <h5 class="relative text-heading-5 text-center after:content-[''] after:absolute after:top-1/2 after:left-0 after:-translate-y-1/2 after:w-full after:h-px after:bg-primary after:z-1 lg:mb-10 mb-8">
+                                                        <span class="relative z-2 bg-secondary px-4">light breakfast buffet</span>
+                                                    </h5>
+                                                    <ul>
+
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Selection of freshly baked
+                                                                    pastries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Greek yoghurt w/ granola & fresh
+                                                                    berries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Fresh orange juice</p>
+
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+                                                <li>
+
+                                                    <h5 class="relative text-heading-5 text-center after:content-[''] after:absolute after:top-1/2 after:left-0 after:-translate-y-1/2 after:w-full after:h-px after:bg-primary after:z-1 lg:mb-10 mb-8">
+                                                        <span class="relative z-2 bg-secondary px-4">light breakfast buffet</span>
+                                                    </h5>
+                                                    <ul>
+
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Selection of freshly baked
+                                                                    pastries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Greek yoghurt w/ granola & fresh
+                                                                    berries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Fresh orange juice</p>
+
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                            </ul>
+                                            <p class="text-body-md text-[#404040] text-center">
+                                                All prices are inclusive of vat at the prevailing rate.
+                                                <br>
+                                                A full pre-order with any dietary requirements will be required at least
+                                                2 weeks prior to arrival.
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="lg:w-3/5 md:w-4/5 w-full lg:order-1 order-1">
+
+                        <div class="relative z-1 flex flex-row justify-start">
+                            <img src="../assets/img/sample-8.jpg" alt="Sample"
+                                 class="w-4/5 aspect-square object-cover object-center"/>
+                        </div>
+                        <div class="relative z-1 flex flex-row justify-end md:-mt-32 -mt-20">
+                            <img src="../assets/img/sample-9.jpg" alt="Sample"
+                                 class="lg:w-2/5 w-1/2 aspect-square md:translate-x-0 -translate-x-1/4 border-8 border-neutral-linen object-cover object-center"/>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section class="bg-secondary lg:py-24 py-16">
+        <div class="container">
+
+            <div class="lg:w-1/2 w-full mx-auto lg:mb-16 mb-12">
+
+                <p class="text-body-lg text-primary text-center mb-6">ON-SITE DINING</p>
+                <h2 class="text-heading-2 text-center mb-6">RESTAURANTS</h2>
+                <p class="text-body-xl text-center text-[#404040]">
+                    Events at The Derby benefit from access to our on-site restaurants, offering flexible options for
+                    group dining, private hire, and post-event entertaining.
+                </p>
+
+            </div>
+            <div class="lg:space-y-24 space-y-16">
+
+                <div class="grid grid-cols-1 md:grid-cols-5 md:gap-x-8 lg:gap-x-16 xl:gap-x-24 gap-y-8">
+
+                    <div class="md:col-span-2 md:order-1 order-2">
+
+                        <div class="lg:mb-10 mb-8">
+                            <img src="../assets/img/logo-spagnoletti-2.png" alt="Logo icon"
+                                 class="w-20 h-20 object-contain object-center">
+                        </div>
+                        <h4 class="text-heading-4">Spagnoletti</h4>
+                        <hr class="w-24 border-primary my-6">
+                        <p class="text-body-lg text-[#404040] lg:mb-10 mb-8">
+                            We'll see you here each morning where you can tuck into all manner of fresh pastries, hot
+                            drinks, full English breakfasts to refuel you for the day. Step into our whimsically
+                            retro-futuristic space for relaxed sharing food all day long.
+                            <br>
+                            <br>
+                            <b>Our multi-Michelin star Chef Patron Adam Simmonds</b> is one of the nation’s brightest
+                            culinary names, bringing his signature light touch to our sumptuous menu of reimagined
+                            Italian classics with heavenly bold flavours
+                        </p>
+                        <div class="flex flex-wrap items-center gap-6">
+                            <a href="#" class="btn btn-black-outline btn-lg">View Spagnoletti</a>
+                        </div>
+
+                    </div>
+                    <div class="md:col-span-3 md:order-2 order-1">
+                        <img src="../assets/img/sample-11.png" alt="Sample"
+                             class="w-full md:h-183 h-82 object-cover object-center">
+                    </div>
+
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-5 md:gap-x-8 lg:gap-x-16 xl:gap-x-24 gap-y-8">
+
+                    <div class="md:col-span-2 md:order-2 order-2">
+
+                        <div class="lg:mb-10 mb-8">
+                            <img src="../assets/img/logo-voyage.png" alt="Logo icon"
+                                 class="w-auto h-16 object-contain object-center">
+                        </div>
+                        <h4 class="text-heading-4">Voyage with Adam <br> Simmonds</h4>
+                        <hr class="w-24 border-primary my-6">
+                        <p class="text-body-lg text-[#404040] lg:mb-10 mb-8">
+                            Voyage with Adam Simmonds is a culinary journey where refined craftsmanship meets creative
+                            freedom. Rooted in a commitment to seasonality, transparency, and sustainability, Voyage
+                            offers guests a unique dining experience that reflects Adam’s light-touch approach and
+                            passion for clarity of flavour.
+                        </p>
+                        <div x-data="modal()">
+
+                            <button x-bind="trigger" class="btn btn-black-outline btn-lg">View sample lunch menu
+                            </button>
+                            <div x-bind="dialogue"
+                                 x-cloak
+                                 class="fixed inset-0 z-30 bg-secondary overflow-y-auto">
+                                <div class="lg:py-10 py-8">
+                                    <div class="container">
+
+                                        <div class="flex flex-row justify-end hover:opacity-70 mb-4">
+                                            <button x-bind="trigger">
+                                                <img src="../assets/img/svg/close-square-black.svg" alt="Close icon"
+                                                     class="w-12 h-12">
+                                            </button>
+                                        </div>
+                                        <div class="w-full lg:w-1/2 lg:mb-24 mb-16 mx-auto">
+
+                                            <div class="mb-4">
+                                                <img src="../assets/img/logo-derby-2.png" alt="Logo icon"
+                                                     class="w-auto h-11 object-contain object-center mx-auto">
+                                            </div>
+                                            <h1 class="text-heading-1 text-center mb-2">BREAKFAST</h1>
+                                            <h5 class="text-heading-5 text-center">from £3.50 per person</h5>
+
+                                        </div>
+                                        <div class="w-full lg:w-2/3 mx-auto">
+
+                                            <ul class="lg:space-y-24 space-y-16 lg:mb-24 mb-16">
+
+                                                <li>
+
+                                                    <h5 class="relative text-heading-5 text-center after:content-[''] after:absolute after:top-1/2 after:left-0 after:-translate-y-1/2 after:w-full after:h-px after:bg-primary after:z-1 lg:mb-10 mb-8">
+                                                        <span class="relative z-2 bg-secondary px-4">light breakfast buffet</span>
+                                                    </h5>
+                                                    <ul>
+
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Selection of freshly baked
+                                                                    pastries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Greek yoghurt w/ granola & fresh
+                                                                    berries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Fresh orange juice</p>
+
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+                                                <li>
+
+                                                    <h5 class="relative text-heading-5 text-center after:content-[''] after:absolute after:top-1/2 after:left-0 after:-translate-y-1/2 after:w-full after:h-px after:bg-primary after:z-1 lg:mb-10 mb-8">
+                                                        <span class="relative z-2 bg-secondary px-4">light breakfast buffet</span>
+                                                    </h5>
+                                                    <ul>
+
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Selection of freshly baked
+                                                                    pastries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Greek yoghurt w/ granola & fresh
+                                                                    berries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Fresh orange juice</p>
+
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+                                                <li>
+
+                                                    <h5 class="relative text-heading-5 text-center after:content-[''] after:absolute after:top-1/2 after:left-0 after:-translate-y-1/2 after:w-full after:h-px after:bg-primary after:z-1 lg:mb-10 mb-8">
+                                                        <span class="relative z-2 bg-secondary px-4">light breakfast buffet</span>
+                                                    </h5>
+                                                    <ul>
+
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Selection of freshly baked
+                                                                    pastries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Greek yoghurt w/ granola & fresh
+                                                                    berries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Fresh orange juice</p>
+
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                            </ul>
+                                            <p class="text-body-md text-[#404040] text-center">
+                                                All prices are inclusive of vat at the prevailing rate.
+                                                <br>
+                                                A full pre-order with any dietary requirements will be required at least
+                                                2 weeks prior to arrival.
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="md:col-span-3 md:order-1 order-1">
+                        <img src="../assets/img/sample-30.jpg" alt="Sample"
+                             class="w-full md:h-183 h-82 object-cover object-center">
+                    </div>
+
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-5 md:gap-x-8 lg:gap-x-16 xl:gap-x-24 gap-y-8">
+
+                    <div class="md:col-span-2 md:order-1 order-2">
+
+                        <h4 class="text-heading-4">The Marine</h4>
+                        <hr class="w-24 border-primary my-6">
+                        <p class="text-body-lg text-[#404040] lg:mb-10 mb-8">
+                            The Marine, with its high vaulted window, overlooks the entrance of The Megaro Hotel. The
+                            wooden table is crafted from Nelson’s HMS Victory Ship, and seats up to twelve people for
+                            lunch or dinner.
+                        </p>
+                        <div x-data="modal()">
+
+                            <button x-bind="trigger" class="btn btn-black-outline btn-lg">View sample menu</button>
+                            <div x-bind="dialogue"
+                                 x-cloak
+                                 class="fixed inset-0 z-30 bg-secondary overflow-y-auto">
+                                <div class="lg:py-10 py-8">
+                                    <div class="container">
+
+                                        <div class="flex flex-row justify-end hover:opacity-70 mb-4">
+                                            <button x-bind="trigger">
+                                                <img src="../assets/img/svg/close-square-black.svg" alt="Close icon"
+                                                     class="w-12 h-12">
+                                            </button>
+                                        </div>
+                                        <div class="w-full lg:w-1/2 lg:mb-24 mb-16 mx-auto">
+
+                                            <div class="mb-4">
+                                                <img src="../assets/img/logo-derby-2.png" alt="Logo icon"
+                                                     class="w-auto h-11 object-contain object-center mx-auto">
+                                            </div>
+                                            <h1 class="text-heading-1 text-center mb-2">BREAKFAST</h1>
+                                            <h5 class="text-heading-5 text-center">from £3.50 per person</h5>
+
+                                        </div>
+                                        <div class="w-full lg:w-2/3 mx-auto">
+
+                                            <ul class="lg:space-y-24 space-y-16 lg:mb-24 mb-16">
+
+                                                <li>
+
+                                                    <h5 class="relative text-heading-5 text-center after:content-[''] after:absolute after:top-1/2 after:left-0 after:-translate-y-1/2 after:w-full after:h-px after:bg-primary after:z-1 lg:mb-10 mb-8">
+                                                        <span class="relative z-2 bg-secondary px-4">light breakfast buffet</span>
+                                                    </h5>
+                                                    <ul>
+
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Selection of freshly baked
+                                                                    pastries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Greek yoghurt w/ granola & fresh
+                                                                    berries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Fresh orange juice</p>
+
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+                                                <li>
+
+                                                    <h5 class="relative text-heading-5 text-center after:content-[''] after:absolute after:top-1/2 after:left-0 after:-translate-y-1/2 after:w-full after:h-px after:bg-primary after:z-1 lg:mb-10 mb-8">
+                                                        <span class="relative z-2 bg-secondary px-4">light breakfast buffet</span>
+                                                    </h5>
+                                                    <ul>
+
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Selection of freshly baked
+                                                                    pastries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Greek yoghurt w/ granola & fresh
+                                                                    berries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Fresh orange juice</p>
+
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+                                                <li>
+
+                                                    <h5 class="relative text-heading-5 text-center after:content-[''] after:absolute after:top-1/2 after:left-0 after:-translate-y-1/2 after:w-full after:h-px after:bg-primary after:z-1 lg:mb-10 mb-8">
+                                                        <span class="relative z-2 bg-secondary px-4">light breakfast buffet</span>
+                                                    </h5>
+                                                    <ul>
+
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Selection of freshly baked
+                                                                    pastries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Greek yoghurt w/ granola & fresh
+                                                                    berries</p>
+
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="flex flex-row justify-between items-center border-b border-dashed border-black/30 py-3">
+
+                                                            <div class="flex flex-row items-center gap-2">
+
+                                                                <p class="text-body-lg">Fresh orange juice</p>
+
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                            </ul>
+                                            <p class="text-body-md text-[#404040] text-center">
+                                                All prices are inclusive of vat at the prevailing rate.
+                                                <br>
+                                                A full pre-order with any dietary requirements will be required at least
+                                                2 weeks prior to arrival.
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="md:col-span-3 md:order-2 order-1">
+                        <img src="../assets/img/sample-11.png" alt="Sample"
+                             class="w-full md:h-183 h-82 object-cover object-center">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section class="bg-secondary/50 lg:py-24 py-16">
+        <div class="container">
+            <div class="lg:w-1/2 mx-auto">
+
+                <div class="mb-16">
+
+                    <p class="text-body-lg text-primary text-center mb-6">GET IN TOUCH</p>
+                    <h3 class="text-heading-3 text-center mb-6">BOOKING ENQUIRY</h3>
+                    <p class="text-body-lg text-[#404040] text-center">
+                        Share a few details about your conference and our team will be in touch to discuss availability,
+                        layouts, and catering options.
+                    </p>
+
+                </div>
+                <form action="#" class="grid grid-cols-1 sm:grid-cols-2 lg:gap-10 gap-8">
+
+                    <div class="sm:col-span-2">
+
+                        <p class="text-body-sm mb-2">Name</p>
+                        <input type="text" placeholder="Enter your Name" class="w-full">
+
+                    </div>
+                    <div>
+
+                        <p class="text-body-sm mb-2">Email</p>
+                        <input type="text" placeholder="Enter your Email" class="w-full">
+
+                    </div>
+                    <div>
+
+                        <p class="text-body-sm mb-2">Phone</p>
+                        <input type="text" placeholder="Enter your Phone" class="w-full">
+
+                    </div>
+                    <div>
+
+                        <p class="text-body-sm mb-2">Number of guests</p>
+                        <input type="text" placeholder="Enter Number of guests" class="w-full">
+
+                    </div>
+                    <div>
+
+                        <p class="text-body-sm mb-2">Date</p>
+                        <div x-data="datepicker()" class="relative">
+
+                            <input x-ref="dateInput" name="booking_date" type="text" class="hidden"
+                                   placeholder="Select Date"/>
+                            <div x-ref="triggerDiv">
+                                <div x-bind="trigger"
+                                     class="h-13 flex flex-col justify-center bg-white border border-secondary px-4 relative cursor-pointer select-none">
+
+                                    <div class="flex justify-between items-center">
+
+                                        <div class="flex items-center gap-2">
+                                            <p x-text="display" class="text-body-lg text-[#737373]"></p>
+                                        </div>
+                                        <img src="../assets/img/svg/chevron-down-black.svg" alt="Arrow icon"
+                                             x-bind:class="{'rotate-180': open}"
+                                             class="w-6 h-6 duration-300">
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="sm:col-span-2">
+
+                        <p class="text-body-sm mb-2">Message</p>
+                        <textarea placeholder="Tell us about what you want from your stay..." class="w-full"></textarea>
+
+                    </div>
+                    <div class="sm:col-span-2">
+                        <button class="btn btn-primary-fill btn-lg">Make enquiry</button>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <p class="text-body-md">By subscribing, you agree to our Terms & Conditions</p>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </section>
+    <section class="bg-secondary py-16">
+        <div class="container">
+            <div class="lg:w-2/3 xl:w-1/2 mx-auto">
+
+                <div class="mb-6">
+
+                    <p class="text-body-lg text-primary text-center mb-4">Subscribe</p>
+                    <h3 class="text-heading-3 text-center mb-4">Newsletter</h3>
+                    <p class="text-body-lg text-center text-[#404040]">Be the first to hear about great offers, new
+                        openings and events.</p>
+
+                </div>
+                <div class="flex flex-row justify-center items-center mb-6">
+
+                    <input type="text" class="lg:w-80 w-56 text-body-lg" placeholder="Email address">
+                    <button class="btn btn-primary-fill btn-lg">Subscribe</button>
+
+                </div>
+                <p class="text-body-md text-center text-[#737373]">By subscribing, you agree to our Terms &
+                    Conditions</p>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-neutral-graphite">
+    <div class="container">
+
+        <div class="lg:py-16 py-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-24 gap-16">
+
+                <div>
+
+                    <div class="mb-6">
+                        <img src="../assets/img/logo-light.png" alt="Logo icon"
+                             class="w-auto h-20 object-contain object-center">
+                    </div>
+                    <p class="text-body-sm text-[#E5E5E5] mb-6">St Pancras Hotels Group Derbyshire House St. Chad's
+                        Street London WC1H 8AG</p>
+                    <a href="#" class="hover:opacity-70">
+                        <img src="../assets/img/svg/linkedin-light.svg" alt="Social icon"
+                             class="w-6 h-6 object-contain object-center">
+                    </a>
+
+                </div>
+                <div>
+
+                    <p class="text-body-sm text-[#A3A3A3] mb-6">Quick Links</p>
+                    <ul class="space-y-1">
+
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">The Megaro Hotel</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">The Gyle Hotel</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">The California
+                                Hotel</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Spagnoletti</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Hokus Pokus</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Meetings & Events</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Private Parties</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div>
+
+                    <p class="text-body-sm text-[#A3A3A3] mb-6">Our Group</p>
+                    <ul class="space-y-1">
+
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Careers</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Sustainability</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Contact Us</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div>
+
+                    <p class="text-body-sm text-[#A3A3A3] mb-6">Legal</p>
+                    <ul class="space-y-1">
+
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Terms & Conditions</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-body-md text-[#E5E5E5] py-1 hover:opacity-70">Legal</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+        <hr class="border-neutral-stone">
+        <div class="lg:py-16 py-12">
+            <p class="text-[#A3A3A3] text-body-md text-center">© 2025 The Megaro Collection | Derbyshire House St.
+                Chad's Street London WC1H 8AG</p>
+        </div>
+
+    </div>
+</footer>
+<a href="#"
+   x-show="$store.page.pageScrolled"
+   x-cloak
+   x-transition:enter="duration-300 ease-out"
+   x-transition:enter-start="opacity-0 translate-y-4"
+   x-transition:enter-end="opacity-100 translate-y-0"
+   x-transition:leave="duration-300 ease-in"
+   x-transition:leave-start="opacity-100 translate-y-0"
+   x-transition:leave-end="opacity-0 translate-y-4"
+   class="fixed lg:bottom-6 bottom-4 lg:right-6 right-4 z-20 w-24 h-24 flex justify-center items-center text-center bg-primary rounded-full hover:opacity-80">
+    <span class="text-body-md text-white">BOOK <br> NOW</span>
+</a>
+
+<script src="../dist/assets/main.js"></script>
+</body>
+</html>
