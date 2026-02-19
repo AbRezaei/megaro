@@ -1,14 +1,26 @@
 import Alpine from "alpinejs";
 import collapse from "@alpinejs/collapse";
-import page from "./widgets/pageStore.js"
-// import sample from "./widgets/sample.js"
+import pageStore from "./widgets/pageStore.js";
+import dropdown from "./widgets/dropdown.js";
+import tabs from "./widgets/tabs.js";
+import select from "./widgets/select.js";
+import datepicker from "./widgets/datepicker.js";
+import modal from "./widgets/modal.js";
 
-Alpine.plugin(collapse)
-window.Alpine = Alpine
+// Alpine init
+document.addEventListener('alpine:init', () => {
+    // Alpine store
+    Alpine.store('page', pageStore);
 
+    // Alpine data
+    Alpine.data('dropdown', dropdown);
+    Alpine.data('tabs', tabs);
+    Alpine.data('select', select);
+    Alpine.data('datepicker', datepicker);
+    Alpine.data('modal', modal);
+});
 
-Alpine.store('page', page());
-//Alpine.data('sample', sample);
+Alpine.plugin(collapse);
 
-
-Alpine.start()
+window.Alpine = Alpine;
+Alpine.start();

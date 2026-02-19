@@ -1,28 +1,28 @@
-export default function () {
-    return {
-        mobileMode: false,
+import {bodyOverflowHidden, bodyOverflowVisible} from "../dom-utils.js";
 
-        init() {
-            this.updatePage();
+export default {
+    mobileMode: false,
+    showHamburgerMenu: false,
+    pageScrolled: false,
 
-            window.addEventListener('resize', () => {
-                this.updatePage();
-            })
-        },
+    init() {
+        this.mobileMode = window.innerWidth < 1024;
+    },
+    resized() {
+        this.mobileMode = window.innerWidth < 1024;
 
-        updatePage() {
-            this.mobileMode = window.innerWidth < 768;
-            const els = document.querySelectorAll('[x-collapse-on-mobile]')
-            if (this.mobileMode) {
-                els.forEach(el => {
-                    el.setAttribute('hidden', true)
-                })
-            } else {
-                els.forEach(el => {
-                    el.removeAttribute('hidden')
-                })
-            }
+        if (!this.mobileMode && this.showHamburgerMenu)
+            this.toggleHamburgerMenu();
+    },
+    scrolled() {
+        this.pageScrolled = window.scrollY >= 500;
+    },
+    toggleHamburgerMenu() {
+        this.showHamburgerMenu = !this.showHamburgerMenu;
 
-        }
+        if (this.showHamburgerMenu)
+            bodyOverflowHidden();
+        else
+            bodyOverflowVisible();
     }
-}
+};

@@ -1,21 +1,24 @@
 import Swiper from 'swiper';
-import sample from './sample.js';
-
+import rooms from './rooms.js';
+import double from './double.js';
+import triple from './triple.js';
+import autoHeight from './autoHeight.js';
 
 const types = {
-    sample
+    rooms,
+    double,
+    triple,
+    autoHeight
 };
 
 // Loading sliders
 document.addEventListener("DOMContentLoaded", function () {
     const sliders = document.querySelectorAll('[data-slider]');
+
     if (!sliders.length) return;
 
     sliders.forEach((slider) => {
-        const type = slider.dataset.slider;
-        const swiperEl = slider.querySelector('.swiper')
-
-        if (!swiperEl) return;
+        const type     = slider.dataset.slider;
 
         const getConfig = types[type];
 
@@ -24,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        new Swiper(swiperEl, getConfig(slider));
-
+        new Swiper(slider, getConfig(slider));
     });
 })

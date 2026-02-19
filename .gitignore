@@ -152,4 +152,5 @@ wp-content/plugins/*
 !wp-content/themes/tribes-*/
 wp-content/themes/tribes-*/package-lock.json
 wp-content/themes/tribes-*/dist/
+wp-content/themes/tribes-*/node_modules
 
