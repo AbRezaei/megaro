@@ -3,7 +3,7 @@
 trait SharedControls
 {
 
-    protected function add_bg_color_control($id = 'bg_color', $label = 'Background Color')
+    protected function add_bg_color_control($id = 'bg_color', $label = 'Background Color'): void
     {
         $this->add_control(
             $id,
@@ -25,7 +25,7 @@ trait SharedControls
         );
     }
 
-    protected function add_button_group_control()
+    protected function add_button_group_control(): void
     {
         $this->add_control(
             'buttons',
