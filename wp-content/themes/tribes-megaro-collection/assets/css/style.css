@@ -286,23 +286,23 @@
     @apply font-fraunces font-semibold lg:text-[80px] text-[48px] lg:leading-22 leading-14;
 }
 
-.text-heading-1 {
+h1, .text-heading-1 {
     @apply font-fraunces lg:text-[60px] text-[40px] lg:leading-17 leading-12;
 }
 
-.text-heading-2 {
+h2, .text-heading-2 {
     @apply font-fraunces lg:text-[48px] text-[32px] lg:leading-14 leading-10;
 }
 
-.text-heading-3 {
+h3, .text-heading-3 {
     @apply font-fraunces lg:text-[40px] text-[28px] lg:leading-12 leading-8;
 }
 
-.text-heading-4 {
+h4, .text-heading-4 {
     @apply font-fraunces lg:text-[32px] text-[24px] lg:leading-10 leading-7;
 }
 
-.text-heading-5 {
+h5, .text-heading-5 {
     @apply font-fraunces lg:text-[24px] text-[20px] lg:leading-8 leading-6;
 }
 

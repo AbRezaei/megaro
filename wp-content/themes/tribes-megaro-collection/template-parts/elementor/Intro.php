@@ -2,135 +2,161 @@
 
 class Intro extends \Elementor\Widget_Base
 {
-  public function get_name(): string
-  {
-    return 'intro';
-  }
+    use SharedControls;
 
-  public function get_title(): string
-  {
-    return 'Intro';
-  }
+    public function get_name(): string
+    {
+        return 'intro';
+    }
 
-  public function get_icon(): string
-  {
-    return 'eicon-order-start';
-  }
+    public function get_title(): string
+    {
+        return 'Intro';
+    }
 
-  public function get_categories(): array
-  {
-    return ['megaro'];
-  }
+    public function get_icon(): string
+    {
+        return 'eicon-info-circle-o';
+    }
 
-  protected function register_controls()
-  {
-    $this->start_controls_section(
-        'section_content',
-        [
-            'label' => esc_html__('Content', 'megaro'),
-            'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
-        ]
-    );
+    public function get_categories(): array
+    {
+        return ['megaro'];
+    }
 
-    $this->add_control(
-        'padding',
-        [
-            'label' => esc_html__('Padding', 'megaro'),
-            'type' => \Elementor\Controls_Manager::SELECT,
-            'default' => 'large',
-            'options' => [
-                'large' => esc_html__('Large', 'megaro'),
-                'small' => esc_html__('Small', 'megaro'),
+    protected function register_controls()
+    {
+        $this->start_controls_section(
+            'section_content',
+            [
+                'label' => esc_html__('Content', 'megaro'),
+                'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
-        ]
-    );
-    $this->add_control(
-        'title',
-        [
-            'label' => esc_html__('Title', 'megaro'),
-            'type' => \Elementor\Controls_Manager::TEXT,
-        ]
-    );
-    $this->add_control(
-        'subtitle',
-        [
-            'label' => esc_html__('Subtitle', 'megaro'),
-            'type' => \Elementor\Controls_Manager::WYSIWYG,
-            'rows' => 10,
-        ]
-    );
-    $this->add_control(
-        'btn_text',
-        [
-            'label' => esc_html__('Button Text', 'megaro'),
-            'type' => \Elementor\Controls_Manager::TEXT,
-        ]
-    );
-    $this->add_control(
-        'btn_link',
-        [
-            'label' => esc_html__('Button Link', 'megaro'),
-            'type' => \Elementor\Controls_Manager::URL,
-            'options' => ['url', 'is_external', 'nofollow'],
-            'label_block' => true,
-        ]
-    );
-    $this->add_control(
-        'image',
-        [
-            'label' => esc_html__('Choose Image', 'megaro'),
-            'type' => \Elementor\Controls_Manager::MEDIA,
+        );
 
-        ]
-    );
+        $this->add_bg_color_control();
 
-    $this->end_controls_section();
-  }
+        $this->add_control(
+            'logo',
+            [
+                'label' => esc_html__('Logo', 'megaro'),
+                'type' => \Elementor\Controls_Manager::MEDIA,
+            ]
+        );
+        $this->add_control(
+            'overline',
+            [
+                'label' => esc_html__('Overline', 'megaro'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+            ]
+        );
+        $this->add_control(
+            'title',
+            [
+                'label' => esc_html__('Title', 'megaro'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+            ]
+        );
+        $this->add_control(
+            'subtitle',
+            [
+                'label' => esc_html__('Subtitle', 'megaro'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+            ]
+        );
+        $this->add_control(
+            'description',
+            [
+                'label' => esc_html__('Description', 'megaro'),
+                'type' => \Elementor\Controls_Manager::WYSIWYG,
+            ]
+        );
+        $this->add_control(
+            'features',
+            [
+                'label' => esc_html__('Features', 'megaro'),
+                'type' => \Elementor\Controls_Manager::REPEATER,
+                'fields' => [
+                    [
+                        'name' => 'title',
+                        'label' => esc_html__('Title', 'megaro'),
+                        'type' => \Elementor\Controls_Manager::TEXT,
+                        'default' => '',
+                        'label_block' => true,
+                    ],
+                ],
+                'default' => [],
+            ]
+        );
 
-  protected function render()
-  {
-    $settings = $this->get_settings_for_display();
+        $this->add_button_group_control();
 
-    $title = $settings['title'];
-    $subtitle = $settings['subtitle'];
-    $btn_text = $settings['btn_text'];
-    $btn_link = $settings['btn_link'];
-    $image = $settings['image'];
-    $padding = $settings['padding'];
-    ?>
+        $this->end_controls_section();
+    }
 
-    <section class="relative flex items-center overflow-hidden <?= $padding === "large" ? "md:py-48 py-28" : "md:py-24 py-12" ?>">
-      <!-- background image -->
-      <div class="absolute -z-10 h-full w-full bg-cover bg-center"
-           style="background-image: url(<?= $image['url'] ?>)"
-      ></div>
+    protected function render()
+    {
+        $settings = $this->get_settings_for_display();
 
-      <!-- background overlay -->
-      <div class="absolute -z-9 h-full w-full bg-black/50"></div>
+        $bg_color = $settings['bg_color'];
+        $logo = $settings['logo'];
+        $overline = $settings['overline'];
+        $title = $settings['title'];
+        $subtitle = $settings['subtitle'];
+        $description = $settings['description'];
+        $features = $settings['features'];
+        $buttons = $settings['buttons'];
+        ?>
+        <section class="<?= $bg_color ?> lg:py-24 py-16">
+            <div class="container">
 
-      <div class="container">
-        <div class="text-center text-white">
+                <div class="lg:w-2/3 mx-auto mb-16">
 
-          <?php if ($title): ?>
-            <div class="heading-1 md:mb-6 mb-4 uppercase"><?= $title ?></div>
-          <?php endif; ?>
+                    <?php if ($logo['url']): ?>
+                        <div class="mb-4">
+                            <img src="<?= $logo['url'] ?>" alt="<?= $logo['alt'] ?>"
+                                 class="w-auto h-8! object-contain object-center mx-auto">
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($overline): ?>
+                        <p class="text-body-lg text-primary text-center mb-6"><?= $overline ?></p>
+                    <?php endif; ?>
+                    <?php if ($title): ?>
+                        <h2 class="text-heading-2 text-center mb-2"><?= $title ?></h2>
+                        <hr class="w-24 border-primary lg:my-10! my-8! mx-auto!">
+                    <?php endif; ?>
+                    <?php if ($subtitle): ?>
+                        <p class="text-body-sm text-center lg:mb-10 mb-8"><?= $subtitle ?></p>
+                    <?php endif; ?>
+                    <?php if ($description): ?>
+                        <p class="text-body-xl text-[#404040]"><?= $description ?></p>
+                    <?php endif; ?>
 
-          <?php if ($subtitle): ?>
-            <div class="md:text-xl md:leading-6! md:mb-8 mb-4">
-              <?= $subtitle ?>
+                </div>
+                <?php if ($features): ?>
+                    <ul class="flex flex-wrap justify-around gap-6 lg:mb-10 mb-8">
+                        <?php foreach ($features as $feature): ?>
+                            <li class="flex flex-col justify-center items-center gap-4">
+
+                                <span class="w-2 h-2 bg-primary rotate-45"></span>
+                                <span class="text-body-lg"><?= $feature['title'] ?></span>
+
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+                <?php if ($buttons): ?>
+                    <div class="flex flex-row flex-wrap justify-center items-center gap-6">
+                        <?php foreach ($buttons as $button): ?>
+                            <a href="<?= $button['btn_link']['url'] ?>"
+                               target="<?= $button['btn_link']['is_external'] ? '_blank' : '_self' ?>"
+                               class="btn <?= $button['btn_type'] . ' ' . $button['btn_size'] ?>"><?= $button['btn_text'] ?></a>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+
             </div>
-          <?php endif; ?>
-
-          <a
-              class="btn-fill-2"
-              href="<?= $btn_link['url'] ?>"
-              target="<?= $btn_link['is_external'] ? '_blank' : '_self' ?>"
-          >
-            <?= $btn_text ?>
-          </a>
-        </div>
-      </div>
-    </section>
-    <?php
-  }
+        </section>
+        <?php
+    }
 }
