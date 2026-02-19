@@ -51,7 +51,7 @@ trait SharedControls
                         'name' => 'btn_size',
                         'label' => esc_html__('Button Size', 'megaro'),
                         'type' => \Elementor\Controls_Manager::SELECT,
-                        'default' => 'btn-primary-fill',
+                        'default' => 'btn-lg',
                         'options' => [
                             'btn-lg' => esc_html__('Large', 'megaro'),
                             'btn-md' => esc_html__('Medium', 'megaro'),
