@@ -148,7 +148,7 @@ class HotelCards extends \Elementor\Widget_Base
                                             <h4 class="text-heading-4 mb-4"><?= $card['title'] ?></h4>
                                             <div class="flex flex-row justify-center items-center mb-4">
                                                 <?php for ($i = 0; $i <= $card['stars']; $i++): ?>
-                                                    <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/start-black.svg"
+                                                    <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/star-black.svg"
                                                          alt="Star icon"
                                                          class="w-6 h-6 object-contain object-center">
                                                 <?php endfor; ?>
