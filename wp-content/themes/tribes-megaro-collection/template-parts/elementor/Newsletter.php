@@ -56,18 +56,20 @@ class Newsletter extends \Elementor\Widget_Base
         ?>
         <section class="<?= $bg_color ?> py-16">
             <div class="container">
+
+                <?php $this->render_section_heading_template($settings);?>
                 <div class="lg:w-2/3 xl:w-1/2 mx-auto">
 
-                    <?php $this->render_section_heading_template($settings);?>
                     <div class="flex flex-row justify-center items-center mb-6">
 
-                        <input type="text" class="lg:w-80 w-56 text-body-lg" placeholder="Email address">
+                        <input type="text" class="lg:w-80! w-56! text-body-lg" placeholder="Email address">
                         <button class="btn btn-primary-fill btn-lg">Subscribe</button>
 
                     </div>
                     <p class="text-body-md text-center text-[#737373]"><?= $description ?></p>
 
                 </div>
+
             </div>
         </section>
         <?php
