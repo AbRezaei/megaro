@@ -19,7 +19,7 @@ class TextMedia extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,7 +27,7 @@ class TextMedia extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
@@ -35,43 +35,43 @@ class TextMedia extends \Elementor\Widget_Base
     $this->add_control(
         'position',
         [
-            'label' => esc_html__('Image Position', 'barnham'),
+            'label' => esc_html__('Image Position', 'megaro'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'right',
             'options' => [
-                'right' => esc_html__('Right', 'barnham'),
-                'left' => esc_html__('Left', 'barnham'),
+                'right' => esc_html__('Right', 'megaro'),
+                'left' => esc_html__('Left', 'megaro'),
             ],
         ]
     );
     $this->add_control(
         'mobile_position',
         [
-            'label' => esc_html__('Mobile Position', 'barnham'),
+            'label' => esc_html__('Mobile Position', 'megaro'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'top',
             'options' => [
-                'top' => esc_html__('Top', 'barnham'),
-                'bottom' => esc_html__('Bottom', 'barnham'),
+                'top' => esc_html__('Top', 'megaro'),
+                'bottom' => esc_html__('Bottom', 'megaro'),
             ],
         ]
     );
     $this->add_control(
         'align',
         [
-            'label' => esc_html__('Align Items', 'barnham'),
+            'label' => esc_html__('Align Items', 'megaro'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'center',
             'options' => [
-                'center' => esc_html__('Center', 'barnham'),
-                'top' => esc_html__('Top', 'barnham'),
+                'center' => esc_html__('Center', 'megaro'),
+                'top' => esc_html__('Top', 'megaro'),
             ],
         ]
     );
     $this->add_control(
         'icon',
         [
-            'label' => esc_html__('Icon', 'barnham'),
+            'label' => esc_html__('Icon', 'megaro'),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'media_types' => ['image'],
         ]
@@ -79,57 +79,57 @@ class TextMedia extends \Elementor\Widget_Base
     $this->add_control(
         'title',
         [
-            'label' => esc_html__('Title', 'barnham'),
+            'label' => esc_html__('Title', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => esc_html__('', 'barnham'),
+            'default' => esc_html__('', 'megaro'),
         ]
     );
     $this->add_control(
         'description',
         [
-            'label' => esc_html__('Description', 'barnham'),
+            'label' => esc_html__('Description', 'megaro'),
             'type' => \Elementor\Controls_Manager::WYSIWYG,
         ]
     );
     $this->add_control(
         'btns',
         [
-            'label' => esc_html__('Buttons', 'barnham'),
+            'label' => esc_html__('Buttons', 'megaro'),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'prevent_empty' => false,
             'fields' => [
                 [
                     'name' => 'text',
-                    'label' => esc_html__('Text', 'barnham'),
+                    'label' => esc_html__('Text', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'default' => '',
                     'label_block' => true,
                 ],
                 [
                     'name' => 'link',
-                    'label' => esc_html__('Link', 'barnham'),
+                    'label' => esc_html__('Link', 'megaro'),
                     'type' => \Elementor\Controls_Manager::URL,
                     'options' => ['url', 'is_external', 'nofollow'],
                     'label_block' => true,
                 ],
                 [
                     'name' => 'width',
-                    'label' => esc_html__('Width', 'barnham'),
+                    'label' => esc_html__('Width', 'megaro'),
                     'type' => \Elementor\Controls_Manager::SELECT,
                     'options' => [
-                        'auto' => esc_html__('Auto', 'barnham'),
-                        'full' => esc_html__('Full', 'barnham'),
+                        'auto' => esc_html__('Auto', 'megaro'),
+                        'full' => esc_html__('Full', 'megaro'),
                     ],
                     'default' => 'auto',
                 ],
                 [
                     'name' => 'type',
-                    'label' => esc_html__('Type', 'barnham'),
+                    'label' => esc_html__('Type', 'megaro'),
                     'type' => \Elementor\Controls_Manager::SELECT,
                     'options' => [
-                        'fill' => esc_html__('Fill', 'barnham'),
-                        'outline' => esc_html__('Outline', 'barnham'),
-                        'fill_2' => esc_html__('Secondary Fill', 'barnham'),
+                        'fill' => esc_html__('Fill', 'megaro'),
+                        'outline' => esc_html__('Outline', 'megaro'),
+                        'fill_2' => esc_html__('Secondary Fill', 'megaro'),
                     ],
                     'default' => 'fill',
                 ],
@@ -141,7 +141,7 @@ class TextMedia extends \Elementor\Widget_Base
     $this->add_control(
         'image',
         [
-            'label' => esc_html__('Image', 'barnham'),
+            'label' => esc_html__('Image', 'megaro'),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'media_types' => ['image'],
         ]
@@ -149,7 +149,7 @@ class TextMedia extends \Elementor\Widget_Base
     $this->add_control(
         'image2',
         [
-            'label' => esc_html__('Image 2', 'barnham'),
+            'label' => esc_html__('Image 2', 'megaro'),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'media_types' => ['image'],
         ]
@@ -157,7 +157,7 @@ class TextMedia extends \Elementor\Widget_Base
     $this->add_control(
         'embedded',
         [
-            'label' => esc_html__('Embedded', 'barnham'),
+            'label' => esc_html__('Embedded', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
             'rows' => 10,
         ]

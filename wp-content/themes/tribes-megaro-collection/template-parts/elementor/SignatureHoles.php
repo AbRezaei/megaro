@@ -19,7 +19,7 @@ class SignatureHoles extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,14 +27,14 @@ class SignatureHoles extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
     $this->add_control(
         'title',
         [
-            'label' => esc_html__('Title', 'barnham'),
+            'label' => esc_html__('Title', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
             'rows' => 10,
             'default' => '',
@@ -43,7 +43,7 @@ class SignatureHoles extends \Elementor\Widget_Base
     $this->add_control(
         'description',
         [
-            'label' => esc_html__('Description', 'barnham'),
+            'label' => esc_html__('Description', 'megaro'),
             'type' => \Elementor\Controls_Manager::WYSIWYG,
             'default' => '',
         ]
@@ -51,7 +51,7 @@ class SignatureHoles extends \Elementor\Widget_Base
     $this->add_control(
         'image',
         [
-            'label' => esc_html__('Choose Image', 'barnham'),
+            'label' => esc_html__('Choose Image', 'megaro'),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
                 'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -62,18 +62,18 @@ class SignatureHoles extends \Elementor\Widget_Base
     $this->add_control(
         'buttons',
         [
-            'label' => esc_html__('Buttons', 'barnham'),
+            'label' => esc_html__('Buttons', 'megaro'),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => [
                 [
                     'name' => 'btn_text',
-                    'label' => esc_html__('Button Text', 'barnham'),
+                    'label' => esc_html__('Button Text', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'default' => '',
                 ],
                 [
                     'name' => 'btn_link',
-                    'label' => esc_html__('Button URL', 'barnham'),
+                    'label' => esc_html__('Button URL', 'megaro'),
                     'type' => \Elementor\Controls_Manager::URL,
                     'options' => ['url', 'is_external', 'nofollow'],
                     'label_block' => true,

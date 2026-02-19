@@ -19,7 +19,7 @@ class Video extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,7 +27,7 @@ class Video extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
@@ -35,7 +35,7 @@ class Video extends \Elementor\Widget_Base
     $this->add_control(
         'title',
         [
-            'label' => esc_html__('Title', 'barnham'),
+            'label' => esc_html__('Title', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
         ]
     );
@@ -43,7 +43,7 @@ class Video extends \Elementor\Widget_Base
     $this->add_control(
         'embedded',
         [
-            'label' => esc_html__('Embedded Code', 'barnham'),
+            'label' => esc_html__('Embedded Code', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
         ]
     );
@@ -51,7 +51,7 @@ class Video extends \Elementor\Widget_Base
     $this->add_control(
         'poster',
         [
-            'label' => esc_html__('Poster', 'barnham'),
+            'label' => esc_html__('Poster', 'megaro'),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'media_types' => ['image'],
             'default' => [],
@@ -60,7 +60,7 @@ class Video extends \Elementor\Widget_Base
     $this->add_control(
         'video',
         [
-            'label' => esc_html__('Video', 'barnham'),
+            'label' => esc_html__('Video', 'megaro'),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'media_types' => ['video'],
             'default' => [],

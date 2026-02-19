@@ -19,7 +19,7 @@ class OpeningHours extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,14 +27,14 @@ class OpeningHours extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
     $this->add_control(
         'title',
         [
-            'label' => esc_html__('Title', 'barnham'),
+            'label' => esc_html__('Title', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
         ]
     );
@@ -42,19 +42,19 @@ class OpeningHours extends \Elementor\Widget_Base
     $this->add_control(
         'items',
         [
-            'label' => esc_html__('Items', 'barnham'),
+            'label' => esc_html__('Items', 'megaro'),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => [
                 [
                     'name' => 'title',
-                    'label' => esc_html__('Title', 'barnham'),
+                    'label' => esc_html__('Title', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'default' => '',
                     'label_block' => true,
                 ],
                 [
                     'name' => 'description',
-                    'label' => esc_html__('Content', 'barnham'),
+                    'label' => esc_html__('Content', 'megaro'),
                     'type' => \Elementor\Controls_Manager::WYSIWYG,
                     'default' => '',
                     'show_label' => false,

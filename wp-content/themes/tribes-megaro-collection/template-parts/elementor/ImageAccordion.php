@@ -19,7 +19,7 @@ class ImageAccordion extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,27 +27,27 @@ class ImageAccordion extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
     $this->add_control(
         'title',
         [
-            'label' => esc_html__('Title', 'barnham'),
+            'label' => esc_html__('Title', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => esc_html__('', 'barnham'),
+            'default' => esc_html__('', 'megaro'),
         ]
     );
     $this->add_control(
         'items',
         [
-            'label' => esc_html__('Items', 'barnham'),
+            'label' => esc_html__('Items', 'megaro'),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => [
                 [
                     'name' => 'image',
-                    'label' => esc_html__('Choose Image', 'barnham'),
+                    'label' => esc_html__('Choose Image', 'megaro'),
                     'type' => \Elementor\Controls_Manager::MEDIA,
                     'default' => [
                         'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -55,24 +55,24 @@ class ImageAccordion extends \Elementor\Widget_Base
                 ],
                 [
                     'name' => 'title',
-                    'label' => esc_html__('Title', 'barnham'),
+                    'label' => esc_html__('Title', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'default' => '',
                     'label_block' => true,
                 ],
                 [
                     'name' => 'description',
-                    'label' => esc_html__('Description', 'barnham'),
+                    'label' => esc_html__('Description', 'megaro'),
                     'type' => \Elementor\Controls_Manager::WYSIWYG,
                 ],
                 [
                     'name' => 'btn_text',
-                    'label' => esc_html__('Button Text', 'barnham'),
+                    'label' => esc_html__('Button Text', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                 ],
                 [
                     'name' => 'btn_link',
-                    'label' => esc_html__('Button Link', 'barnham'),
+                    'label' => esc_html__('Button Link', 'megaro'),
                     'type' => \Elementor\Controls_Manager::URL,
                     'options' => ['url', 'is_external', 'nofollow'],
                     'default' => [

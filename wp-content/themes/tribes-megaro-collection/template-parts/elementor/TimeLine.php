@@ -19,7 +19,7 @@ class TimeLine extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,40 +27,40 @@ class TimeLine extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
     $this->add_control(
         'title',
         [
-            'label' => esc_html__('Title', 'barnham'),
+            'label' => esc_html__('Title', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
         ]
     );
     $this->add_control(
         'items',
         [
-            'label' => esc_html__('Items', 'barnham'),
+            'label' => esc_html__('Items', 'megaro'),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => [
                 [
                     'name' => 'title',
-                    'label' => esc_html__('Title', 'barnham'),
+                    'label' => esc_html__('Title', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'default' => '',
                     'label_block' => true,
                 ],
                 [
                     'name' => 'content',
-                    'label' => esc_html__('Content', 'barnham'),
+                    'label' => esc_html__('Content', 'megaro'),
                     'type' => \Elementor\Controls_Manager::WYSIWYG,
                     'default' => '',
                     'show_label' => false,
                 ],
                 [
                     'name' => 'image',
-                    'label' => esc_html__('Choose Image', 'barnham'),
+                    'label' => esc_html__('Choose Image', 'megaro'),
                     'type' => \Elementor\Controls_Manager::MEDIA,
                     'default' => [],
                 ]

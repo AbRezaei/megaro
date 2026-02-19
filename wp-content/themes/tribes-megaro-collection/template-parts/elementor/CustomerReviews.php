@@ -19,7 +19,7 @@ class CustomerReviews extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,7 +27,7 @@ class CustomerReviews extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
@@ -35,7 +35,7 @@ class CustomerReviews extends \Elementor\Widget_Base
     $this->add_control(
         'title',
         [
-            'label' => esc_html__('Title', 'barnham'),
+            'label' => esc_html__('Title', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '',
         ]
@@ -43,7 +43,7 @@ class CustomerReviews extends \Elementor\Widget_Base
     $this->add_control(
         'description',
         [
-            'label' => esc_html__('Description', 'barnham'),
+            'label' => esc_html__('Description', 'megaro'),
             'type' => \Elementor\Controls_Manager::WYSIWYG,
             'rows' => 10,
             'default' => '',
@@ -53,12 +53,12 @@ class CustomerReviews extends \Elementor\Widget_Base
     $this->add_control(
         'comments',
         [
-            'label' => esc_html__('Repeater Comments', 'barnham'),
+            'label' => esc_html__('Repeater Comments', 'megaro'),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => [
                 [
                     'name' => 'image',
-                    'label' => esc_html__('Image', 'barnham'),
+                    'label' => esc_html__('Image', 'megaro'),
                     'type' => \Elementor\Controls_Manager::MEDIA,
                     'default' => [
                         'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -66,7 +66,7 @@ class CustomerReviews extends \Elementor\Widget_Base
                 ],
                 [
                     'name' => 'rate',
-                    'label' => esc_html__('Rate', 'barnham'),
+                    'label' => esc_html__('Rate', 'megaro'),
                     'type' => \Elementor\Controls_Manager::NUMBER,
                     'min' => 0,
                     'max' => 5,
@@ -74,10 +74,10 @@ class CustomerReviews extends \Elementor\Widget_Base
                 ],
                 [
                     'name' => 'comment',
-                    'label' => esc_html__('Description', 'barnham'),
+                    'label' => esc_html__('Description', 'megaro'),
                     'type' => \Elementor\Controls_Manager::WYSIWYG,
                     'default' => '',
-                    'placeholder' => esc_html__('Type your description here', 'barnham'),
+                    'placeholder' => esc_html__('Type your description here', 'megaro'),
                 ]
             ],
             'default' => [],

@@ -19,7 +19,7 @@ class Hero extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,7 +27,7 @@ class Hero extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
@@ -48,7 +48,7 @@ class Hero extends \Elementor\Widget_Base
     $this->add_control(
         'image',
         [
-            'label' => esc_html__('Image', 'barnham'),
+            'label' => esc_html__('Image', 'megaro'),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'media_types' => ['image']
         ]
@@ -56,7 +56,7 @@ class Hero extends \Elementor\Widget_Base
     $this->add_control(
         'title',
         [
-            'label' => esc_html__('Title', 'barnham'),
+            'label' => esc_html__('Title', 'megaro'),
             'type' => \Elementor\Controls_Manager::WYSIWYG,
             'rows' => 10,
         ]
@@ -64,14 +64,14 @@ class Hero extends \Elementor\Widget_Base
     $this->add_control(
         'btn_text',
         [
-            'label' => esc_html__('Button Text', 'barnham'),
+            'label' => esc_html__('Button Text', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
         ]
     );
     $this->add_control(
         'btn_link',
         [
-            'label' => esc_html__('Button Link', 'barnham'),
+            'label' => esc_html__('Button Link', 'megaro'),
             'type' => \Elementor\Controls_Manager::URL,
             'options' => ['url', 'is_external', 'nofollow'],
             'label_block' => true,

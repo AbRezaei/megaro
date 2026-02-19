@@ -19,7 +19,7 @@ class TextSlider extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,43 +27,43 @@ class TextSlider extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
     $this->add_control(
         'items',
         [
-            'label' => esc_html__('Items', 'barnham'),
+            'label' => esc_html__('Items', 'megaro'),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => [
                 [
                     'name' => 'title',
-                    'label' => esc_html__('Title', 'barnham'),
+                    'label' => esc_html__('Title', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'default' => '',
                     'label_block' => true,
                 ],
                 [
                     'name' => 'overline',
-                    'label' => esc_html__('Overline', 'barnham'),
+                    'label' => esc_html__('Overline', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'label_block' => true,
                 ],
                 [
                     'name' => 'description',
-                    'label' => esc_html__('Description', 'barnham'),
+                    'label' => esc_html__('Description', 'megaro'),
                     'type' => \Elementor\Controls_Manager::WYSIWYG,
                     'rows' => 10,
                 ],
                 [
                     'name' => 'btn_text',
-                    'label' => esc_html__('Button Text', 'barnham'),
+                    'label' => esc_html__('Button Text', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                 ],
                 [
                     'name' => 'btn_link',
-                    'label' => esc_html__('Button Link', 'barnham'),
+                    'label' => esc_html__('Button Link', 'megaro'),
                     'type' => \Elementor\Controls_Manager::URL,
                     'options' => ['url', 'is_external', 'nofollow'],
                     'label_block' => true,

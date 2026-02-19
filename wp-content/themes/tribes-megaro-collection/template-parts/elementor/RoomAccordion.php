@@ -19,7 +19,7 @@ class RoomAccordion extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -28,7 +28,7 @@ class RoomAccordion extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
@@ -36,26 +36,26 @@ class RoomAccordion extends \Elementor\Widget_Base
     $this->add_control(
         'position',
         [
-            'label' => esc_html__('Image Position', 'barnham'),
+            'label' => esc_html__('Image Position', 'megaro'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'right',
             'options' => [
-                'right' => esc_html__('Right', 'barnham'),
-                'left' => esc_html__('Left', 'barnham'),
+                'right' => esc_html__('Right', 'megaro'),
+                'left' => esc_html__('Left', 'megaro'),
             ],
         ]
     );
     $this->add_control(
         'images',
         [
-            'label' => esc_html__('Images', 'barnham'),
+            'label' => esc_html__('Images', 'megaro'),
             'type' => \Elementor\Controls_Manager::GALLERY,
         ]
     );
     $this->add_control(
         'title',
         [
-            'label' => esc_html__('Title', 'barnham'),
+            'label' => esc_html__('Title', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '',
         ]
@@ -64,19 +64,19 @@ class RoomAccordion extends \Elementor\Widget_Base
     $this->add_control(
         'tags',
         [
-            'label' => esc_html__('Tags', 'barnham'),
+            'label' => esc_html__('Tags', 'megaro'),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => [
                 [
                     'name' => 'title',
-                    'label' => esc_html__('Title', 'barnham'),
+                    'label' => esc_html__('Title', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'default' => '',
                     'label_block' => true,
                 ],
                 [
                     'name' => 'content',
-                    'label' => esc_html__('Content', 'barnham'),
+                    'label' => esc_html__('Content', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'default' => '',
                     'show_label' => false,
@@ -90,29 +90,29 @@ class RoomAccordion extends \Elementor\Widget_Base
     $this->add_control(
         'items',
         [
-            'label' => esc_html__('Accordion Items', 'barnham'),
+            'label' => esc_html__('Accordion Items', 'megaro'),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => [
                 [
                     'name' => 'title',
-                    'label' => esc_html__('Title', 'barnham'),
+                    'label' => esc_html__('Title', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'default' => '',
                     'label_block' => true,
                 ],
                 [
                     'name' => 'description',
-                    'label' => esc_html__('Description', 'barnham'),
+                    'label' => esc_html__('Description', 'megaro'),
                     'type' => \Elementor\Controls_Manager::WYSIWYG,
                 ],
                 [
                     'name' => 'btn_text',
-                    'label' => esc_html__('Button Text', 'barnham'),
+                    'label' => esc_html__('Button Text', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                 ],
                 [
                     'name' => 'btn_link',
-                    'label' => esc_html__('Button Link', 'barnham'),
+                    'label' => esc_html__('Button Link', 'megaro'),
                     'type' => \Elementor\Controls_Manager::URL,
                     'options' => ['url', 'is_external', 'nofollow'],
                     'label_block' => true,

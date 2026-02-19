@@ -19,7 +19,7 @@ class TextHeader extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,7 +27,7 @@ class TextHeader extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
@@ -35,7 +35,7 @@ class TextHeader extends \Elementor\Widget_Base
     $this->add_control(
         'icon',
         [
-            'label' => esc_html__('Icon', 'barnham'),
+            'label' => esc_html__('Icon', 'megaro'),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'media_types' => ['image', 'svg'],
         ]
@@ -43,21 +43,21 @@ class TextHeader extends \Elementor\Widget_Base
     $this->add_control(
         'title',
         [
-            'label' => esc_html__('Title', 'barnham'),
+            'label' => esc_html__('Title', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
         ]
     );
     $this->add_control(
         'overline',
         [
-            'label' => esc_html__('Overline', 'barnham'),
+            'label' => esc_html__('Overline', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
         ]
     );
     $this->add_control(
         'text',
         [
-            'label' => esc_html__('Text', 'barnham'),
+            'label' => esc_html__('Text', 'megaro'),
             'type' => \Elementor\Controls_Manager::WYSIWYG,
             'rows' => 10,
         ]

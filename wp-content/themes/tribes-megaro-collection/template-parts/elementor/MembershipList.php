@@ -19,7 +19,7 @@ class MembershipList extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,40 +27,40 @@ class MembershipList extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
     $this->add_control(
         'list',
         [
-            'label' => esc_html__('List', 'barnham'),
+            'label' => esc_html__('List', 'megaro'),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => [
                 [
                     'name' => 'title',
-                    'label' => esc_html__('Title', 'barnham'),
+                    'label' => esc_html__('Title', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'rows' => 10,
                     'default' => '',
-                    'placeholder' => esc_html__('Type your description here', 'barnham'),
+                    'placeholder' => esc_html__('Type your description here', 'megaro'),
                 ],
                 [
                     'name' => 'price',
-                    'label' => esc_html__('Price', 'barnham'),
+                    'label' => esc_html__('Price', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'rows' => 10,
                     'default' => '',
-                    'placeholder' => esc_html__('Type your description here', 'barnham'),
+                    'placeholder' => esc_html__('Type your description here', 'megaro'),
                 ],
                 [
                     'name' => 'items',
-                    'label' => esc_html__('Items', 'barnham'),
+                    'label' => esc_html__('Items', 'megaro'),
                     'type' => \Elementor\Controls_Manager::REPEATER,
                     'fields' => [
                         [
                             'name' => 'text',
-                            'label' => esc_html__('Text', 'barnham'),
+                            'label' => esc_html__('Text', 'megaro'),
                             'type' => \Elementor\Controls_Manager::TEXT,
                             'default' => '',
                         ]
@@ -70,28 +70,28 @@ class MembershipList extends \Elementor\Widget_Base
                 ],
                 [
                     'name' => 'more_text',
-                    'label' => esc_html__('More Text', 'barnham'),
+                    'label' => esc_html__('More Text', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'rows' => 10,
-                    'default' => esc_html__('And More', 'barnham'),
+                    'default' => esc_html__('And More', 'megaro'),
                 ],
                 [
                     'name' => 'btn_text',
-                    'label' => esc_html__('Button Text', 'barnham'),
+                    'label' => esc_html__('Button Text', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'rows' => 10,
                     'default' => '',
                 ],
                 [
                     'name' => 'btn_link',
-                    'label' => esc_html__('Button Link', 'barnham'),
+                    'label' => esc_html__('Button Link', 'megaro'),
                     'type' => \Elementor\Controls_Manager::URL,
                     'options' => ['url', 'is_external', 'nofollow'],
                     'label_block' => true,
                 ],
                 [
                     'name' => 'bottom_text',
-                    'label' => esc_html__('Bottom Text', 'barnham'),
+                    'label' => esc_html__('Bottom Text', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXTAREA,
                     'rows' => 10,
                     'default' => '',

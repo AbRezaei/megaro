@@ -19,7 +19,7 @@ class Careers extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,19 +27,19 @@ class Careers extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
     $this->add_control(
         'tabs',
         [
-            'label' => esc_html__('Tabs', 'barnham'),
+            'label' => esc_html__('Tabs', 'megaro'),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => [
                 [
                     'name' => 'title',
-                    'label' => esc_html__('Title', 'barnham'),
+                    'label' => esc_html__('Title', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'default' => '',
                     'label_block' => true,
@@ -52,40 +52,40 @@ class Careers extends \Elementor\Widget_Base
     $this->add_control(
         'items',
         [
-            'label' => esc_html__('Items', 'barnham'),
+            'label' => esc_html__('Items', 'megaro'),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => [
                 [
                     'name' => 'tabs',
-                    'label' => esc_html__('Tabs', 'barnham'),
+                    'label' => esc_html__('Tabs', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'default' => '',
-                    'description' => esc_html__('Enter tab title(s). Use comma to assign multiple tabs.', 'barnham'),
+                    'description' => esc_html__('Enter tab title(s). Use comma to assign multiple tabs.', 'megaro'),
                 ],
                 [
                     'name' => 'title',
-                    'label' => esc_html__('Title', 'barnham'),
+                    'label' => esc_html__('Title', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'default' => '',
                     'label_block' => true,
                 ],
                 [
                     'name' => 'subtitle',
-                    'label' => esc_html__('Subtitle', 'barnham'),
+                    'label' => esc_html__('Subtitle', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'default' => '',
                     'label_block' => true,
                 ],
                 [
                     'name' => 'description',
-                    'label' => esc_html__('Description', 'barnham'),
+                    'label' => esc_html__('Description', 'megaro'),
                     'type' => \Elementor\Controls_Manager::WYSIWYG,
                 ],
                 [
                     'name' => 'email',
-                    'label' => esc_html__('Email', 'barnham'),
+                    'label' => esc_html__('Email', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => 'housekeeping@barnham-broom.co.uk',
+                    'default' => 'housekeeping@megaro-broom.co.uk',
                     'label_block' => true,
                 ],
             ],

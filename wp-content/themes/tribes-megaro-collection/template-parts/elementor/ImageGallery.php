@@ -19,7 +19,7 @@ class ImageGallery extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,14 +27,14 @@ class ImageGallery extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
     $this->add_control(
         'title',
         [
-            'label' => esc_html__('Title', 'barnham'),
+            'label' => esc_html__('Title', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '',
         ]
@@ -42,7 +42,7 @@ class ImageGallery extends \Elementor\Widget_Base
     $this->add_control(
         'description',
         [
-            'label' => esc_html__('Description', 'barnham'),
+            'label' => esc_html__('Description', 'megaro'),
             'type' => \Elementor\Controls_Manager::WYSIWYG,
             'rows' => 10,
             'default' => '',
@@ -51,18 +51,18 @@ class ImageGallery extends \Elementor\Widget_Base
     $this->add_control(
         'images',
         [
-            'label' => esc_html__('Images', 'barnham'),
+            'label' => esc_html__('Images', 'megaro'),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => [
                 [
                     'name' => 'title',
-                    'label' => esc_html__('Title', 'barnham'),
+                    'label' => esc_html__('Title', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'default' => '',
                 ],
                 [
                     'name' => 'image',
-                    'label' => esc_html__('Image', 'barnham'),
+                    'label' => esc_html__('Image', 'megaro'),
                     'type' => \Elementor\Controls_Manager::MEDIA,
                     'media_types' => ['image'],
                     'default' => [
@@ -82,7 +82,7 @@ class ImageGallery extends \Elementor\Widget_Base
     $this->add_control(
         'images',
         [
-            'label' => esc_html__('Images', 'barnham'),
+            'label' => esc_html__('Images', 'megaro'),
             'type' => \Elementor\Controls_Manager::GALLERY,
             'show_label' => false,
             'default' => [],

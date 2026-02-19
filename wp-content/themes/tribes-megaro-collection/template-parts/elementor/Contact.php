@@ -19,7 +19,7 @@ class Contact extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,39 +27,39 @@ class Contact extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
     $this->add_control(
         'title',
         [
-            'label' => esc_html__('Title', 'barnham'),
+            'label' => esc_html__('Title', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
         ]
     );
     $this->add_control(
         'contacts',
         [
-            'label' => esc_html__('Contact List', 'barnham'),
+            'label' => esc_html__('Contact List', 'megaro'),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => [
                 [
                     'name' => 'text',
-                    'label' => esc_html__('Text', 'barnham'),
+                    'label' => esc_html__('Text', 'megaro'),
                     'type' => \Elementor\Controls_Manager::TEXT,
                     'default' => '',
                     'label_block' => true,
                 ],
                 [
                     'name' => 'icon',
-                    'label' => esc_html__('Icon', 'barnham'),
+                    'label' => esc_html__('Icon', 'megaro'),
                     'type' => \Elementor\Controls_Manager::MEDIA,
                     'default' => [],
                 ],
                 [
                     'name' => 'link',
-                    'label' => esc_html__('Link', 'barnham'),
+                    'label' => esc_html__('Link', 'megaro'),
                     'type' => \Elementor\Controls_Manager::URL,
                     'options' => ['url', 'is_external', 'nofollow'],
                     'label_block' => true,

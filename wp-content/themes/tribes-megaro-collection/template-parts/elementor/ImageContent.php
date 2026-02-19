@@ -19,7 +19,7 @@ class ImageContent extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,7 +27,7 @@ class ImageContent extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
@@ -35,7 +35,7 @@ class ImageContent extends \Elementor\Widget_Base
     $this->add_control(
         'image',
         [
-            'label' => esc_html__('Image', 'barnham'),
+            'label' => esc_html__('Image', 'megaro'),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'media_types' => ['image']
         ]
@@ -43,42 +43,42 @@ class ImageContent extends \Elementor\Widget_Base
     $this->add_control(
         'position',
         [
-            'label' => esc_html__('Image Position', 'barnham'),
+            'label' => esc_html__('Image Position', 'megaro'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'right',
             'options' => [
-                'right' => esc_html__('Right', 'barnham'),
-                'left' => esc_html__('Left', 'barnham'),
+                'right' => esc_html__('Right', 'megaro'),
+                'left' => esc_html__('Left', 'megaro'),
             ]
         ]
     );
     $this->add_control(
         'title',
         [
-            'label' => esc_html__('Title', 'barnham'),
+            'label' => esc_html__('Title', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => esc_html__('', 'barnham'),
+            'default' => esc_html__('', 'megaro'),
         ]
     );
     $this->add_control(
         'description',
         [
-            'label' => esc_html__('Description', 'barnham'),
+            'label' => esc_html__('Description', 'megaro'),
             'type' => \Elementor\Controls_Manager::WYSIWYG,
         ]
     );
     $this->add_control(
         'btn_text',
         [
-            'label' => esc_html__('Button Text', 'barnham'),
+            'label' => esc_html__('Button Text', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => esc_html__('', 'barnham'),
+            'default' => esc_html__('', 'megaro'),
         ]
     );
     $this->add_control(
         'btn_link',
         [
-            'label' => esc_html__('Button Link', 'barnham'),
+            'label' => esc_html__('Button Link', 'megaro'),
             'type' => \Elementor\Controls_Manager::URL,
             'options' => ['url', 'is_external', 'nofollow'],
             'label_block' => true,
@@ -87,15 +87,15 @@ class ImageContent extends \Elementor\Widget_Base
     $this->add_control(
         'btn2_text',
         [
-            'label' => esc_html__('Button2 Text', 'barnham'),
+            'label' => esc_html__('Button2 Text', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => esc_html__('', 'barnham'),
+            'default' => esc_html__('', 'megaro'),
         ]
     );
     $this->add_control(
         'btn2_link',
         [
-            'label' => esc_html__('Button2 Link', 'barnham'),
+            'label' => esc_html__('Button2 Link', 'megaro'),
             'type' => \Elementor\Controls_Manager::URL,
             'options' => ['url', 'is_external', 'nofollow'],
             'label_block' => true,

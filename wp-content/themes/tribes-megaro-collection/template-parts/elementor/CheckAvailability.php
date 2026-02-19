@@ -19,7 +19,7 @@ class CheckAvailability extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,39 +27,39 @@ class CheckAvailability extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
     $this->add_control(
         'title',
         [
-            'label' => esc_html__('Title', 'barnham'),
+            'label' => esc_html__('Title', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => esc_html__('Check Availability', 'barnham'),
+            'default' => esc_html__('Check Availability', 'megaro'),
         ]
     );
     $this->add_control(
         'btn_text',
         [
-            'label' => esc_html__('Button Text', 'barnham'),
+            'label' => esc_html__('Button Text', 'megaro'),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => esc_html__('Search', 'barnham'),
+            'default' => esc_html__('Search', 'megaro'),
         ]
     );
     $this->add_control(
         'type',
         [
-            'label' => esc_html__('Type', 'barnham'),
+            'label' => esc_html__('Type', 'megaro'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'all',
             'options' => [
-                'all' => esc_html__('ALL', 'barnham'),
-                '0' => esc_html__('STAY', 'barnham'),
-                '1' => esc_html__('EAT', 'barnham'),
-                '2' => esc_html__('GOLF', 'barnham'),
-                '3' => esc_html__('SPA', 'barnham'),
-                '4' => esc_html__('MEETING', 'barnham'),
+                'all' => esc_html__('ALL', 'megaro'),
+                '0' => esc_html__('STAY', 'megaro'),
+                '1' => esc_html__('EAT', 'megaro'),
+                '2' => esc_html__('GOLF', 'megaro'),
+                '3' => esc_html__('SPA', 'megaro'),
+                '4' => esc_html__('MEETING', 'megaro'),
             ]
         ]
     );

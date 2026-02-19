@@ -1,15 +1,15 @@
 <?php
 
-class Banner extends \Elementor\Widget_Base
+class Intro extends \Elementor\Widget_Base
 {
   public function get_name(): string
   {
-    return 'banner';
+    return 'intro';
   }
 
   public function get_title(): string
   {
-    return 'Banner';
+    return 'Intro';
   }
 
   public function get_icon(): string
@@ -31,6 +31,7 @@ class Banner extends \Elementor\Widget_Base
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
+
     $this->add_control(
         'padding',
         [
@@ -74,7 +75,6 @@ class Banner extends \Elementor\Widget_Base
             'label_block' => true,
         ]
     );
-
     $this->add_control(
         'image',
         [
@@ -83,6 +83,7 @@ class Banner extends \Elementor\Widget_Base
 
         ]
     );
+
     $this->end_controls_section();
   }
 

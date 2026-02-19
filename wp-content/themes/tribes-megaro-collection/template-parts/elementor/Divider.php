@@ -19,7 +19,7 @@ class Divider extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function register_controls()
@@ -27,7 +27,7 @@ class Divider extends \Elementor\Widget_Base
     $this->start_controls_section(
         'section_content',
         [
-            'label' => esc_html__('Content', 'barnham'),
+            'label' => esc_html__('Content', 'megaro'),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
         ]
     );
@@ -35,7 +35,7 @@ class Divider extends \Elementor\Widget_Base
     $this->add_control(
         'icon',
         [
-            'label' => esc_html__('Icon', 'barnham'),
+            'label' => esc_html__('Icon', 'megaro'),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'media_types' => ['image', 'svg'],
         ]

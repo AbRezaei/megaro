@@ -19,7 +19,7 @@ class BookingResdiary extends \Elementor\Widget_Base
 
   public function get_categories(): array
   {
-    return ['barnham'];
+    return ['megaro'];
   }
 
   protected function render()
