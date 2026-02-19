@@ -34,15 +34,18 @@ class CheckAvailabilityForm extends \Elementor\Widget_Base
             ]
         );
 
+        $this->add_bg_color_control();
+
         $this->end_controls_section();
     }
 
     protected function render()
     {
         $settings = $this->get_settings_for_display();
+        $bg_color = $settings['bg_color'];
 
         ?>
-        <section class="bg-neutral-graphite lg:py-24 py-16">
+        <section class="<?= $bg_color ?> lg:py-24 py-16">
             <div class="container">
                 <div>
 
