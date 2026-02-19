@@ -1,0 +1,4 @@
+<?php
+
+?>
+<footer>Footer</footer>

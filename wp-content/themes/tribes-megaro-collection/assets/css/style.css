@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import "swiper/css";
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import "flatpickr/dist/flatpickr.min.css";
+
+@source "../../**/*.{php,js,jsx,ts,tsx,html}";
+
+@theme {
+    --color-primary: rgb(25, 41, 89);
+    --color-secondary: rgba(243, 245, 248, 1);
+
+}
+
+@utility container {
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+[x-cloak] {
+    display: none !important;
+}
