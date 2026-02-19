@@ -41,29 +41,12 @@ class Intro extends \Elementor\Widget_Base
             [
                 'label' => esc_html__('Logo', 'megaro'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
+                'media_types' => ['image'],
             ]
         );
-        $this->add_control(
-            'overline',
-            [
-                'label' => esc_html__('Overline', 'megaro'),
-                'type' => \Elementor\Controls_Manager::TEXT,
-            ]
-        );
-        $this->add_control(
-            'title',
-            [
-                'label' => esc_html__('Title', 'megaro'),
-                'type' => \Elementor\Controls_Manager::TEXT,
-            ]
-        );
-        $this->add_control(
-            'subtitle',
-            [
-                'label' => esc_html__('Subtitle', 'megaro'),
-                'type' => \Elementor\Controls_Manager::TEXT,
-            ]
-        );
+
+        $this->add_section_heading_control();
+
         $this->add_control(
             'description',
             [
@@ -76,6 +59,8 @@ class Intro extends \Elementor\Widget_Base
             [
                 'label' => esc_html__('Features', 'megaro'),
                 'type' => \Elementor\Controls_Manager::REPEATER,
+                'prevent_empty' => false,
+                'default' => [],
                 'fields' => [
                     [
                         'name' => 'title',
@@ -85,7 +70,6 @@ class Intro extends \Elementor\Widget_Base
                         'label_block' => true,
                     ],
                 ],
-                'default' => [],
             ]
         );
 
@@ -105,35 +89,34 @@ class Intro extends \Elementor\Widget_Base
         $subtitle = $settings['subtitle'];
         $description = $settings['description'];
         $features = $settings['features'];
-        $buttons = $settings['buttons'];
         ?>
         <section class="<?= $bg_color ?> lg:py-24 py-16">
             <div class="container">
 
                 <div class="lg:w-2/3 mx-auto mb-16">
 
-                    <?php if ($logo['url']): ?>
+                    <?php if (!empty($logo['url'])): ?>
                         <div class="mb-4">
                             <img src="<?= $logo['url'] ?>" alt="<?= $logo['alt'] ?>"
                                  class="w-auto h-8! object-contain object-center mx-auto">
                         </div>
                     <?php endif; ?>
-                    <?php if ($overline): ?>
+                    <?php if (!empty($overline)): ?>
                         <p class="text-body-lg text-primary text-center mb-6"><?= $overline ?></p>
                     <?php endif; ?>
-                    <?php if ($title): ?>
+                    <?php if (!empty($title)): ?>
                         <h2 class="text-heading-2 text-center mb-2"><?= $title ?></h2>
                         <hr class="w-24 border-primary lg:my-10! my-8! mx-auto!">
                     <?php endif; ?>
-                    <?php if ($subtitle): ?>
+                    <?php if (!empty($subtitle)): ?>
                         <p class="text-body-sm text-center lg:mb-10 mb-8"><?= $subtitle ?></p>
                     <?php endif; ?>
-                    <?php if ($description): ?>
+                    <?php if (!empty($description)): ?>
                         <p class="text-body-xl text-[#404040]"><?= $description ?></p>
                     <?php endif; ?>
 
                 </div>
-                <?php if ($features): ?>
+                <?php if (!empty($features)): ?>
                     <ul class="flex flex-wrap justify-around gap-6 lg:mb-10 mb-8">
                         <?php foreach ($features as $feature): ?>
                             <li class="flex flex-col justify-center items-center gap-4">
@@ -145,15 +128,8 @@ class Intro extends \Elementor\Widget_Base
                         <?php endforeach; ?>
                     </ul>
                 <?php endif; ?>
-                <?php if ($buttons): ?>
-                    <div class="flex flex-row flex-wrap justify-center items-center gap-6">
-                        <?php foreach ($buttons as $button): ?>
-                            <a href="<?= $button['btn_link']['url'] ?>"
-                               target="<?= $button['btn_link']['is_external'] ? '_blank' : '_self' ?>"
-                               class="btn <?= $button['btn_type'] . ' ' . $button['btn_size'] ?>"><?= $button['btn_text'] ?></a>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
+
+                <?php $this->render_button_group_control($settings); ?>
 
             </div>
         </section>

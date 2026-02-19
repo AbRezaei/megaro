@@ -25,6 +25,7 @@ trait SharedControls
         );
     }
 
+    /* Button groups */
     protected function add_button_group_control(): void
     {
         $this->add_control(
@@ -32,6 +33,8 @@ trait SharedControls
             [
                 'label' => esc_html__('Buttons', 'megaro'),
                 'type' => \Elementor\Controls_Manager::REPEATER,
+                'prevent_empty' => false,
+                'default' => [],
                 'fields' => [
                     [
                         'name' => 'btn_type',
@@ -68,9 +71,80 @@ trait SharedControls
                         'label_block' => true,
                     ]
                 ],
-                'default' => [],
             ]
         );
+    }
+
+    protected function render_button_group_control(array $settings, string $justify = 'justify-center'): void
+    {
+        $buttons = $settings['buttons'];
+
+        if (empty($buttons)) {
+            return;
+        }
+
+        ?>
+        <div class="flex flex-row flex-wrap <?= $justify ?> items-center gap-6">
+            <?php foreach ($buttons as $button): ?>
+                <a href="<?= $button['btn_link']['url'] ?>"
+                   target="<?= $button['btn_link']['is_external'] ? '_blank' : '_self' ?>"
+                   class="btn <?= $button['btn_type'] . ' ' . $button['btn_size'] ?>"><?= $button['btn_text'] ?></a>
+            <?php endforeach; ?>
+        </div>
+        <?php
+    }
+
+    /* Section heading */
+    protected function add_section_heading_control(): void
+    {
+        $this->add_control(
+            'overline',
+            [
+                'label' => esc_html__('Overline', 'megaro'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+            ]
+        );
+        $this->add_control(
+            'title',
+            [
+                'label' => esc_html__('Title', 'megaro'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+            ]
+        );
+        $this->add_control(
+            'subtitle',
+            [
+                'label' => esc_html__('Subtitle', 'megaro'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+            ]
+        );
+    }
+
+    protected function render_section_heading_template(array $settings): void
+    {
+        $overline = $settings['overline'];
+        $title = $settings['title'];
+        $subtitle = $settings['subtitle'];
+
+        if (empty($overline) && empty($title) && empty($subtitle)) {
+            return;
+        }
+
+        ?>
+        <div class="lg:w-1/2 w-full mx-auto lg:mb-16 mb-12 space-y-6">
+
+            <?php if (!empty($overline)): ?>
+                <p class="text-body-lg text-primary text-center"><?= $overline ?></p>
+            <?php endif; ?>
+            <?php if (!empty($title)): ?>
+                <h2 class="text-heading-2 text-center"><?= $title ?></h2>
+            <?php endif; ?>
+            <?php if (!empty($subtitle)): ?>
+                <p class="text-body-xl text-center text-[#404040]"><?= $subtitle ?></p>
+            <?php endif; ?>
+
+        </div>
+        <?php
     }
 
 }
