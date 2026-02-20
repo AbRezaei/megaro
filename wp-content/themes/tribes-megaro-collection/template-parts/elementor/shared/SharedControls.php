@@ -13,6 +13,7 @@ trait SharedControls
                 'default' => 'bg-transparent',
                 'options' => [
                     'bg-transparent' => esc_html__('Transparent', 'megaro'),
+                    'bg-white' => esc_html__('White', 'megaro'),
                     'bg-primary' => esc_html__('Primary', 'megaro'),
                     'bg-secondary' => esc_html__('Secondary', 'megaro'),
                     'bg-mid' => esc_html__('Mid', 'megaro'),

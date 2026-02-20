@@ -6,7 +6,7 @@ class StackedImageContent extends \Elementor\Widget_Base
 
     public function get_name(): string
     {
-        return 'stacked_image_content';
+        return 'stacked-image-content';
     }
 
     public function get_title(): string
