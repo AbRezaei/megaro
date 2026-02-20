@@ -26,6 +26,29 @@ trait SharedControls
         );
     }
 
+    protected function add_text_color_control($id = 'text_color', $label = 'Text Color'): void
+    {
+        $this->add_control(
+            $id,
+            [
+                'label' => esc_html__($label, 'megaro'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'default' => 'text-black',
+                'options' => [
+                    'text-black' => esc_html__('Transparent', 'megaro'),
+                    'text-white' => esc_html__('White', 'megaro'),
+                    'text-primary' => esc_html__('Primary', 'megaro'),
+                    'text-secondary' => esc_html__('Secondary', 'megaro'),
+                    'text-mid' => esc_html__('Mid', 'megaro'),
+                    'text-tertiary' => esc_html__('Tertiary', 'megaro'),
+                    'text-neutral-graphite' => esc_html__('Neutral Graphite', 'megaro'),
+                    'text-neutral-stone' => esc_html__('Neutral Stone', 'megaro'),
+                    'text-neutral-linen' => esc_html__('Neutral Linen', 'megaro'),
+                ]
+            ]
+        );
+    }
+
     /* Button groups */
     protected function add_button_group_control(): void
     {
@@ -147,5 +170,4 @@ trait SharedControls
         </div>
         <?php
     }
-
 }
