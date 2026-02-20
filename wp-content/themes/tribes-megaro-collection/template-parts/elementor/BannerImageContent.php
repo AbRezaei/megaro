@@ -56,38 +56,8 @@ class BannerImageContent extends \Elementor\Widget_Base
                 ],
             ]
         );
-        $this->add_control(
-            'logo',
-            [
-                'label' => esc_html__('Logo', 'megaro'),
-                'type' => \Elementor\Controls_Manager::MEDIA,
-                'media_types' => ['image'],
-            ]
-        );
-        $this->add_control(
-            'overline',
-            [
-                'label' => esc_html__('Overline', 'megaro'),
-                'type' => \Elementor\Controls_Manager::TEXT,
-            ]
-        );
-        $this->add_control(
-            'title',
-            [
-                'label' => esc_html__('Title', 'megaro'),
-                'type' => \Elementor\Controls_Manager::TEXT,
-            ]
-        );
-        $this->add_control(
-            'description',
-            [
-                'label' => esc_html__('Description', 'megaro'),
-                'type' => \Elementor\Controls_Manager::WYSIWYG,
-            ]
-        );
-        $this->add_text_color_control();
 
-        $this->add_button_group_control();
+        $this->add_logo_content_column_control();
 
         $this->end_controls_section();
     }
@@ -97,11 +67,6 @@ class BannerImageContent extends \Elementor\Widget_Base
         $settings = $this->get_settings_for_display();
         $bg_image = $settings['bg_image'];
         $image = $settings['image'];
-        $logo = $settings['logo'];
-        $overline = $settings['overline'];
-        $title = $settings['title'];
-        $description = $settings['description'];
-        $text_color = $settings['text_color'];
         ?>
         <section class="bg-cover bg-center bg-no-repeat lg:py-24 py-16"
                  style="background-image: url('<?= $bg_image['url'] ?>')">
@@ -109,29 +74,7 @@ class BannerImageContent extends \Elementor\Widget_Base
                 <div class="flex sm:flex-row flex-col justify-between items-center gap-x-4 gap-y-12">
 
                     <div class="lg:w-1/3 sm:w-1/2 w-full">
-
-                        <div class="<?= $text_color ?>">
-                            <?php if (!empty($logo['url'])): ?>
-                                <div class="lg:mb-10 mb-8">
-                                    <img src="<?= $logo['url'] ?>" alt="<?= $logo['alt'] ?>"
-                                         class="w-auto h-11! object-contain object-center">
-                                </div>
-                            <?php endif; ?>
-                            <?php if (!empty($overline)): ?>
-                                <p class="text-body-lg text-primary mb-6"><?= $overline ?></p>
-                            <?php endif; ?>
-                            <?php if (!empty($title)): ?>
-                                <h2 class="text-heading-2 lg:mb-10 mb-8"><?= $title ?></h2>
-                            <?php endif; ?>
-                            <?php if (!empty($description)): ?>
-                                <div class="lg:mb-10 mb-8">
-                                    <p class="text-body-lg text-[#404040]"><?= $description ?></p>
-                                </div>
-                            <?php endif; ?>
-
-                            <?php $this->render_button_group_control($settings, 'justify-start'); ?>
-                        </div>
-
+                        <?php $this->render_logo_content_column_control($settings); ?>
                     </div>
                     <img src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>"
                          class="lg:w-90! sm:w-1/2! w-full! aspect-square object-cover object-center border-8! border-neutral-linen!">

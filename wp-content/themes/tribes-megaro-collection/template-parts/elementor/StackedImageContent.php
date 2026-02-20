@@ -36,37 +36,7 @@ class StackedImageContent extends \Elementor\Widget_Base
 
         $this->add_bg_color_control();
 
-        $this->add_control(
-            'logo',
-            [
-                'label' => esc_html__('Logo', 'megaro'),
-                'type' => \Elementor\Controls_Manager::MEDIA,
-                'media_types' => ['image'],
-            ]
-        );
-        $this->add_control(
-            'overline',
-            [
-                'label' => esc_html__('Overline', 'megaro'),
-                'type' => \Elementor\Controls_Manager::TEXT,
-            ]
-        );
-        $this->add_control(
-            'title',
-            [
-                'label' => esc_html__('Title', 'megaro'),
-                'type' => \Elementor\Controls_Manager::TEXT,
-            ]
-        );
-        $this->add_control(
-            'description',
-            [
-                'label' => esc_html__('Description', 'megaro'),
-                'type' => \Elementor\Controls_Manager::WYSIWYG,
-            ]
-        );
-
-        $this->add_button_group_control();
+        $this->add_logo_content_column_control();
 
         $this->add_control(
             'images',
@@ -97,10 +67,6 @@ class StackedImageContent extends \Elementor\Widget_Base
     {
         $settings = $this->get_settings_for_display();
         $bg_color = $settings['bg_color'];
-        $logo = $settings['logo'];
-        $overline = $settings['overline'];
-        $title = $settings['title'];
-        $description = $settings['description'];
         $images = $settings['images'];
         $images_placement = $settings['images_placement'];
         ?>
@@ -109,27 +75,7 @@ class StackedImageContent extends \Elementor\Widget_Base
                 <div class="flex flex-row lg:flex-nowrap flex-wrap xl:gap-x-24 gap-x-12 gap-y-16 <?= $images_placement === 'right' ? 'justify-end' : 'justify-start' ?>">
 
                     <div class="lg:w-2/5 order-2 <?= $images_placement === 'right' ? 'lg:order-1' : 'lg:order-2' ?>">
-
-                        <?php if (!empty($logo['url'])): ?>
-                            <div class="lg:mb-10 mb-8">
-                                <img src="<?= $logo['url'] ?>" alt="<?= $logo['alt'] ?>"
-                                     class="w-auto h-11! object-contain object-center">
-                            </div>
-                        <?php endif; ?>
-                        <?php if (!empty($overline)): ?>
-                            <p class="text-body-lg text-primary mb-6"><?= $overline ?></p>
-                        <?php endif; ?>
-                        <?php if (!empty($title)): ?>
-                            <h2 class="text-heading-2 lg:mb-10 mb-8"><?= $title ?></h2>
-                        <?php endif; ?>
-                        <?php if (!empty($description)): ?>
-                            <div class="lg:mb-10 mb-8">
-                                <p class="text-body-lg text-[#404040]"><?= $description ?></p>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php $this->render_button_group_control($settings, 'justify-start'); ?>
-
+                        <?php $this->render_logo_content_column_control($settings);?>
                     </div>
                     <div class="lg:w-3/5 md:w-4/5 w-full order-1 <?= $images_placement === 'right' ? 'lg:order-2' : 'lg:order-1' ?>">
 

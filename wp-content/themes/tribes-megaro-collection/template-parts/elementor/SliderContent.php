@@ -36,37 +36,7 @@ class SliderContent extends \Elementor\Widget_Base
 
         $this->add_bg_color_control();
 
-        $this->add_control(
-            'logo',
-            [
-                'label' => esc_html__('Logo', 'megaro'),
-                'type' => \Elementor\Controls_Manager::MEDIA,
-                'media_types' => ['image'],
-            ]
-        );
-        $this->add_control(
-            'overline',
-            [
-                'label' => esc_html__('Overline', 'megaro'),
-                'type' => \Elementor\Controls_Manager::TEXT,
-            ]
-        );
-        $this->add_control(
-            'title',
-            [
-                'label' => esc_html__('Title', 'megaro'),
-                'type' => \Elementor\Controls_Manager::TEXT,
-            ]
-        );
-        $this->add_control(
-            'description',
-            [
-                'label' => esc_html__('Description', 'megaro'),
-                'type' => \Elementor\Controls_Manager::WYSIWYG,
-            ]
-        );
-
-        $this->add_button_group_control();
+        $this->add_logo_content_column_control();
 
         $this->add_control(
             'gallery',
@@ -97,43 +67,18 @@ class SliderContent extends \Elementor\Widget_Base
     {
         $settings = $this->get_settings_for_display();
         $bg_color = $settings['bg_color'];
-        $logo = $settings['logo'];
-        $overline = $settings['overline'];
-        $title = $settings['title'];
-        $description = $settings['description'];
         $gallery = $settings['gallery'];
         $gallery_placement = $settings['gallery_placement'];
+        $text_color = $settings['text_color'];
         ?>
         <section class="<?= $bg_color ?> lg:py-24 py-16">
             <div class="container">
                 <div class="grid grid-cols-1 md:grid-cols-5 md:gap-x-8 lg:gap-x-16 xl:gap-x-24 gap-y-6">
 
                     <div class="md:col-span-2 flex flex-col justify-center order-2 <?= $gallery_placement === 'right' ? 'md:order-1' : 'md:order-2' ?>">
-                        <div>
-
-                            <?php if (!empty($logo['url'])): ?>
-                                <div class="lg:mb-10 mb-8">
-                                    <img src="<?= $logo['url'] ?>" alt="<?= $logo['alt'] ?>"
-                                         class="w-auto h-11! object-contain object-center">
-                                </div>
-                            <?php endif; ?>
-                            <?php if (!empty($overline)): ?>
-                                <p class="text-body-lg text-primary mb-6"><?= $overline ?></p>
-                            <?php endif; ?>
-                            <?php if (!empty($title)): ?>
-                                <h2 class="text-heading-2 lg:mb-10 mb-8"><?= $title ?></h2>
-                            <?php endif; ?>
-                            <?php if (!empty($description)): ?>
-                                <div class="lg:mb-10 mb-8">
-                                    <p class="text-body-lg text-[#404040]"><?= $description ?></p>
-                                </div>
-                            <?php endif; ?>
-
-                            <?php $this->render_button_group_control($settings, 'justify-start'); ?>
-
-                        </div>
+                        <?php $this->render_logo_content_column_control($settings); ?>
                     </div>
-                    <div class="md:col-span-3 order-1 <?= $gallery_placement === 'right' ? 'md:order-2' : 'md:order-1' ?>">
+                    <div class="md:col-span-3 order-1 <?= $text_color ?> <?= $gallery_placement === 'right' ? 'md:order-2' : 'md:order-1' ?>">
                         <div class="swiper relative" data-slider="rooms">
 
                             <div class="swiper-wrapper">
