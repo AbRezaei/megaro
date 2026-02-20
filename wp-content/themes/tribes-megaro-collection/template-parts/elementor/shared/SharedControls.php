@@ -13,6 +13,7 @@ trait SharedControls
                 'default' => 'bg-transparent',
                 'options' => [
                     'bg-transparent' => esc_html__('Transparent', 'megaro'),
+                    'bg-black' => esc_html__('Black', 'megaro'),
                     'bg-white' => esc_html__('White', 'megaro'),
                     'bg-primary' => esc_html__('Primary', 'megaro'),
                     'bg-secondary' => esc_html__('Secondary', 'megaro'),
@@ -35,7 +36,7 @@ trait SharedControls
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'default' => 'text-black',
                 'options' => [
-                    'text-black' => esc_html__('Transparent', 'megaro'),
+                    'text-black' => esc_html__('Black', 'megaro'),
                     'text-white' => esc_html__('White', 'megaro'),
                     'text-primary' => esc_html__('Primary', 'megaro'),
                     'text-secondary' => esc_html__('Secondary', 'megaro'),
@@ -246,4 +247,5 @@ trait SharedControls
         </div>
         <?php
     }
+
 }

@@ -90,7 +90,7 @@ class RestaurantCards extends \Elementor\Widget_Base
                         'name' => 'btn_size',
                         'label' => esc_html__('Button Size', 'megaro'),
                         'type' => \Elementor\Controls_Manager::SELECT,
-                        'default' => 'btn-primary-fill',
+                        'default' => 'btn-lg',
                         'options' => [
                             'btn-lg' => esc_html__('Large', 'megaro'),
                             'btn-md' => esc_html__('Medium', 'megaro'),
@@ -137,7 +137,7 @@ class RestaurantCards extends \Elementor\Widget_Base
                                         <img src="<?= $card['image']['url'] ?>" alt="<?= $card['image']['alt'] ?>"
                                              class="w-full lg:h-175! h-102! object-cover object-center">
                                     </div>
-                                    <div class="<?= $index % 2 === 0 ? 'md:order-1 order-2 xl:px-16 lg:px-10 px-6' : 'md:order-2 order-2 xl:px-16 lg:px-10 px-6' ?> ">
+                                    <div class="<?= $index % 2 === 0 ? 'md:order-1 order-2 xl:px-16 lg:px-10 px-6' : 'md:order-2 order-2 xl:px-16 lg:px-10 px-6' ?>">
 
                                         <div class="lg:mb-6 mb-4">
                                             <img src="<?= $card['logo']['url'] ?>" alt="<?= $card['logo']['alt'] ?>"

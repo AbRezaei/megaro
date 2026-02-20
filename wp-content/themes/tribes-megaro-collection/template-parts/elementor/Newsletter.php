@@ -57,7 +57,7 @@ class Newsletter extends \Elementor\Widget_Base
         <section class="<?= $bg_color ?> py-16">
             <div class="container">
 
-                <?php $this->render_section_heading_template($settings);?>
+                <?php $this->render_section_heading_template($settings); ?>
                 <div class="lg:w-2/3 xl:w-1/2 mx-auto">
 
                     <div class="flex flex-row justify-center items-center mb-6">

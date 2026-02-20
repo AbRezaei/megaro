@@ -50,7 +50,7 @@ class Location extends \Elementor\Widget_Base
             <div class="container">
                 <div>
 
-                    <?php $this->render_section_heading_template($settings);?>
+                    <?php $this->render_section_heading_template($settings); ?>
                     <div>
                         <iframe src="https://www.google.com/maps?q=Turin,Italy&output=embed" loading="lazy"
                                 class="w-full lg:h-150! h-75!">

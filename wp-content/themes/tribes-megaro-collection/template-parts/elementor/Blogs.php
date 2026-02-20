@@ -119,7 +119,6 @@ class Blogs extends \Elementor\Widget_Base
                 <div>
 
                     <?php $this->render_section_heading_template($settings); ?>
-
                     <?php if (!empty($btn_text)): ?>
                         <div class="flex flex-row justify-center items-center lg:mb-16 mb-12">
                             <a href="<?= $btn_link['url'] ?>"

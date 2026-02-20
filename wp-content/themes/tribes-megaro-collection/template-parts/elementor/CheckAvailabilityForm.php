@@ -35,6 +35,7 @@ class CheckAvailabilityForm extends \Elementor\Widget_Base
         );
 
         $this->add_bg_color_control();
+        $this->add_text_color_control();
 
         $this->end_controls_section();
     }
@@ -43,13 +44,14 @@ class CheckAvailabilityForm extends \Elementor\Widget_Base
     {
         $settings = $this->get_settings_for_display();
         $bg_color = $settings['bg_color'];
+        $text_color = $settings['text_color'];
 
         ?>
         <section class="<?= $bg_color ?> lg:py-24 py-16">
             <div class="container">
                 <div>
 
-                    <h3 class="text-heading-3 text-white text-center mb-10">CHECK AVAILABILITY</h3>
+                    <h3 class="<?= $text_color ?> text-heading-3 text-center mb-10">CHECK AVAILABILITY</h3>
                     <div x-data="tabs()">
 
                         <ul class="flex flex-row justify-center items-center mb-8" data-tabs>
@@ -105,7 +107,8 @@ class CheckAvailabilityForm extends \Elementor\Widget_Base
                                                            :class="display === options[0]?.label ? 'text-[#737373]' : ''"></p>
 
                                                     </div>
-                                                    <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/chevron-down-black.svg" alt="Arrow icon"
+                                                    <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/chevron-down-black.svg"
+                                                         alt="Arrow icon"
                                                          x-bind:class="{'rotate-180': open}"
                                                          class="w-6 h-6 duration-300">
 
@@ -152,7 +155,8 @@ class CheckAvailabilityForm extends \Elementor\Widget_Base
                                                             <p x-text="display" class="text-body-lg text-[#737373]"></p>
 
                                                         </div>
-                                                        <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/chevron-down-black.svg" alt="Arrow icon"
+                                                        <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/chevron-down-black.svg"
+                                                             alt="Arrow icon"
                                                              x-bind:class="{'rotate-180': open}"
                                                              class="w-6 h-6 duration-300">
 
@@ -183,7 +187,8 @@ class CheckAvailabilityForm extends \Elementor\Widget_Base
                                                             <p x-text="display" class="text-body-lg text-[#737373]"></p>
 
                                                         </div>
-                                                        <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/chevron-down-black.svg" alt="Arrow icon"
+                                                        <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/chevron-down-black.svg"
+                                                             alt="Arrow icon"
                                                              x-bind:class="{'rotate-180': open}"
                                                              class="w-6 h-6 duration-300">
 
@@ -218,13 +223,15 @@ class CheckAvailabilityForm extends \Elementor\Widget_Base
 
                                                     <div class="flex items-center gap-2">
 
-                                                        <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/user-black.svg" alt="User icon"
+                                                        <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/user-black.svg"
+                                                             alt="User icon"
                                                              class="w-6 h-6">
                                                         <p x-text="display" class="text-body-lg"
                                                            :class="display === options[0]?.label ? 'text-[#737373]' : ''"></p>
 
                                                     </div>
-                                                    <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/chevron-down-black.svg" alt="Arrow icon"
+                                                    <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/chevron-down-black.svg"
+                                                         alt="Arrow icon"
                                                          x-bind:class="{'rotate-180': open}"
                                                          class="w-6 h-6 duration-300">
 
@@ -286,7 +293,8 @@ class CheckAvailabilityForm extends \Elementor\Widget_Base
                                                            :class="display === options[0]?.label ? 'text-[#737373]' : ''"></p>
 
                                                     </div>
-                                                    <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/chevron-down-black.svg" alt="Arrow icon"
+                                                    <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/chevron-down-black.svg"
+                                                         alt="Arrow icon"
                                                          x-bind:class="{'rotate-180': open}"
                                                          class="w-6 h-6 duration-300">
 
@@ -337,13 +345,15 @@ class CheckAvailabilityForm extends \Elementor\Widget_Base
 
                                                     <div class="flex items-center gap-2">
 
-                                                        <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/user-black.svg" alt="User icon"
+                                                        <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/user-black.svg"
+                                                             alt="User icon"
                                                              class="w-6 h-6">
                                                         <p x-text="display" class="text-body-lg"
                                                            :class="display === options[0]?.label ? 'text-[#737373]' : ''"></p>
 
                                                     </div>
-                                                    <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/chevron-down-black.svg" alt="Arrow icon"
+                                                    <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/chevron-down-black.svg"
+                                                         alt="Arrow icon"
                                                          x-bind:class="{'rotate-180': open}"
                                                          class="w-6 h-6 duration-300">
 
@@ -390,7 +400,8 @@ class CheckAvailabilityForm extends \Elementor\Widget_Base
                                                             <p x-text="display" class="text-body-lg text-[#737373]"></p>
 
                                                         </div>
-                                                        <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/chevron-down-black.svg" alt="Arrow icon"
+                                                        <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/chevron-down-black.svg"
+                                                             alt="Arrow icon"
                                                              x-bind:class="{'rotate-180': open}"
                                                              class="w-6 h-6 duration-300">
 
@@ -442,13 +453,15 @@ class CheckAvailabilityForm extends \Elementor\Widget_Base
 
                                                     <div class="flex items-center gap-2">
 
-                                                        <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/clock-black.svg" alt="Clock icon"
+                                                        <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/clock-black.svg"
+                                                             alt="Clock icon"
                                                              class="w-6 h-6">
                                                         <p x-text="display" class="text-body-lg"
                                                            :class="display === options[0]?.label ? 'text-[#737373]' : ''"></p>
 
                                                     </div>
-                                                    <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/chevron-down-black.svg" alt="Arrow icon"
+                                                    <img src="<?= get_template_directory_uri(); ?>/assets/img/svg/chevron-down-black.svg"
+                                                         alt="Arrow icon"
                                                          x-bind:class="{'rotate-180': open}"
                                                          class="w-6 h-6 duration-300">
 
