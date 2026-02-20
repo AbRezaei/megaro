@@ -1,17 +1,17 @@
 <?php
 
-class RestaurantCards extends \Elementor\Widget_Base
+class RestaurantVerticalCards extends \Elementor\Widget_Base
 {
     use SharedControls;
 
     public function get_name(): string
     {
-        return 'restaurant-cards';
+        return 'restaurant-vertical-cards';
     }
 
     public function get_title(): string
     {
-        return 'Restaurant Cards';
+        return 'Restaurant Vertical Cards';
     }
 
     public function get_icon(): string
