@@ -79,7 +79,6 @@ class Blogs extends \Elementor\Widget_Base
                 'description' => esc_html__('Select categories to show.', 'megaro'),
             ]
         );
-
         $this->add_control(
             'posts_count',
             [
