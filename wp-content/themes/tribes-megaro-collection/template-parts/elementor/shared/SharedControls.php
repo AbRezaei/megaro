@@ -287,7 +287,7 @@ trait SharedControls
                 <p class="text-body-lg text-primary mb-6"><?= $overline ?></p>
             <?php endif; ?>
             <?php if (!empty($title)): ?>
-                <h2 class="text-heading-2 lg:mb-10 mb-8"><?= $title ?></h2>
+                <h2 class="main-title text-heading-2 lg:mb-10 mb-8"><?= $title ?></h2>
             <?php endif; ?>
             <?php if (!empty($description)): ?>
                 <div class="text-body-lg lg:mb-10 mb-8">
