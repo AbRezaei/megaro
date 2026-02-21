@@ -238,8 +238,8 @@ trait SharedControls
                 <h2 class="text-heading-2 lg:mb-10 mb-8"><?= $title ?></h2>
             <?php endif; ?>
             <?php if (!empty($description)): ?>
-                <div class="lg:mb-10 mb-8">
-                    <p class="text-body-lg text-[#404040]"><?= $description ?></p>
+                <div class="text-body-lg lg:mb-10 mb-8">
+                    <?= $description ?>
                 </div>
             <?php endif; ?>
             <?php $this->render_button_group_control($settings, 'justify-start'); ?>

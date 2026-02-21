@@ -126,8 +126,8 @@ class RoomSliderContent extends \Elementor\Widget_Base
                             <?php endforeach; ?>
                         </ul>
                         <hr class="border-primary my-6!">
-                        <div class="lg:mb-10 mb-8">
-                            <p class="text-body-lg"><?= $description ?></p>
+                        <div class="text-body-lg lg:mb-10 mb-8">
+                            <?= $description ?>
                         </div>
                         <?php $this->render_button_group_control($settings, 'justify-start'); ?>
 

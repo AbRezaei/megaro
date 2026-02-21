@@ -96,9 +96,9 @@ class RoomImageContent extends \Elementor\Widget_Base
                         <div class="border-y border-primary lg:py-10 py-8">
 
                             <h4 class="text-heading-4 mb-6"><?= $title ?></h4>
-                            <p class="text-body-lg">
+                            <div class="text-body-lg">
                                 <?= $description ?>
-                            </p>
+                            </div>
 
                         </div>
                     </div>

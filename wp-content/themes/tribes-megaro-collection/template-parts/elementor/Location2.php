@@ -164,8 +164,8 @@ class Location2 extends \Elementor\Widget_Base
 
                                 <h3 class="text-heading-3"><?= $title ?></h3>
                                 <hr class="w-24 border-primary my-6!">
-                                <div class="mb-4">
-                                    <p class="text-body-lg text-[#404040]"><?= $description ?></p>
+                                <div class="text-body-lg mb-4">
+                                    <?= $description ?>
                                 </div>
                                 <a href="<?= $btn_link['url'] ?>"
                                    target="<?= $btn_link['is_external'] ? '_blank' : '_self' ?>"

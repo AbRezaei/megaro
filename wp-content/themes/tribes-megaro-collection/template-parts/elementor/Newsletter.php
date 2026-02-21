@@ -66,7 +66,9 @@ class Newsletter extends \Elementor\Widget_Base
                         <button class="btn btn-primary-fill btn-lg">Subscribe</button>
 
                     </div>
-                    <p class="text-body-md text-center text-[#737373]"><?= $description ?></p>
+                    <div class="text-body-md text-center text-[#737373]">
+                        <?= $description ?>
+                    </div>
 
                 </div>
 

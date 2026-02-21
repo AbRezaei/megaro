@@ -112,7 +112,9 @@ class Intro extends \Elementor\Widget_Base
                         <p class="text-body-sm text-center lg:mb-10 mb-8"><?= $subtitle ?></p>
                     <?php endif; ?>
                     <?php if (!empty($description)): ?>
-                        <p class="text-body-xl text-[#404040]"><?= $description ?></p>
+                        <div class="text-body-xl text-[#404040]">
+                            <?= $description ?>
+                        </div>
                     <?php endif; ?>
 
                 </div>
