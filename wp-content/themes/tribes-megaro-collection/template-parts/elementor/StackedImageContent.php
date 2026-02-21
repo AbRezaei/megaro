@@ -35,7 +35,6 @@ class StackedImageContent extends \Elementor\Widget_Base
         );
 
         $this->add_bg_color_control();
-
         $this->add_logo_content_column_control();
 
         $this->add_control(
@@ -45,9 +44,20 @@ class StackedImageContent extends \Elementor\Widget_Base
                 'type' => \Elementor\Controls_Manager::GALLERY,
                 'show_label' => false,
                 'default' => [],
-                'description' => esc_html__('Maximum 3 images allowed. Additional images will be ignored.', 'megaro'),
                 'separator' => 'before',
             ],
+        );
+        $this->add_control(
+            'stack_layout',
+            [
+                'label' => esc_html__('Stacked Images Layout', 'megaro'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'default' => '3-images-bottom-left',
+                'options' => [
+                    '3-images-bottom-left' => esc_html__('3 Images - Bottom-Left Stack', 'megaro'),
+                    '2-images-center' => esc_html__('2 Images - Centered Overlap', 'megaro'),
+                ]
+            ]
         );
         $this->add_control(
             'images_placement',
@@ -70,6 +80,7 @@ class StackedImageContent extends \Elementor\Widget_Base
         $settings = $this->get_settings_for_display();
         $bg_color = $settings['bg_color'];
         $images = $settings['images'];
+        $stack_layout = $settings['stack_layout'];
         $images_placement = $settings['images_placement'];
         ?>
         <section class="<?= $bg_color ?> lg:py-24 py-16">
@@ -80,30 +91,53 @@ class StackedImageContent extends \Elementor\Widget_Base
                         <?php $this->render_logo_content_column_control($settings); ?>
                     </div>
                     <div class="lg:w-3/5 md:w-4/5 w-full order-1 <?= $images_placement === 'right' ? 'lg:order-2' : 'lg:order-1' ?>">
+                        <?php if (!empty($images)): ?>
 
-                        <?php if (isset($images[0])): ?>
-                            <div class="relative z-1 flex flex-row <?= $images_placement === 'right' ? 'justify-end' : 'justify-start' ?>">
-                                <img src="<?= $images[0]['url'] ?>" alt="<?= $images[0]['id'] ?>"
-                                     class="w-4/5 aspect-square object-cover object-center"/>
-                            </div>
-                        <?php endif; ?>
-                        <?php if (isset($images[1])): ?>
-                            <div class="relative z-1 flex flex-row md:-mt-32 -mt-20 <?= $images_placement === 'right' ? 'justify-start' : 'justify-end' ?>">
-                                <div class="<?= $bg_color ?> lg:w-2/5 w-1/2 aspect-square md:translate-x-0 p-2 <?= $images_placement === 'right' ? 'translate-x-1/4' : '-translate-x-1/4' ?>">
-                                    <img src="<?= $images[1]['url'] ?>" alt="<?= $images[1]['id'] ?>"
-                                         class="w-full h-full! object-cover object-center"/>
-                                </div>
-                            </div>
-                        <?php endif; ?>
-                        <?php if (isset($images[2])): ?>
-                            <div class="relative z-1 flex flex-row md:-mt-32 -mt-20 <?= $images_placement === 'right' ? 'justify-start' : 'justify-end' ?>">
-                                <div class="<?= $bg_color ?> lg:w-2/5 w-1/2 aspect-square p-2 <?= $images_placement === 'right' ? 'md:-translate-x-1/2' : 'md:translate-x-1/2' ?>">
-                                    <img src="<?= $images[2]['url'] ?>" alt="<?= $images[2]['id'] ?>"
-                                         class="w-full h-full! object-cover object-center"/>
-                                </div>
-                            </div>
-                        <?php endif; ?>
+                            <?php if ($stack_layout === '3-images-bottom-left'): ?>
 
+                                <?php if (isset($images[0])): ?>
+                                    <div class="relative z-1 flex flex-row <?= $images_placement === 'right' ? 'justify-end' : 'justify-start' ?>">
+                                        <img src="<?= $images[0]['url'] ?>" alt="<?= $images[0]['id'] ?>"
+                                             class="w-4/5 aspect-square object-cover object-center"/>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if (isset($images[1])): ?>
+                                    <div class="relative z-1 flex flex-row md:-mt-32 -mt-20 <?= $images_placement === 'right' ? 'justify-start' : 'justify-end' ?>">
+                                        <div class="<?= $bg_color ?> lg:w-2/5 w-1/2 aspect-square md:translate-x-0 p-2 <?= $images_placement === 'right' ? 'translate-x-1/4' : '-translate-x-1/4' ?>">
+                                            <img src="<?= $images[1]['url'] ?>" alt="<?= $images[1]['id'] ?>"
+                                                 class="w-full h-full! object-cover object-center"/>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if (isset($images[2])): ?>
+                                    <div class="relative z-1 flex flex-row md:-mt-32 -mt-20 <?= $images_placement === 'right' ? 'justify-start' : 'justify-end' ?>">
+                                        <div class="<?= $bg_color ?> lg:w-2/5 w-1/2 aspect-square p-2 <?= $images_placement === 'right' ? 'md:-translate-x-1/2' : 'md:translate-x-1/2' ?>">
+                                            <img src="<?= $images[2]['url'] ?>" alt="<?= $images[2]['id'] ?>"
+                                                 class="w-full h-full! object-cover object-center"/>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+
+                            <?php else: ?>
+                                <div class="relative">
+
+                                    <?php if (isset($images[0])): ?>
+                                        <div class="relative z-1 flex flex-row <?= $images_placement === 'right' ? 'justify-end' : 'justify-start' ?>">
+                                            <img src="<?= $images[0]['url'] ?>" alt="<?= $images[0]['id'] ?>"
+                                                 class="w-4/5 aspect-2/3 object-cover object-center"/>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if (isset($images[1])): ?>
+                                        <div class="<?= $bg_color ?> absolute top-1/2 -translate-y-1/2 z-2 lg:w-2/5 w-1/2 aspect-square p-2 <?= $images_placement === 'right' ? 'left-0' : 'right-0' ?>">
+                                            <img src="<?= $images[1]['url'] ?>" alt="<?= $images[1]['id'] ?>"
+                                                 class="w-full h-full! object-cover object-center"/>
+                                        </div>
+                                    <?php endif; ?>
+
+                                </div>
+                            <?php endif; ?>
+
+                        <?php endif; ?>
                     </div>
 
                 </div>
