@@ -165,7 +165,7 @@ trait SharedControls
                 <h2 class="text-heading-2 text-center"><?= $title ?></h2>
             <?php endif; ?>
             <?php if (!empty($subtitle)): ?>
-                <p class="text-body-xl text-center text-[#404040]"><?= $subtitle ?></p>
+                <p class="text-body-xl text-center"><?= $subtitle ?></p>
             <?php endif; ?>
 
         </div>
