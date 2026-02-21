@@ -45,6 +45,8 @@ class StackedImageContent extends \Elementor\Widget_Base
                 'type' => \Elementor\Controls_Manager::GALLERY,
                 'show_label' => false,
                 'default' => [],
+                'description' => esc_html__('Maximum 3 images allowed. Additional images will be ignored.', 'megaro'),
+                'separator' => 'before',
             ],
         );
         $this->add_control(
