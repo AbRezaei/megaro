@@ -74,8 +74,8 @@ class StackedImageContent extends \Elementor\Widget_Base
             <div class="container">
                 <div class="flex flex-row lg:flex-nowrap flex-wrap xl:gap-x-24 gap-x-12 gap-y-16 <?= $images_placement === 'right' ? 'justify-end' : 'justify-start' ?>">
 
-                    <div class="lg:w-2/5 order-2 <?= $images_placement === 'right' ? 'lg:order-1' : 'lg:order-2' ?>">
-                        <?php $this->render_logo_content_column_control($settings);?>
+                    <div class="lg:w-2/5 w-full order-2 <?= $images_placement === 'right' ? 'lg:order-1' : 'lg:order-2' ?>">
+                        <?php $this->render_logo_content_column_control($settings); ?>
                     </div>
                     <div class="lg:w-3/5 md:w-4/5 w-full order-1 <?= $images_placement === 'right' ? 'lg:order-2' : 'lg:order-1' ?>">
 

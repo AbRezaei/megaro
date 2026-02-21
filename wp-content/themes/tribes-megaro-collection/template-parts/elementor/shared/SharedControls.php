@@ -207,6 +207,46 @@ trait SharedControls
             ]
         );
 
+        $this->add_control(
+            'table',
+            [
+                'label' => esc_html__('Table', 'megaro'),
+                'type' => \Elementor\Controls_Manager::REPEATER,
+                'prevent_empty' => false,
+                'default' => [],
+                'fields' => [
+                    [
+                        'name' => 'column_1',
+                        'label' => esc_html__('Column 1', 'megaro'),
+                        'type' => \Elementor\Controls_Manager::TEXT,
+                        'default' => '',
+                        'label_block' => true,
+                    ],
+                    [
+                        'name' => 'column_2',
+                        'label' => esc_html__('Column 2', 'megaro'),
+                        'type' => \Elementor\Controls_Manager::TEXT,
+                        'default' => '',
+                        'label_block' => true,
+                    ],
+                    [
+                        'name' => 'column_3',
+                        'label' => esc_html__('Column 3', 'megaro'),
+                        'type' => \Elementor\Controls_Manager::TEXT,
+                        'default' => '',
+                        'label_block' => true,
+                    ],
+                    [
+                        'name' => 'column_4',
+                        'label' => esc_html__('Column 4', 'megaro'),
+                        'type' => \Elementor\Controls_Manager::TEXT,
+                        'default' => '',
+                        'label_block' => true,
+                    ],
+                ],
+            ]
+        );
+
         $this->add_button_group_control();
     }
 
@@ -217,11 +257,23 @@ trait SharedControls
         $overline = $settings['overline'];
         $title = $settings['title'];
         $description = $settings['description'];
+        $table = $settings['table'];
 
-        if (empty($logo['url']) && empty($overline) && empty($title) && empty($description)) {
+        if (empty($logo['url']) && empty($overline) && empty($title) && empty($description) && empty($table)) {
             return;
         }
 
+        $show_col_1 = false;
+        $show_col_2 = false;
+        $show_col_3 = false;
+        $show_col_4 = false;
+
+        foreach ($settings['table'] as $item) {
+            if (!empty($item['column_1'])) $show_col_1 = true;
+            if (!empty($item['column_2'])) $show_col_2 = true;
+            if (!empty($item['column_3'])) $show_col_3 = true;
+            if (!empty($item['column_4'])) $show_col_4 = true;
+        }
         ?>
         <div class="<?= $text_color ?>">
 
@@ -240,6 +292,40 @@ trait SharedControls
             <?php if (!empty($description)): ?>
                 <div class="text-body-lg lg:mb-10 mb-8">
                     <?= $description ?>
+                </div>
+            <?php endif; ?>
+            <?php if ($show_col_1 || $show_col_2 || $show_col_3 || $show_col_4): ?>
+                <div class="overflow-x-auto! lg:mb-10 mb-8">
+                    <table class="min-w-full! text-left text-body-md">
+                        <tbody>
+                        <?php foreach ($settings['table'] as $item): ?>
+                            <tr class="border-b border-gray-300">
+
+                                <?php if ($show_col_1) : ?>
+                                    <td class="min-w-48 py-3">
+                                        <?= $item['column_1'] ?>
+                                    </td>
+                                <?php endif; ?>
+                                <?php if ($show_col_2) : ?>
+                                    <td class="min-w-16 py-3">
+                                        <?= $item['column_2'] ?>
+                                    </td>
+                                <?php endif; ?>
+                                <?php if ($show_col_3) : ?>
+                                    <td class="min-w-16 py-3">
+                                        <?= $item['column_3'] ?>
+                                    </td>
+                                <?php endif; ?>
+                                <?php if ($show_col_4) : ?>
+                                    <td class="min-w-16 py-3">
+                                        <?= $item['column_4'] ?>
+                                    </td>
+                                <?php endif; ?>
+
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
             <?php endif; ?>
             <?php $this->render_button_group_control($settings, 'justify-start'); ?>
