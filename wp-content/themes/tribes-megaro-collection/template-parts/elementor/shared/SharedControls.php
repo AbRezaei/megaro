@@ -200,6 +200,21 @@ trait SharedControls
             ]
         );
         $this->add_control(
+            'title_hierarchy',
+            [
+                'label' => esc_html__('Title Hierarchy', 'megaro'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'default' => 'h2',
+                'options' => [
+                    'h1' => esc_html__('Heading 1', 'megaro'),
+                    'h2' => esc_html__('Heading 2', 'megaro'),
+                    'h3' => esc_html__('Heading 3', 'megaro'),
+                    'h4' => esc_html__('Heading 4', 'megaro'),
+                    'h5' => esc_html__('Heading 5', 'megaro'),
+                ]
+            ]
+        );
+        $this->add_control(
             'description',
             [
                 'label' => esc_html__('Description', 'megaro'),
@@ -256,6 +271,7 @@ trait SharedControls
         $logo = $settings['logo'];
         $overline = $settings['overline'];
         $title = $settings['title'];
+        $title_hierarchy = $settings['title_hierarchy'];
         $description = $settings['description'];
         $table = $settings['table'];
 
@@ -287,7 +303,19 @@ trait SharedControls
                 <p class="text-body-lg text-primary mb-6"><?= $overline ?></p>
             <?php endif; ?>
             <?php if (!empty($title)): ?>
-                <h2 class="main-title text-heading-2 lg:mb-10 mb-8"><?= $title ?></h2>
+
+                <?php if ($title_hierarchy === 'h1'): ?>
+                    <h1 class="main-title text-heading-1 lg:mb-10 mb-8"><?= $title ?></h1>
+                <?php elseif ($title_hierarchy === 'h2'): ?>
+                    <h2 class="main-title text-heading-2 lg:mb-10 mb-8"><?= $title ?></h2>
+                <?php elseif ($title_hierarchy === 'h3'): ?>
+                    <h3 class="main-title text-heading-3 mb-6"><?= $title ?></h3>
+                <?php elseif ($title_hierarchy === 'h4'): ?>
+                    <h4 class="main-title text-heading-4 mb-6"><?= $title ?></h4>
+                <?php elseif ($title_hierarchy === 'h5'): ?>
+                    <h5 class="main-title text-heading-5 mb-4"><?= $title ?></h5>
+                <?php endif; ?>
+
             <?php endif; ?>
             <?php if (!empty($description)): ?>
                 <div class="text-body-lg lg:mb-10 mb-8">
