@@ -60,6 +60,7 @@ trait SharedControls
                 'type' => \Elementor\Controls_Manager::REPEATER,
                 'prevent_empty' => false,
                 'default' => [],
+                'separator' => 'before',
                 'fields' => [
                     [
                         'name' => 'btn_type',
@@ -96,7 +97,7 @@ trait SharedControls
                         'label_block' => true,
                     ]
                 ],
-            ]
+            ],
         );
     }
 
@@ -127,6 +128,7 @@ trait SharedControls
             [
                 'label' => esc_html__('Overline', 'megaro'),
                 'type' => \Elementor\Controls_Manager::TEXT,
+                'separator' => 'before',
             ]
         );
         $this->add_control(
@@ -183,6 +185,7 @@ trait SharedControls
                 'label' => esc_html__('Logo', 'megaro'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'media_types' => ['image'],
+                'separator' => 'before',
             ]
         );
         $this->add_control(
@@ -229,6 +232,7 @@ trait SharedControls
                 'type' => \Elementor\Controls_Manager::REPEATER,
                 'prevent_empty' => false,
                 'default' => [],
+                'separator' => 'before',
                 'fields' => [
                     [
                         'name' => 'column_1',
@@ -262,6 +266,33 @@ trait SharedControls
             ]
         );
 
+        $this->add_control(
+            'bullet_list',
+            [
+                'label' => esc_html__('Bullet List', 'megaro'),
+                'type' => \Elementor\Controls_Manager::REPEATER,
+                'prevent_empty' => false,
+                'default' => [],
+                'separator' => 'before',
+                'fields' => [
+                    [
+                        'name' => 'key',
+                        'label' => esc_html__('Key', 'megaro'),
+                        'type' => \Elementor\Controls_Manager::TEXT,
+                        'default' => '',
+                        'label_block' => true,
+                    ],
+                    [
+                        'name' => 'value',
+                        'label' => esc_html__('Value', 'megaro'),
+                        'type' => \Elementor\Controls_Manager::TEXT,
+                        'default' => '',
+                        'label_block' => true,
+                    ],
+                ],
+            ]
+        );
+
         $this->add_button_group_control();
     }
 
@@ -274,6 +305,7 @@ trait SharedControls
         $title_hierarchy = $settings['title_hierarchy'];
         $description = $settings['description'];
         $table = $settings['table'];
+        $bullet_list = $settings['bullet_list'];
 
         if (empty($logo['url']) && empty($overline) && empty($title) && empty($description) && empty($table)) {
             return;
@@ -355,6 +387,21 @@ trait SharedControls
                         </tbody>
                     </table>
                 </div>
+            <?php endif; ?>
+            <?php if (!empty($bullet_list)): ?>
+                <ul class="space-y-2 lg:mb-10 mb-8">
+                    <?php foreach ($bullet_list as $item): ?>
+                        <li class="flex flex-row items-center gap-2">
+
+                            <span class="w-2 h-2 bg-primary rotate-45"></span>
+                            <p class="text-body-lg">
+                                <span class="font-semibold"><?= $item['key'] ?>:</span>
+                                <span><?= $item['value'] ?></span>
+                            </p>
+
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
             <?php endif; ?>
             <?php $this->render_button_group_control($settings, 'justify-start'); ?>
 

@@ -43,6 +43,7 @@ class ImageContent extends \Elementor\Widget_Base
                 'label' => esc_html__('Image', 'megaro'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'media_types' => ['image'],
+                'separator' => 'before',
                 'default' => [
                     'url' => \Elementor\Utils::get_placeholder_image_src(),
                 ],
