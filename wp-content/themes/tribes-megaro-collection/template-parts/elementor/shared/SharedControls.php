@@ -10,11 +10,10 @@ trait SharedControls
             [
                 'label' => esc_html__($label, 'megaro'),
                 'type' => \Elementor\Controls_Manager::SELECT,
-                'default' => 'bg-transparent',
+                'default' => 'bg-white',
                 'options' => [
-                    'bg-transparent' => esc_html__('Transparent', 'megaro'),
-                    'bg-black' => esc_html__('Black', 'megaro'),
                     'bg-white' => esc_html__('White', 'megaro'),
+                    'bg-black' => esc_html__('Black', 'megaro'),
                     'bg-primary' => esc_html__('Primary', 'megaro'),
                     'bg-secondary' => esc_html__('Secondary', 'megaro'),
                     'bg-mid' => esc_html__('Mid', 'megaro'),
