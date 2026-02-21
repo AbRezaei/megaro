@@ -94,7 +94,7 @@ class HotelCards extends \Elementor\Widget_Base
                         'name' => 'btn_size',
                         'label' => esc_html__('Button Size', 'megaro'),
                         'type' => \Elementor\Controls_Manager::SELECT,
-                        'default' => 'btn-primary-fill',
+                        'default' => 'btn-lg',
                         'options' => [
                             'btn-lg' => esc_html__('Large', 'megaro'),
                             'btn-md' => esc_html__('Medium', 'megaro'),
@@ -159,7 +159,7 @@ class HotelCards extends \Elementor\Widget_Base
                                         <div>
                                             <a href="<?= $card['btn_link']['url'] ?>"
                                                target="<?= $card['btn_link']['is_external'] ? '_blank' : '_self' ?>"
-                                               class="btn <?= $card['btn_type'] . ' ' . $card['btn_size'] ?>"><?= $card['btn_text'] ?></a>
+                                               class="btn <?= $card['btn_type'] ?> <?= $card['btn_size'] ?>"><?= $card['btn_text'] ?></a>
                                         </div>
 
                                     </div>
