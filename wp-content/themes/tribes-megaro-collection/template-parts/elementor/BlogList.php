@@ -34,6 +34,7 @@ class BlogList extends \Elementor\Widget_Base
             ]
         );
 
+        $this->add_bg_color_control();
         $this->add_control(
             'posts_count',
             [
@@ -43,62 +44,46 @@ class BlogList extends \Elementor\Widget_Base
             ]
         );
 
-        $this->add_bg_color_control();
-
         $this->end_controls_section();
     }
 
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-        $posts_per_page = $settings['posts_count'] ?? 10;
         $bg_color = $settings['bg_color'];
+        $posts_per_page = $settings['posts_count'];
 
         $categories = get_categories(['hide_empty' => true]);
         ?>
-
-        <section class="blog-list <?= esc_attr($bg_color); ?> lg:py-24 py-16"
-                 data-posts-per-page="<?= esc_attr($posts_per_page); ?>">
-
+        <section class="blog-list <?= $bg_color ?> lg:py-24 py-16" data-posts-per-page="<?= $posts_per_page ?>">
             <div class="container">
 
-                <!-- Category Filter -->
-                <ul class="blog-filter flex flex-wrap justify-center gap-2 lg:mb-16 mb-12">
+                <ul class="blog-filter flex flex-row flex-wrap justify-center items-center gap-2 lg:mb-16 mb-12">
 
                     <li>
-                        <button
-                                data-cat="all"
-                                class="filter-btn border px-4 py-2 rounded-full bg-black text-white">
+                        <button data-cat="all"
+                                class="filter-btn bg-black text-white text-body-sm font-medium border border-black rounded-full px-4 py-2 duration-300 hover:bg-black hover:text-white">
                             All
                         </button>
                     </li>
-
                     <?php foreach ($categories as $category): ?>
                         <li>
-                            <button
-                                    data-cat="<?= esc_attr($category->slug); ?>"
-                                    class="filter-btn border px-4 py-2 rounded-full">
+                            <button data-cat="<?= esc_attr($category->slug); ?>"
+                                    class="filter-btn bg-black text-white text-body-sm font-medium border border-black rounded-full px-4 py-2 duration-300 hover:bg-black hover:text-white">
                                 <?= esc_html($category->name); ?>
                             </button>
                         </li>
                     <?php endforeach; ?>
 
                 </ul>
-
-                <!-- Posts -->
-                <ul class="blog-posts grid grid-cols-1 md:grid-cols-2 gap-6 lg:mb-16 mb-12"></ul>
+                <ul class="blog-posts grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-12 lg:mb-16 mb-12"></ul>
                 <p class="blog-counter text-body-lg text-[#404040] text-center mb-6"></p>
-
-                <!-- Load More -->
-                <div class="text-center mt-10">
-                    <button class="load-more btn btn-black-outline btn-lg">
-                        Load More
-                    </button>
+                <div class="flex flex-row justify-center">
+                    <button class="load-more btn btn-black-outline btn-lg">Load more articles</button>
                 </div>
 
             </div>
         </section>
-
         <script>
             jQuery(document).ready(function ($) {
 
@@ -171,7 +156,7 @@ class BlogList extends \Elementor\Widget_Base
                             url: '<?= admin_url('admin-ajax.php') ?>',
                             type: 'POST',
                             data: {
-                                action: 'load_blog_posts',
+                                action: 'fetch_blog_posts',
                                 page: page,
                                 category: category,
                                 posts_per_page: postsPerPage,
@@ -264,7 +249,6 @@ class BlogList extends \Elementor\Widget_Base
 
             });
         </script>
-
         <?php
     }
 }
