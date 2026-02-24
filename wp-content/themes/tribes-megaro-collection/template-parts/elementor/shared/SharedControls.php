@@ -408,4 +408,21 @@ trait SharedControls
         <?php
     }
 
+    /* Dietary tag list */
+    public static function get_dietary_tags_list(): array
+    {
+        return [
+            'vegetarian' => [
+                'label' => 'Vegetarian',
+                'symbol' => 'v',
+                'color' => '#008A09'
+            ],
+            'vegan' => [
+                'label' => 'Vegan',
+                'symbol' => 've',
+                'color' => '#007272'
+            ]
+        ];
+    }
+
 }

@@ -7,6 +7,7 @@ import select from "./widgets/select.js";
 import datepicker from "./widgets/datepicker.js";
 import modal from "./widgets/modal.js";
 import blogList from "./widgets/blogList.js";
+import menuModals from "./widgets/menuModals.js";
 
 // Alpine init
 document.addEventListener('alpine:init', () => {
@@ -20,6 +21,7 @@ document.addEventListener('alpine:init', () => {
     Alpine.data('datepicker', datepicker);
     Alpine.data('modal', modal);
     Alpine.data('blogList', blogList);
+    Alpine.data('menuModals', menuModals);
 });
 
 Alpine.plugin(collapse);
