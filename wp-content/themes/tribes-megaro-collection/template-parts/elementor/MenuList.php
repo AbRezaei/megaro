@@ -44,10 +44,11 @@ class MenuList extends \Elementor\Widget_Base
             ],
         );
 
-        $tags_data = self::get_dietary_tags_list();
+        $dietary_tags = self::get_dietary_tags();
         $tag_options = [];
-        foreach ($tags_data as $key => $data) {
-            $tag_options[$key] = $data['label'] . ' (' . $data['symbol'] . ')';
+
+        foreach ($dietary_tags as $key => $value) {
+            $tag_options[$key] = $value['label'] . ' (' . $value['symbol'] . ')';
         }
 
         $this->add_control(
@@ -95,7 +96,7 @@ class MenuList extends \Elementor\Widget_Base
                     ],
                     [
                         'name' => 'tag',
-                        'label' => esc_html__('Dietary Tags', 'megaro'),
+                        'label' => esc_html__('Dietary Tag', 'megaro'),
                         'type' => \Elementor\Controls_Manager::SELECT,
                         'options' => $tag_options,
                         'default' => [],
@@ -116,7 +117,7 @@ class MenuList extends \Elementor\Widget_Base
         $title = $settings['title'];
         $items = $settings['items'];
 
-        $all_tags = self::get_dietary_tags_list();
+        $dietary_tags = self::get_dietary_tags();
         ?>
         <section class="lg:py-12 py-8">
             <div class="container">
@@ -135,7 +136,7 @@ class MenuList extends \Elementor\Widget_Base
 
                                         <p class="text-body-lg"><?= $item['title'] ?></p>
                                         <p class="w-5 h-5 flex flex-row justify-center items-center text-body-sm text-white rounded-full"
-                                           style="background-color: <?= $all_tags[$item['tag']]['color'] ?>"><?= $all_tags[$item['tag']]['symbol'] ?></p>
+                                           style="background-color: <?= $dietary_tags[$item['tag']]['color'] ?>"><?= $dietary_tags[$item['tag']]['symbol'] ?></p>
 
                                     </div>
                                     <p class="text-body-lg"><?= $item['price'] ?></p>

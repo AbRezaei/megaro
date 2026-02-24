@@ -408,8 +408,8 @@ trait SharedControls
         <?php
     }
 
-    /* Dietary tag list */
-    public static function get_dietary_tags_list(): array
+    /* Dietary tags */
+    public static function get_dietary_tags(): array
     {
         return [
             'vegetarian' => [

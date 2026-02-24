@@ -1,22 +1,22 @@
 <?php
 
-class MenuDietaryLegend extends \Elementor\Widget_Base
+class MenuDietaryTags extends \Elementor\Widget_Base
 {
     use SharedControls;
 
     public function get_name(): string
     {
-        return 'menu-dietary-legend';
+        return 'menu-dietary-tags';
     }
 
     public function get_title(): string
     {
-        return 'Menu Dietary Legend';
+        return 'Menu Dietary Tags';
     }
 
     public function get_icon(): string
     {
-        return 'eicon-bullet-list';
+        return 'eicon-tags';
     }
 
     public function get_categories(): array
@@ -34,16 +34,17 @@ class MenuDietaryLegend extends \Elementor\Widget_Base
             ]
         );
 
-        $tags_data = self::get_dietary_tags_list();
+        $dietary_tags = self::get_dietary_tags();
         $tag_options = [];
-        foreach ($tags_data as $key => $data) {
-            $tag_options[$key] = $data['label'];
+
+        foreach ($dietary_tags as $key => $value) {
+            $tag_options[$key] = $value['label'];
         }
 
         $this->add_control(
-            'legends',
+            'tags',
             [
-                'label' => esc_html__('Select Legends to Show', 'megaro'),
+                'label' => esc_html__('Select Tags to Show', 'megaro'),
                 'type' => \Elementor\Controls_Manager::SELECT2,
                 'multiple' => true,
                 'options' => $tag_options,
@@ -57,10 +58,10 @@ class MenuDietaryLegend extends \Elementor\Widget_Base
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-        $legends = $settings['legends'];
-        $all_tags = self::get_dietary_tags_list();
+        $dietary_tags = self::get_dietary_tags();
+        $tags = $settings['tags'];
 
-        if (empty($legends)) {
+        if (empty($tags)) {
             return;
         }
         ?>
@@ -68,17 +69,17 @@ class MenuDietaryLegend extends \Elementor\Widget_Base
             <div class="container">
                 <div class="w-full lg:w-1/2 mx-auto">
                     <ul class="flex flex-row flex-wrap justify-center items-center gap-3">
-                        <?php foreach ($legends as $legend):
-                            if (isset($all_tags[$legend])):
-                                $tag = $all_tags[$legend];
+                        <?php foreach ($tags as $tag):
+                            if (isset($dietary_tags[$tag])):
+                                $item = $dietary_tags[$tag];
                                 ?>
                                 <li class="flex flex-row items-center gap-1">
 
                                     <p class="w-5 h-5 flex flex-row justify-center items-center text-body-sm text-white rounded-full"
-                                       style="background-color: <?= $tag['color'] ?>">
-                                        <?= $tag['symbol'] ?>
+                                       style="background-color: <?= $item['color'] ?>">
+                                        <?= $item['symbol'] ?>
                                     </p>
-                                    <p class="text-body-sm"><?= $tag['label'] ?></p>
+                                    <p class="text-body-sm"><?= $item['label'] ?></p>
 
                                 </li>
                             <?php
