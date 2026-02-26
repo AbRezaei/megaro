@@ -45,7 +45,54 @@ class Intro extends \Elementor\Widget_Base
             ]
         );
 
-        $this->add_section_heading_control();
+        $this->add_control(
+            'overline',
+            [
+                'label' => esc_html__('Overline', 'megaro'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'separator' => 'before',
+            ]
+        );
+        $this->add_control(
+            'title',
+            [
+                'label' => esc_html__('Title', 'megaro'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+            ]
+        );
+        $this->add_control(
+            'title_hierarchy',
+            [
+                'label' => esc_html__('Title Hierarchy', 'megaro'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'default' => 'h2',
+                'options' => [
+                    'h1' => esc_html__('Heading 1', 'megaro'),
+                    'h2' => esc_html__('Heading 2', 'megaro'),
+                    'h3' => esc_html__('Heading 3', 'megaro'),
+                    'h4' => esc_html__('Heading 4', 'megaro'),
+                    'h5' => esc_html__('Heading 5', 'megaro'),
+                ]
+            ]
+        );
+        $this->add_control(
+            'show_title_divider',
+            [
+                'label' => esc_html__('Show Title divider', 'megaro'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => esc_html__('Show', 'megaro'),
+                'label_off' => esc_html__('Hide', 'megaro'),
+                'return_value' => 'yes',
+                'default' => '',
+            ]
+        );
+        $this->add_control(
+            'subtitle',
+            [
+                'label' => esc_html__('Subtitle', 'megaro'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+            ]
+        );
 
         $this->add_control(
             'description',
@@ -86,6 +133,8 @@ class Intro extends \Elementor\Widget_Base
         $logo = $settings['logo'];
         $overline = $settings['overline'];
         $title = $settings['title'];
+        $title_hierarchy = $settings['title_hierarchy'];
+        $show_title_divider = $settings['show_title_divider'];
         $subtitle = $settings['subtitle'];
         $description = $settings['description'];
         $features = $settings['features'];
@@ -105,8 +154,20 @@ class Intro extends \Elementor\Widget_Base
                         <p class="text-body-lg text-primary text-center mb-6"><?= $overline ?></p>
                     <?php endif; ?>
                     <?php if (!empty($title)): ?>
-                        <h2 class="text-heading-2 text-center mb-2"><?= $title ?></h2>
-                        <hr class="w-24 border-primary lg:my-10! my-8! mx-auto!">
+
+                        <?php if ($title_hierarchy === 'h1'): ?>
+                            <h1 class="text-heading-1 text-center"><?= $title ?></h1>
+                        <?php elseif ($title_hierarchy === 'h2'): ?>
+                            <h2 class="text-heading-2 text-center"><?= $title ?></h2>
+                        <?php elseif ($title_hierarchy === 'h3'): ?>
+                            <h3 class="text-heading-3 text-center"><?= $title ?></h3>
+                        <?php elseif ($title_hierarchy === 'h4'): ?>
+                            <h4 class="text-heading-4 text-center"><?= $title ?></h4>
+                        <?php elseif ($title_hierarchy === 'h5'): ?>
+                            <h5 class="text-heading-5 text-center"><?= $title ?></h5>
+                        <?php endif; ?>
+                        <hr class="w-24 mx-auto! <?= $show_title_divider === 'yes' ? 'border-primary lg:my-10! my-8!' : 'border-transparent my-3!' ?>">
+
                     <?php endif; ?>
                     <?php if (!empty($subtitle)): ?>
                         <p class="text-body-sm text-center lg:mb-10 mb-8"><?= $subtitle ?></p>
