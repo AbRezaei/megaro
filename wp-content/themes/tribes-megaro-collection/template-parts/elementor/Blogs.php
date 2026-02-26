@@ -101,11 +101,19 @@ class Blogs extends \Elementor\Widget_Base
         $btn_text = $settings['btn_text'];
         $btn_link = $settings['btn_link'];
 
+        $current_post_id = (int)get_queried_object_id();
+        if (!$current_post_id) {
+            $current_post_id = (int)get_the_ID();
+        }
+
+        $excluded_post_ids = $current_post_id ? [$current_post_id] : [];
+
         $args = [
             'post_type' => 'post',
             'post_status' => 'publish',
             'posts_per_page' => $settings['posts_count'],
             'ignore_sticky_posts' => true,
+            'post__not_in' => $excluded_post_ids,
         ];
 
         if (!empty($settings['category_ids'])) {
