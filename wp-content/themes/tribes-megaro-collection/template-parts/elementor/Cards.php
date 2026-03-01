@@ -163,9 +163,11 @@ class Cards extends \Elementor\Widget_Base
 
                                         </div>
                                     <?php endif; ?>
-                                    <a href="<?= $card['btn_link']['url'] ?>"
-                                       target="<?= $card['btn_link']['is_external'] ? '_blank' : '_self' ?>"
-                                       class="btn <?= $card['btn_type'] ?> <?= $card['btn_size'] ?>"><?= $card['btn_text'] ?></a>
+                                    <?php if (!empty($card['btn_text'])): ?>
+                                        <a href="<?= $card['btn_link']['url'] ?>"
+                                           target="<?= $card['btn_link']['is_external'] ? '_blank' : '_self' ?>"
+                                           class="btn <?= $card['btn_type'] ?> <?= $card['btn_size'] ?>"><?= $card['btn_text'] ?></a>
+                                    <?php endif; ?>
 
                                 </div>
 
