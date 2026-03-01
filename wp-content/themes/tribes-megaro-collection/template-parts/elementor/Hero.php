@@ -119,7 +119,7 @@ class Hero extends \Elementor\Widget_Base
         $this->add_control(
             'stars',
             [
-                'label' => esc_html__('Starts', 'megaro'),
+                'label' => esc_html__('Stars', 'megaro'),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'default' => 0,
                 'options' => [
@@ -322,7 +322,7 @@ class Hero extends \Elementor\Widget_Base
                             <div class="mb-10">
 
                                 <?php if (!empty($settings['overline'])): ?>
-                                    <p class="text-body-lg text-secondary text-center mb-4"><?= $settings['overline'] ?></p>
+                                    <p class="text-body-lg text-center mb-4 uppercase"><?= $settings['overline'] ?></p>
                                 <?php endif; ?>
                                 <?php if (!empty($title)): ?>
                                     <h1 class="text-heading-1 text-center mb-4"><?= $title ?></h1>

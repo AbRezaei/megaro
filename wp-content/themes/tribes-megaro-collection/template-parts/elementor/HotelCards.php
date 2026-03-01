@@ -63,7 +63,7 @@ class HotelCards extends \Elementor\Widget_Base
                     ],
                     [
                         'name' => 'stars',
-                        'label' => esc_html__('Starts', 'megaro'),
+                        'label' => esc_html__('Stars', 'megaro'),
                         'type' => \Elementor\Controls_Manager::SELECT,
                         'default' => 0,
                         'options' => [

@@ -72,27 +72,27 @@
 
 /* Typography */
 .text-display {
-    @apply font-fraunces font-semibold lg:text-[80px] text-[48px] lg:leading-22 leading-14;
+    @apply font-fraunces font-semibold lg:text-[80px] text-[48px] lg:leading-22 leading-14 uppercase;
 }
 
 h1, .text-heading-1 {
-    @apply font-fraunces lg:text-[60px] text-[40px] lg:leading-17 leading-12;
+    @apply font-fraunces lg:text-[60px] text-[40px] lg:leading-17 leading-12 uppercase;
 }
 
 h2, .text-heading-2 {
-    @apply font-fraunces lg:text-[48px] text-[32px] lg:leading-14 leading-10;
+    @apply font-fraunces lg:text-[48px] text-[32px] lg:leading-14 leading-10 uppercase;
 }
 
 h3, .text-heading-3 {
-    @apply font-fraunces lg:text-[40px] text-[28px] lg:leading-12 leading-8;
+    @apply font-fraunces lg:text-[40px] text-[28px] lg:leading-12 leading-8 uppercase;
 }
 
 h4, .text-heading-4 {
-    @apply font-fraunces lg:text-[32px] text-[24px] lg:leading-10 leading-7;
+    @apply font-fraunces lg:text-[32px] text-[24px] lg:leading-10 leading-7 uppercase;
 }
 
 h5, .text-heading-5 {
-    @apply font-fraunces lg:text-[24px] text-[20px] lg:leading-8 leading-6;
+    @apply font-fraunces lg:text-[24px] text-[20px] lg:leading-8 leading-6 uppercase;
 }
 
 .text-body-xl {

@@ -151,7 +151,7 @@ class Intro extends \Elementor\Widget_Base
                         </div>
                     <?php endif; ?>
                     <?php if (!empty($overline)): ?>
-                        <p class="text-body-lg text-primary text-center mb-6"><?= $overline ?></p>
+                        <p class="text-body-lg text-primary text-center mb-6 uppercase"><?= $overline ?></p>
                     <?php endif; ?>
                     <?php if (!empty($title)): ?>
 
@@ -173,7 +173,7 @@ class Intro extends \Elementor\Widget_Base
                         <p class="text-body-sm text-center lg:mb-10 mb-8"><?= $subtitle ?></p>
                     <?php endif; ?>
                     <?php if (!empty($description)): ?>
-                        <div class="text-body-xl text-[#404040]">
+                        <div class="text-body-xl text-[#404040] text-center">
                             <?= $description ?>
                         </div>
                     <?php endif; ?>

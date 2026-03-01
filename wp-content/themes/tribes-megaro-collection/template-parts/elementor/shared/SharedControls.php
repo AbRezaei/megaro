@@ -26,14 +26,14 @@ trait SharedControls
         );
     }
 
-    protected function add_text_color_control($id = 'text_color', $label = 'Text Color'): void
+    protected function add_text_color_control($id = 'text_color', $label = 'Text Color', $default = 'text-black'): void
     {
         $this->add_control(
             $id,
             [
                 'label' => esc_html__($label, 'megaro'),
                 'type' => \Elementor\Controls_Manager::SELECT,
-                'default' => 'text-black',
+                'default' => $default,
                 'options' => [
                     'text-black' => esc_html__('Black', 'megaro'),
                     'text-white' => esc_html__('White', 'megaro'),
@@ -130,6 +130,7 @@ trait SharedControls
                 'separator' => 'before',
             ]
         );
+        $this->add_text_color_control('overline_color', 'Overline Color', 'text-primary');
         $this->add_control(
             'title',
             [
@@ -149,6 +150,7 @@ trait SharedControls
     protected function render_section_heading_template(array $settings): void
     {
         $overline = $settings['overline'];
+        $overline_color = $settings['overline_color'];
         $title = $settings['title'];
         $subtitle = $settings['subtitle'];
 
@@ -160,7 +162,7 @@ trait SharedControls
         <div class="lg:w-1/2 w-full mx-auto lg:mb-16 mb-12 space-y-6">
 
             <?php if (!empty($overline)): ?>
-                <p class="text-body-lg text-primary text-center"><?= $overline ?></p>
+                <p class="<?= $overline_color ?> text-body-lg text-center uppercase"><?= $overline ?></p>
             <?php endif; ?>
             <?php if (!empty($title)): ?>
                 <h2 class="text-heading-2 text-center"><?= $title ?></h2>
@@ -194,6 +196,7 @@ trait SharedControls
                 'type' => \Elementor\Controls_Manager::TEXT,
             ]
         );
+        $this->add_text_color_control('overline_color', 'Overline Color', 'text-primary');
         $this->add_control(
             'title',
             [
@@ -300,6 +303,7 @@ trait SharedControls
         $text_color = $settings['text_color'];
         $logo = $settings['logo'];
         $overline = $settings['overline'];
+        $overline_color = $settings['overline_color'];
         $title = $settings['title'];
         $title_hierarchy = $settings['title_hierarchy'];
         $description = $settings['description'];
@@ -331,7 +335,7 @@ trait SharedControls
                 </div>
             <?php endif; ?>
             <?php if (!empty($overline)): ?>
-                <p class="text-body-lg text-primary mb-6"><?= $overline ?></p>
+                <p class="<?= $overline_color ?> text-body-lg mb-6 uppercase"><?= $overline ?></p>
             <?php endif; ?>
             <?php if (!empty($title)): ?>
 
