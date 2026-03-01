@@ -1,6 +1,0 @@
-<?php
-?>
-
-<nav>Navbar</nav>
-
-
