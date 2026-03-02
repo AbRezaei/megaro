@@ -147,7 +147,7 @@ trait SharedControls
         );
     }
 
-    protected function render_section_heading_template(array $settings): void
+    protected function render_section_heading_template(array $settings, string $margin_bottom = 'lg:mb-16 mb-12'): void
     {
         $overline = $settings['overline'];
         $overline_color = $settings['overline_color'];
@@ -159,7 +159,7 @@ trait SharedControls
         }
 
         ?>
-        <div class="lg:w-1/2 w-full mx-auto lg:mb-16 mb-12 space-y-6">
+        <div class="lg:w-1/2 w-full <?= $margin_bottom ?> mx-auto space-y-6">
 
             <?php if (!empty($overline)): ?>
                 <p class="<?= $overline_color ?> text-body-lg text-center uppercase"><?= $overline ?></p>
