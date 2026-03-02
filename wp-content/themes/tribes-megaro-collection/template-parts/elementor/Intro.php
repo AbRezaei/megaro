@@ -35,6 +35,7 @@ class Intro extends \Elementor\Widget_Base
         );
 
         $this->add_bg_color_control();
+        $this->add_text_color_control();
 
         $this->add_control(
             'logo',
@@ -53,6 +54,7 @@ class Intro extends \Elementor\Widget_Base
                 'separator' => 'before',
             ]
         );
+        $this->add_text_color_control('overline_color', 'Overline Color', 'text-primary');
         $this->add_control(
             'title',
             [
@@ -130,8 +132,10 @@ class Intro extends \Elementor\Widget_Base
         $settings = $this->get_settings_for_display();
 
         $bg_color = $settings['bg_color'];
+        $text_color = $settings['text_color'];
         $logo = $settings['logo'];
         $overline = $settings['overline'];
+        $overline_color = $settings['overline_color'];
         $title = $settings['title'];
         $title_hierarchy = $settings['title_hierarchy'];
         $show_title_divider = $settings['show_title_divider'];
@@ -139,7 +143,7 @@ class Intro extends \Elementor\Widget_Base
         $description = $settings['description'];
         $features = $settings['features'];
         ?>
-        <section class="<?= $bg_color ?> lg:py-24 py-16">
+        <section class="<?= $bg_color ?> <?= $text_color ?> lg:py-24 py-16">
             <div class="container">
 
                 <div class="lg:w-2/3 mx-auto mb-16">
@@ -151,7 +155,7 @@ class Intro extends \Elementor\Widget_Base
                         </div>
                     <?php endif; ?>
                     <?php if (!empty($overline)): ?>
-                        <p class="text-body-lg text-primary text-center mb-6 uppercase"><?= $overline ?></p>
+                        <p class="<?= $overline_color ?> text-body-lg text-center mb-6 uppercase"><?= $overline ?></p>
                     <?php endif; ?>
                     <?php if (!empty($title)): ?>
 
@@ -173,7 +177,7 @@ class Intro extends \Elementor\Widget_Base
                         <p class="text-body-sm text-center lg:mb-10 mb-8"><?= $subtitle ?></p>
                     <?php endif; ?>
                     <?php if (!empty($description)): ?>
-                        <div class="text-body-xl text-[#404040] text-center">
+                        <div class="text-body-xl text-center">
                             <?= $description ?>
                         </div>
                     <?php endif; ?>
